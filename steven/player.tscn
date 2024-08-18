@@ -22,16 +22,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.056)
 
 [node name="Flashlight" type="SpotLight3D" parent="Pivot"]
-transform = Transform3D(0.995887, -0.000844767, 0.0906034, 0.000393198, 0.999987, 0.00500181, -0.0906065, -0.00494561, 0.995874, 0.277601, 0.556317, -0.193159)
+transform = Transform3D(0.995887, -0.000844772, 0.0906034, 0.000393198, 0.999987, 0.00500181, -0.0906065, -0.00494561, 0.995875, 0.290519, 0.549173, -0.215929)
 light_energy = 1.5
 light_indirect_energy = 1.485
 light_volumetric_fog_energy = 3.909
 shadow_enabled = true
-shadow_reverse_cull_face = true
 spot_range = 30.0
 spot_attenuation = 0.25
 spot_angle = 10.0
-spot_angle_attenuation = 30.9099
+spot_angle_attenuation = 30.0
 script = ExtResource("2_4tg8v")
 
 [node name="Feet" type="CollisionShape3D" parent="."]

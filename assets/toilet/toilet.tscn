@@ -43,7 +43,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_oo2d1")
 
-[node name="prison_toilet01_reference_smd_2" type="Node3D"]
+[node name="Toilet" type="Node3D"]
 transform = Transform3D(1.40792, 0, 0, 0, 1.40792, 0, 0, 0, 1.40792, 0.682609, 0.32535, -3.05085)
 
 [node name="Object_4" type="MeshInstance3D" parent="."]
