@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cvy2cxxhx4tpx"]
+[gd_scene load_steps=23 format=3 uid="uid://cvy2cxxhx4tpx"]
 
 [ext_resource type="Texture2D" uid="uid://cs78jdei8wskt" path="res://textures/concrete_floor_02_diff_4k.png" id="1_dga0w"]
 [ext_resource type="Texture2D" uid="uid://36i6bg32rvon" path="res://textures/concrete_floor_02_nor_gl_4k.png" id="2_iw5u4"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ieh4thkhdtwg" path="res://assets/cell/cell.tscn" id="10_xbo2t"]
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="11_oq74o"]
 [ext_resource type="PackedScene" uid="uid://c8prweejgtkg7" path="res://assets/light/light.tscn" id="12_cv8ag"]
+[ext_resource type="PackedScene" uid="uid://362mbj6aqka5" path="res://assets/cell/Cell.gltf" id="13_3484u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjxey"]
 albedo_texture = ExtResource("4_1pj51")
@@ -86,7 +87,6 @@ environment = SubResource("Environment_7c6p0")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(0.99763, 0, 0, 0, 0.99763, 0, 0, 0, 0.99763, -0.0043237, 4.12773, 0.0116615)
-visible = false
 light_energy = 7.626
 omni_range = 75.161
 
@@ -149,5 +149,8 @@ transform = Transform3D(-1.00388, 0, 8.77622e-08, 0, 1.00388, 0, -8.77622e-08, 0
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("12_cv8ag")]
 transform = Transform3D(0.040547, 0, 0, 0, 0.0257596, 0, 0, 0, 0.0672726, -2.28644, 8.21736, -2.25952)
+
+[node name="Cell" parent="." instance=ExtResource("13_3484u")]
+transform = Transform3D(0.997626, 0, 0, 0, 0.997626, 0, 0, 0, 0.997626, -4.96089, 0, -1.1708)
 
 [editable path="Player2"]
