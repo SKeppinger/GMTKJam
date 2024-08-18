@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjkyarhgjy3bt"]
+
+[ext_resource type="Script" path="res://steven/player_controller.gd" id="1_0r8s4"]
+[ext_resource type="Script" path="res://steven/flashlight_controller.gd" id="2_4tg8v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uevqu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vc15v"]
+size = Vector3(0.4, 0.1, 0.4)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_0r8s4")
+
+[node name="Body" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_uevqu")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.056)
+
+[node name="Flashlight" type="SpotLight3D" parent="Pivot"]
+transform = Transform3D(0.995979, 0, 0.0895896, 0, 1, 0, -0.0895896, 0, 0.995979, 0.25, 0.385068, -0.5)
+light_indirect_energy = 1.485
+light_volumetric_fog_energy = 3.909
+spot_range = 95.432
+spot_attenuation = 0.5
+spot_angle_attenuation = 3.36359
+script = ExtResource("2_4tg8v")
+
+[node name="Feet" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("BoxShape3D_vc15v")

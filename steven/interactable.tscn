@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://0r3s4aqqbyuf"]
+
+[ext_resource type="Script" path="res://steven/interactable.gd" id="1_k0s5b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tfy6q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xn8y2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yc6wy"]
+radius = 1.5
+
+[node name="Interactable" type="StaticBody3D" groups=["interactable"]]
+script = ExtResource("1_k0s5b")
+target_grow_x = 2.0
+target_grow_y = 2.0
+target_grow_z = 2.0
+target_shrink_x = 0.5
+target_shrink_y = 0.5
+target_shrink_z = 0.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_tfy6q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("BoxMesh_xn8y2")
+skeleton = NodePath("../..")
+
+[node name="TargetArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TargetArea"]
+shape = SubResource("SphereShape3D_yc6wy")
+
+[connection signal="grow" from="." to="." method="_on_grow"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="shrink" from="." to="." method="_on_shrink"]
