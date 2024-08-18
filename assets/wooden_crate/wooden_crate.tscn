@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqev2vuajxp3a"]
+
+[ext_resource type="PackedScene" uid="uid://d3vql56tmu8jr" path="res://assets/wooden_crate/wooden_crate_01_4k.gltf" id="1_o4xkl"]
+[ext_resource type="Texture2D" uid="uid://b2wdqwu6ustji" path="res://assets/wooden_crate/textures/wooden_crate_01_diff_4k.png" id="2_tk7pw"]
+[ext_resource type="Texture2D" uid="uid://coq73bk85l0np" path="res://assets/wooden_crate/textures/wooden_crate_01_nor_gl_4k.png" id="3_b0ne8"]
+[ext_resource type="Texture2D" uid="uid://rqc0tjhy5cs3" path="res://assets/wooden_crate/textures/wooden_crate_01_ao_4k.png" id="3_u7lgw"]
+[ext_resource type="Texture2D" uid="uid://cwsbpggf3c5my" path="res://assets/wooden_crate/textures/wooden_crate_01_rough_4k.png" id="4_33jl6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8mrl"]
+albedo_texture = ExtResource("2_tk7pw")
+normal_enabled = true
+normal_texture = ExtResource("3_b0ne8")
+ao_enabled = true
+ao_texture = ExtResource("3_u7lgw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dk66"]
+albedo_texture = ExtResource("2_tk7pw")
+roughness_texture = ExtResource("4_33jl6")
+normal_enabled = true
+normal_texture = ExtResource("3_b0ne8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8i3tc"]
+albedo_texture = ExtResource("4_33jl6")
+
+[node name="wooden_crate" instance=ExtResource("1_o4xkl")]
+
+[node name="wooden_crate_01_lid" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00292832, 5.96046e-08, -0.000471532)
+surface_material_override/0 = SubResource("StandardMaterial3D_c8mrl")
+
+[node name="wooden_crate_01" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0dk66")
+
+[node name="wooden_crate_01_latch" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8i3tc")

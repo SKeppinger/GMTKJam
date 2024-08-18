@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8prweejgtkg7"]
+
+[ext_resource type="PackedScene" uid="uid://dsvuv15o3jn62" path="res://assets/light/scene.gltf" id="1_bavn1"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_bavn1")]
+transform = Transform3D(0.424935, 0, 0, 0, 0.161504, 0, 0, 0, 0.659835, 0, 54.5998, 0)
+
+[node name="defaultMaterial4" parent="Sketchfab_model/Collada visual scene group/SM_hanging_lights_006" index="0"]
+visible = false

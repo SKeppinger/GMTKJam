@@ -36,7 +36,7 @@ func _physics_process(_delta):
 			else:
 				interactable.emit_signal("shrink")
 	else:
-		spot_angle = 45
+		spot_angle = 40
 		light_energy = 1
 		light_color = Color(1, 1, 1)
 	

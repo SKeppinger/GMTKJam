@@ -1,0 +1,60 @@
+[gd_scene load_steps=16 format=3 uid="uid://ieh4thkhdtwg"]
+
+[ext_resource type="PackedScene" uid="uid://drw7aqal4iarr" path="res://assets/cell/Cell.blend" id="1_wpjba"]
+[ext_resource type="Texture2D" uid="uid://dptl7qu86mx1i" path="res://assets/cell/cell_irons.png" id="2_n1m73"]
+[ext_resource type="Texture2D" uid="uid://cn0piyn0itp0t" path="res://assets/cell/Walls.png" id="3_lqklc"]
+[ext_resource type="Texture2D" uid="uid://uv2xi6t1w3ke" path="res://assets/cell/Ground.png" id="4_qecwd"]
+[ext_resource type="Texture2D" uid="uid://10c6kmy5pblm" path="res://assets/cell/Ceiling.png" id="5_n48y6"]
+[ext_resource type="PackedScene" uid="uid://dmbnksbmh1q1d" path="res://assets/bed/bed.fbx" id="6_fkupv"]
+[ext_resource type="PackedScene" uid="uid://dastmnt4lnj7i" path="res://assets/wood_bucket/scene.gltf" id="7_omslc"]
+[ext_resource type="PackedScene" uid="uid://cxya6oei28qkt" path="res://assets/toilet/toilet.tscn" id="8_1xl1e"]
+[ext_resource type="PackedScene" uid="uid://butm54pfexrev" path="res://assets/metal_bucket/scene.gltf" id="9_k7w12"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6od2"]
+albedo_texture = ExtResource("2_n1m73")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1p3e"]
+albedo_texture = ExtResource("2_n1m73")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ceqc"]
+albedo_texture = ExtResource("2_n1m73")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fg015"]
+albedo_texture = ExtResource("3_lqklc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xn14c"]
+albedo_texture = ExtResource("4_qecwd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_diw21"]
+albedo_texture = ExtResource("5_n48y6")
+
+[node name="Cell" instance=ExtResource("1_wpjba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.940018, 0, 0, 0)
+
+[node name="Door" parent="." index="0"]
+transform = Transform3D(0.801976, 0.214889, -8.29174e-07, -3.6292e-08, -3.06824e-06, -0.830267, -0.214889, 0.801976, -2.9543e-06, -1.00594, 1.84377, 5.40999)
+surface_material_override/0 = SubResource("StandardMaterial3D_e6od2")
+
+[node name="Cell_irons" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_d1p3e")
+
+[node name="Window" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0ceqc")
+
+[node name="Concrete_cell" parent="." index="3"]
+transform = Transform3D(-0.830267, -6.0639e-06, 2.65061e-13, 0, -3.62921e-08, -0.830267, 6.0639e-06, -0.830267, 3.62921e-08, -0.0498258, 2.84797, -0.171981)
+surface_material_override/0 = SubResource("StandardMaterial3D_fg015")
+surface_material_override/1 = SubResource("StandardMaterial3D_xn14c")
+surface_material_override/2 = SubResource("StandardMaterial3D_diw21")
+
+[node name="bed" parent="." index="4" instance=ExtResource("6_fkupv")]
+transform = Transform3D(1.38835, 0, 0, 0, 1, 0, 0, 0, 1.31791, -1.94155, -4.76837e-07, -2.33034)
+
+[node name="Sketchfab_Scene" parent="." index="5" instance=ExtResource("7_omslc")]
+transform = Transform3D(0.0495719, 0, 0, 0, 0.0310814, 0, 0, 0, 0.0614731, -0.0404906, 0, -3.66735)
+
+[node name="prison_toilet01_reference_smd_2" parent="." index="6" instance=ExtResource("8_1xl1e")]
+transform = Transform3D(8.9407e-08, 0, -2.45118, 0, 1.56797, 0, 1.78501, 0, 1.26816e-07, 1.77861, 0.710159, -4.14815)
+
+[node name="Sketchfab_Scene2" parent="." index="7" instance=ExtResource("9_k7w12")]
+transform = Transform3D(1.89286, 0, 0, 0, 2.20921, 0, 0, 0, 1.83714, 0.888464, 0, -3.50486)
