@@ -5,9 +5,15 @@ signal shrink
 
 var grown = false
 var shrunk = false
+var growing = false
+var shrinking = false
 
 var model
+var target_timer = 0.0
+var shift_timer = 0.0
 
+@export var target_time: float
+@export var shift_time: float
 @export var target_grow_x: float
 @export var target_grow_y: float
 @export var target_grow_z: float
