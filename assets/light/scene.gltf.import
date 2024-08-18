@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/scene.gltf-9d433a1080aa2f4eaf0a35856621709b.s
 
 nodes/root_type=""
 nodes/root_name=""
-nodes/apply_root_scale=true
+nodes/apply_root_scale=false
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
