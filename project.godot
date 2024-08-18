@@ -11,13 +11,9 @@ config_version=5
 [application]
 
 config/name="Lighthouse"
-run/main_scene="res://steven/steven_scene.tscn"
+run/main_scene="res://evan/evan_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
-
-[filesystem]
-
-import/blender/enabled=false
 
 [global_group]
 
