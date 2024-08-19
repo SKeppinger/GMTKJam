@@ -29,6 +29,12 @@ func _physics_process(delta):
 		query.collide_with_areas = true
 		query.exclude = [get_parent().get_parent()]
 		var result = space_state.intersect_ray(query)
+		if result and result.collider.is_in_group("interactable"):
+			var interactable = result.collider
+			if mode == LightMode.GROW:
+				interactable.grow.emit(delta)
+			else:
+				interactable.shrink.emit(delta)
 		if result and result.collider.get_parent().get_parent().is_in_group("interactable"):
 			var interactable = result.collider.get_parent().get_parent()
 			if mode == LightMode.GROW:
