@@ -6,6 +6,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxr8c"]
 cull_mode = 2
+emission_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_xn8y2"]
 material = SubResource("StandardMaterial3D_sxr8c")
@@ -32,22 +33,12 @@ shape = SubResource("BoxShape3D_tfy6q")
 mesh = SubResource("BoxMesh_xn8y2")
 skeleton = NodePath("../..")
 
-[node name="GrowLight" type="OmniLight3D" parent="CollisionShape3D"]
-light_color = Color(0.611765, 0, 0.152941, 1)
-light_energy = 0.0
-light_size = 1.0
-omni_range = 1.5
+[node name="OmniLight3D" type="OmniLight3D" parent="CollisionShape3D/MeshInstance3D"]
+visible = false
 
-[node name="ShrinkLight" type="OmniLight3D" parent="CollisionShape3D"]
-light_color = Color(0, 0.303804, 0.542969, 1)
-light_energy = 0.0
-light_size = 1.0
-omni_range = 1.5
+[node name="TargetArea" type="Area3D" parent="CollisionShape3D"]
 
-[node name="TargetArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TargetArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionShape3D/TargetArea"]
 shape = SubResource("SphereShape3D_yc6wy")
 
 [connection signal="grow" from="." to="." method="_on_grow"]
