@@ -1,10 +1,13 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
+@export var SPEED = 5.0
+@export var RUN_SPEED = 11.0
+@export var ACCEL = 12.0
 
 var MOUSE_SENSITIVITY = 0.05
 
 var camera
+var move_speed = SPEED
 var pivot
 
 func _ready():
@@ -29,11 +32,21 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("Left", "Right", "Forward", "Backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+	if Input.is_action_pressed("Run") and not Input.is_action_pressed("Backward"):
+		if move_speed < RUN_SPEED:
+			move_speed += ACCEL * delta
+		if move_speed > RUN_SPEED:
+			move_speed = RUN_SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		if move_speed > SPEED:
+			move_speed -= ACCEL * delta
+		if move_speed < SPEED:
+			move_speed = SPEED
+	if direction:
+		velocity.x = direction.x * move_speed
+		velocity.z = direction.z * move_speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, move_speed)
+		velocity.z = move_toward(velocity.z, 0, move_speed)
 
 	move_and_slide()

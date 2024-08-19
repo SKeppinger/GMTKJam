@@ -92,7 +92,7 @@ func _on_shrink(delta):
 		if not shrinking and not growing and shrink_timer >= target_time:
 			shrink_timer = 0
 			shrinking = true
-			
+
 func block_and_die():
 	block.emit()
 	queue_free()
