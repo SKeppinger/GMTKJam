@@ -12,7 +12,7 @@ func _ready():
 	camera = get_parent().get_node("Camera3D")
 
 # Switch and shine light
-func _physics_process(_delta):
+func _physics_process(delta):
 	if Input.is_action_pressed("Shine"):
 		spot_angle = 15
 		light_energy = 5
@@ -29,12 +29,12 @@ func _physics_process(_delta):
 		query.collide_with_areas = true
 		query.exclude = [get_parent().get_parent()]
 		var result = space_state.intersect_ray(query)
-		if result and result.collider.get_parent().is_in_group("interactable"):
-			var interactable = result.collider.get_parent()
+		if result and result.collider.get_parent().get_parent().is_in_group("interactable"):
+			var interactable = result.collider.get_parent().get_parent()
 			if mode == LightMode.GROW:
-				interactable.emit_signal("grow")
+				interactable.grow.emit(delta)
 			else:
-				interactable.emit_signal("shrink")
+				interactable.shrink.emit(delta)
 	else:
 		spot_angle = 40
 		light_energy = 1
