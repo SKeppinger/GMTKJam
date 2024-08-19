@@ -15,7 +15,9 @@ albedo_color = Color(0.340096, 0.507813, 0.331268, 1)
 material = SubResource("StandardMaterial3D_ro78b")
 
 [node name="Sebas" type="CharacterBody3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 15.1893, 2.09485, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 15.1893, 3.09485, 0)
+collision_layer = 6
+collision_mask = 8
 script = ExtResource("1_wthsh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

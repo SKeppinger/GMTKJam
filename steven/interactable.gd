@@ -2,6 +2,7 @@ extends StaticBody3D
 
 signal grow
 signal shrink
+signal block
 
 var grown = false
 var shrunk = false
@@ -91,3 +92,10 @@ func _on_shrink(delta):
 		if not shrinking and not growing and shrink_timer >= target_time:
 			shrink_timer = 0
 			shrinking = true
+			
+func block_and_die():
+	block.emit()
+	queue_free()
+
+func _on_hitbox_body_entered(body):
+	block_and_die()

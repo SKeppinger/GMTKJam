@@ -1,4 +1,4 @@
-extends Node
+extends State
 class_name SebasObstacle
 
 # Called when the node enters the scene tree for the first time.
