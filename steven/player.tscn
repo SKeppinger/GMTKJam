@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjkyarhgjy3bt"]
+[gd_scene load_steps=6 format=3 uid="uid://bjkyarhgjy3bt"]
 
 [ext_resource type="Script" path="res://steven/player_controller.gd" id="1_0r8s4"]
 [ext_resource type="Script" path="res://steven/flashlight_controller.gd" id="2_4tg8v"]
@@ -7,6 +7,8 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vc15v"]
 size = Vector3(0.4, 0.1, 0.4)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oyqal"]
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 11
@@ -38,3 +40,9 @@ script = ExtResource("2_4tg8v")
 [node name="Feet" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 shape = SubResource("BoxShape3D_vc15v")
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_oyqal")

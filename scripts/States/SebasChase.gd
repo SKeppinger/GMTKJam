@@ -23,6 +23,7 @@ func _on_cracked_wall_block():
 	move_speed *= 2
 	print("speeding up!")
 
+#this one is for the "crate" object instead of "interactable", we can prob delete one of them and rename the other and be fine
 func _on_interactable_2_block():
 	print("slowing down!")
 	move_speed /= 2

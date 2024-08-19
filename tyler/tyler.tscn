@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bpa2f44jlgfwu"]
+[gd_scene load_steps=16 format=3 uid="uid://bpa2f44jlgfwu"]
 
+[ext_resource type="AudioStream" uid="uid://cbek1pn3pdvhm" path="res://music/SpookyTutorial.wav" id="3_ax2d8"]
 [ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://assets/cell/cell.tscn" id="10_xbo2t"]
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="11_oq74o"]
 
@@ -57,6 +58,8 @@ mesh = SubResource("PlaneMesh_yrb3x")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+collision_layer = 8
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("WorldBoundaryShape3D_uawtq")
@@ -148,5 +151,10 @@ omni_range = 50.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.60529, 0)
 size = Vector3(50, 5, 50)
 material = SubResource("FogMaterial_7ybha")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ax2d8")
+volume_db = -25.0
+autoplay = true
 
 [editable path="Player"]
