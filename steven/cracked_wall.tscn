@@ -12,7 +12,7 @@ radius = 3.5
 
 [node name="Cracked Wall" type="StaticBody3D" groups=["interactable"]]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 8
 script = ExtResource("1_3053l")
 target_time = 0.5
 shift_time = 0.5
@@ -46,6 +46,16 @@ depth = 2.1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionShape3D/TargetArea"]
 shape = SubResource("SphereShape3D_yc6wy")
 
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionPolygon3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+depth = 2.0
+polygon = PackedVector2Array(0.347089, -2.49234, 0.715103, -2.08103, -0.0335008, -0.590169, -0.670366, -2.50316, -2.50436, -2.4953, -2.50436, 2.50423, 2.49517, 2.50423, 2.5078, -2.4953)
+
 [connection signal="grow" from="." to="." method="_on_grow"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="shrink" from="." to="." method="_on_shrink"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

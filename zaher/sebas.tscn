@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbfia2gpr8qgd"]
+[gd_scene load_steps=8 format=3 uid="uid://dbfia2gpr8qgd"]
 
 [ext_resource type="Script" path="res://scripts/Sebas/sebas.gd" id="1_wthsh"]
 [ext_resource type="Script" path="res://scripts/States/State_machine.gd" id="2_r6jlr"]
 [ext_resource type="Script" path="res://scripts/States/SebasIdle.gd" id="3_8j8dt"]
 [ext_resource type="Script" path="res://scripts/States/SebasChase.gd" id="4_xdpbf"]
-[ext_resource type="Script" path="res://scripts/States/SebasObstacle.gd" id="5_nmk5b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tyyxk"]
 
@@ -16,7 +15,7 @@ material = SubResource("StandardMaterial3D_ro78b")
 
 [node name="Sebas" type="CharacterBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 15.1893, 3.09485, 0)
-collision_layer = 6
+collision_layer = 4
 collision_mask = 8
 script = ExtResource("1_wthsh")
 
@@ -36,6 +35,3 @@ script = ExtResource("3_8j8dt")
 [node name="SebasChase" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_xdpbf")
 enemy = NodePath("../..")
-
-[node name="SebasObstacle" type="Node" parent="StateMachine"]
-script = ExtResource("5_nmk5b")

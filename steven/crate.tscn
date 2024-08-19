@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbldo0fwudiao"]
+[gd_scene load_steps=7 format=3 uid="uid://dbldo0fwudiao"]
 
 [ext_resource type="Script" path="res://steven/interactable.gd" id="1_0efft"]
 
@@ -14,9 +14,11 @@ material = SubResource("StandardMaterial3D_sxr8c")
 [sub_resource type="SphereShape3D" id="SphereShape3D_yc6wy"]
 radius = 1.5
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_oicsb"]
+
 [node name="Interactable" type="StaticBody3D" groups=["interactable"]]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 8
 script = ExtResource("1_0efft")
 target_time = 0.5
 shift_time = 0.5
@@ -43,6 +45,13 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionShape3D/TargetArea"]
 shape = SubResource("SphereShape3D_yc6wy")
 
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_oicsb")
+
 [connection signal="grow" from="." to="." method="_on_grow"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="shrink" from="." to="." method="_on_shrink"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
