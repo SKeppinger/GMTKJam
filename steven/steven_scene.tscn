@@ -37,6 +37,8 @@ environment = SubResource("Environment_a10hr")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_layer = 8
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_5duyy")
@@ -46,9 +48,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.998036, 0)
 mesh = SubResource("BoxMesh_4mlas")
 
 [node name="Player" parent="." instance=ExtResource("1_rjgvv")]
+collision_layer = 1
 
 [node name="Wall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.7742, -53.1801)
+collision_layer = 8
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
 shape = SubResource("BoxShape3D_5duyy")
@@ -59,6 +64,8 @@ mesh = SubResource("BoxMesh_4mlas")
 
 [node name="Wall2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.7742, 3.23274)
+collision_layer = 8
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2"]
 shape = SubResource("BoxShape3D_5duyy")
@@ -69,6 +76,8 @@ mesh = SubResource("BoxMesh_4mlas")
 
 [node name="Wall3" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -22.7742, -0.343117)
+collision_layer = 8
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3"]
 shape = SubResource("BoxShape3D_5duyy")
@@ -79,6 +88,8 @@ mesh = SubResource("BoxMesh_4mlas")
 
 [node name="Wall4" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 53.6161, -22.7742, -0.343117)
+collision_layer = 8
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4"]
 shape = SubResource("BoxShape3D_5duyy")
