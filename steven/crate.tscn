@@ -11,10 +11,10 @@ emission_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_xn8y2"]
 material = SubResource("StandardMaterial3D_sxr8c")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_oicsb"]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_yc6wy"]
 radius = 1.5
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_oicsb"]
 
 [node name="Interactable" type="StaticBody3D" groups=["interactable"]]
 collision_layer = 2
@@ -40,16 +40,17 @@ skeleton = NodePath("../..")
 [node name="OmniLight3D" type="OmniLight3D" parent="CollisionShape3D/MeshInstance3D"]
 visible = false
 
-[node name="TargetArea" type="Area3D" parent="CollisionShape3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionShape3D/TargetArea"]
-shape = SubResource("SphereShape3D_yc6wy")
-
 [node name="Hitbox" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_oicsb")
+
+[node name="TargetArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TargetArea"]
+shape = SubResource("SphereShape3D_yc6wy")
 
 [connection signal="grow" from="." to="." method="_on_grow"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]

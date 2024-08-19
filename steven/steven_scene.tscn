@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ee8q031pg1c3"]
+[gd_scene load_steps=9 format=3 uid="uid://ee8q031pg1c3"]
 
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="1_rjgvv"]
 [ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="3_jfkfh"]
-[ext_resource type="PackedScene" uid="uid://0r3s4aqqbyuf" path="res://steven/interactable.tscn" id="3_rn5jm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p5882"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -97,9 +96,6 @@ shape = SubResource("BoxShape3D_5duyy")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall4"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 20.1516, 25.4305)
 mesh = SubResource("BoxMesh_4mlas")
-
-[node name="Interactable" parent="." instance=ExtResource("3_rn5jm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.103, -0.5, 0)
 
 [node name="Cracked Wall" parent="." instance=ExtResource("3_jfkfh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.82062)
