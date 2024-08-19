@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ee8q031pg1c3"]
+[gd_scene load_steps=10 format=3 uid="uid://ee8q031pg1c3"]
 
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="1_rjgvv"]
+[ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="3_jacgm"]
 [ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="3_jfkfh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p5882"]
@@ -99,3 +100,6 @@ mesh = SubResource("BoxMesh_4mlas")
 
 [node name="Cracked Wall" parent="." instance=ExtResource("3_jfkfh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.82062)
+
+[node name="Sebas" parent="." instance=ExtResource("3_jacgm")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 15.189, 1, 0)
