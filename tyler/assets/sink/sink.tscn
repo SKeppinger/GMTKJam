@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://crkibit2w3gup"]
+
+[ext_resource type="PackedScene" uid="uid://cfwu5wjw4wr1d" path="res://tyler/assets/sink/scene.gltf" id="1_s3ryn"]
+
+[node name="Sink" instance=ExtResource("1_s3ryn")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.00278381, 0.00123076, 0.000754654)
+
+[node name="Object_2" parent="Sketchfab_model/0909581ac9da4121a8fca3c45552959e_obj_cleaner_materialmerger_gles" index="0"]
+transform = Transform3D(0.073, 0, 0, 0, 0.073, 0, 0, 0, 0.1, 0, 0, 0)

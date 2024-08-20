@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs6k8thlx7kkj"]
+
+[ext_resource type="PackedScene" uid="uid://dsvuv15o3jn62" path="res://tyler/assets/light/scene.gltf" id="1_dxjm5"]
+
+[node name="Hanging_Light" instance=ExtResource("1_dxjm5")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
+
+[node name="defaultMaterial" parent="Sketchfab_model/Collada visual scene group/SM_hanging_lights_009" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -7.10543e-15, 0, 3.55271e-14, 0.293727, 0.000196004, -0.000699759, 0.00208543)
+
+[node name="defaultMaterial2" parent="Sketchfab_model/Collada visual scene group/SM_hanging_lights_008" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -4.26326e-14, 0, 4.26326e-14, 1, 0.000196004, -0.000699833, 0.632861)
+
+[node name="defaultMaterial3" parent="Sketchfab_model/Collada visual scene group/SM_hanging_lights_007" index="0"]
+transform = Transform3D(1, 1.77636e-15, -9.71161e-15, 0, 1, -1.42109e-14, 1.16047e-14, 1.42109e-14, 1, -0.630071, -1.02445e-08, -2.52039e-08)
+
+[node name="SM_hanging_lights_006" parent="Sketchfab_model/Collada visual scene group" index="3"]
+transform = Transform3D(100, 0, 0, 0, -1.6e-05, 100, 0, -100, -1.6e-05, -0.010184, 0.026083, -0.396512)
+visible = false
+
+[node name="defaultMaterial4" parent="Sketchfab_model/Collada visual scene group/SM_hanging_lights_006" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-14, 0, 3.55271e-14, 1, 0, -7.35745e-08, 0.630071)
+
+[node name="defaultMaterial5" parent="Sketchfab_model/Collada visual scene group/SM_hanging_lights_005" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -7.10543e-15, 0, 3.55271e-14, 0.293727, 0, 0, 0.000704)
+
+[node name="defaultMaterial6" parent="Sketchfab_model/Collada visual scene group/SM_hanging_lights_004" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-14, 0, 3.55271e-14, 1, 0, -7.35745e-08, 0.630071)
+
+[node name="SM_hanging_lights_003" parent="Sketchfab_model/Collada visual scene group" index="6"]
+transform = Transform3D(-3.94481e-06, -1.57792e-05, 98.6202, -98.6202, -5.91721e-06, -3.94481e-06, 5.91721e-06, -98.6202, -1.57792e-05, -0.010181, 0.026083, -0.396512)
+
+[node name="defaultMaterial7" parent="Sketchfab_model/Collada visual scene group/SM_hanging_lights_003" index="0"]
+transform = Transform3D(1, 1.06581e-14, -2.60617e-15, 0, 1, 0, 4.71318e-14, 0, 1, -0.625, 0, 0.009)
+
+[node name="defaultMaterial8" parent="Sketchfab_model/Collada visual scene group/SM_hanging_lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-14, 0, 3.55271e-14, 1, 0, -7.35745e-08, 0.630071)

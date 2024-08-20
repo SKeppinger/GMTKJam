@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=4 uid="uid://d14w2l16caarp"]
+
+[ext_resource type="Texture2D" uid="uid://wbokkpa18hnx" path="res://tyler/textures/brick_wall_08_diff_4k.png" id="2_ebp77"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocokb"]
+albedo_texture = ExtResource("2_ebp77")
+uv1_scale = Vector3(1, 4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxnxm"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4qvl4"]
+_surfaces = [{
+"aabb": AABB(-7, 0.919407, -1, 8, 0.5, 2),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAHAAMAAgAGAAcABgAFAAcABgAEAAUABAABAAUABAAAAAEABwABAAMABwAFAAEAAAAGAAIAAAAEAAYA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AADgwB+vtT8AAIA/AACAPyGvtT8AAIA/AADgwB+vtT8AAIC/AACAPyGvtT8AAIC/AADgwD5eaz8AAIA/AACAP0Jeaz8AAIA/AADgwD5eaz8AAIC/AACAP0Jeaz8AAIC/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e04lk"]
+resource_name = "door_Cube_002"
+_surfaces = [{
+"aabb": AABB(-7, 0.919407, -1, 8, 0.5, 2),
+"attribute_data": PackedByteArray("AADAPgAAAAAAAMA+AACAPwAAwD4AAAAAAAAgPwAAAAAAACA/AACAPwAAYD8AAIA+AADAPgAAQD8AAMA+AABAPwAAwD4AAEA/AAAgPwAAQD8AACA/AABAPwAAYD8AAAA/AADAPgAAgD4AAMA+AACAPgAAwD4AAIA+AAAgPwAAgD4AACA/AACAPgAAID8AAIA+AADAPgAAAD8AAMA+AAAAPwAAwD4AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AQAKAAQAAQAHAAoABgAVAAkABgASABUAEwAQABYAEwANABAADAADAA8ADAAAAAMAFwAFAAsAFwARAAUAAgAUAAgAAgAOABQA"),
+"material": SubResource("StandardMaterial3D_cxnxm"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AADgwB+vtT8AAIA/AADgwB+vtT8AAIA/AADgwB+vtT8AAIA/AACAPyGvtT8AAIA/AACAPyGvtT8AAIA/AACAPyGvtT8AAIA/AADgwB+vtT8AAIC/AADgwB+vtT8AAIC/AADgwB+vtT8AAIC/AACAPyGvtT8AAIC/AACAPyGvtT8AAIC/AACAPyGvtT8AAIC/AADgwD5eaz8AAIA/AADgwD5eaz8AAIA/AADgwD5eaz8AAIA/AACAP0Jeaz8AAIA/AACAP0Jeaz8AAIA/AACAP0Jeaz8AAIA/AADgwD5eaz8AAIC/AADgwD5eaz8AAIC/AADgwD5eaz8AAIC/AACAP0Jeaz8AAIC/AACAP0Jeaz8AAIC/AACAP0Jeaz8AAIC//3//f////7//f///////vwAA/3////+//3//f////7//f///////v////3//f////////////7//f///////vwAA/3////+//////////7//f///////v////3//f////3//f////7//fwAA////vwAA/3////+//3//f////7//fwAA////v////3//f////////////7//fwAA////vwAA/3////+//////////7//fwAA////v////3//f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4qvl4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db1ix"]
+albedo_texture = ExtResource("2_ebp77")
+uv1_scale = Vector3(4, 1, 1)
+
+[node name="door"]
+
+[node name="frame_side" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 1, 0.382052, 0.5, 0.225161)
+surface_material_override/0 = SubResource("StandardMaterial3D_ocokb")
+
+[node name="frame_top" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 1, 0.379539, 0.5, 0.211464)
+mesh = SubResource("ArrayMesh_e04lk")
+surface_material_override/0 = SubResource("StandardMaterial3D_db1ix")
