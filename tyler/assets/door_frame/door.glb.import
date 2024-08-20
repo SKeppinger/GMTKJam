@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctscddsehnnid"
-valid=false
+uid="uid://cexibqveksl3a"
+path="res://.godot/imported/door.glb-fc9284e389e0c29f86d5ef72f9350337.scn"
 
 [deps]
 
-source_file="res://tyler/door.glb"
+source_file="res://tyler/assets/door_frame/door.glb"
+dest_files=["res://.godot/imported/door.glb-fc9284e389e0c29f86d5ef72f9350337.scn"]
 
 [params]
 
