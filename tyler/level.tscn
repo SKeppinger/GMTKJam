@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://6btpbxw6yvoq"]
+[gd_scene load_steps=62 format=4 uid="uid://6btpbxw6yvoq"]
 
 [ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://tyler/assets/cell/cell.tscn" id="1_82dhp"]
 [ext_resource type="Texture2D" uid="uid://bot5c48e3ylkd" path="res://tyler/textures/white_plaster_02_diff_4k.png" id="1_sikpa"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" path="res://tyler/assets/wood_bucket/bucket.tscn" id="17_re5mv"]
 [ext_resource type="Texture2D" uid="uid://dptl7qu86mx1i" path="res://tyler/assets/cell/cell_irons.png" id="19_qaf73"]
 [ext_resource type="PackedScene" uid="uid://brbs5vylur337" path="res://tyler/assets/lockers/lockers_green.tscn" id="20_0vp06"]
+[ext_resource type="PackedScene" uid="uid://ds772r5a5m0te" path="res://evan/lighthouse_evan.tscn" id="20_b4rqh"]
 [ext_resource type="PackedScene" uid="uid://t2plyh102rde" path="res://tyler/assets/lockers/lockers_green_damaged.tscn" id="21_86s12"]
 [ext_resource type="PackedScene" uid="uid://j708j4nd7t1l" path="res://tyler/assets/bench/old_bench.tscn" id="22_lodh8"]
 [ext_resource type="PackedScene" uid="uid://b0rmpt7cwb4wt" path="res://tyler/assets/bench/bench.tscn" id="23_bhgvn"]
@@ -368,6 +369,9 @@ collision_mask = 15
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Starting Room/door/Door/StaticBody3D"]
 transform = Transform3D(1, -2.98023e-08, -6.82121e-13, 0, 1, 1.13687e-13, 0, -1.13687e-13, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_0once")
+
+[node name="lighthouse_evan" parent="Starting Room" instance=ExtResource("20_b4rqh")]
+transform = Transform3D(-6.92498, 0, -6.92498, 0, 8.58, 0, 6.92498, 0, -6.92498, 4.72722, -0.232922, 50.4844)
 
 [node name="Tutorial" type="Node" parent="."]
 
