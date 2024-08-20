@@ -239,7 +239,7 @@ bones/39/rotation = Quaternion(0.306303, -0.0392778, 0.0126504, 0.951039)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.30979, 0, 0)
 
 [node name="Hallway2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.96952, 0, 0.033597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.96952, 0, -330.478)
 
 [node name="Floor" type="CSGBox3D" parent="Hallway2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 0)
@@ -286,7 +286,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1736, 0.526157, 2.84685)
 mass = 0.01
 
 [node name="FlashlightPickUp" parent="." instance=ExtResource("14_1s30k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.014, 0.705, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.014, 0.705, -330.512)
 
 [node name="PauseMenu" parent="." instance=ExtResource("15_d2spm")]
 visible = false
