@@ -16,7 +16,7 @@ material = SubResource("StandardMaterial3D_ro78b")
 [node name="Sebas" type="CharacterBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 15.1893, 3.09485, 0)
 collision_layer = 4
-collision_mask = 8
+collision_mask = 9
 script = ExtResource("1_wthsh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

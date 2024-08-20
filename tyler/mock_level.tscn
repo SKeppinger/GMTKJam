@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://du3yjuu7qepiu"]
+[gd_scene load_steps=9 format=3 uid="uid://cfmeo743wplfn"]
 
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="1_b4cwv"]
 [ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="2_jolvv"]
-[ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="2_utu1w"]
-[ext_resource type="PackedScene" uid="uid://dmy4c65skjafx" path="res://steven/Sebas Pathpoint.tscn" id="3_3jveu"]
+[ext_resource type="PackedScene" path="res://steven/sebas.tscn" id="2_utu1w"]
+[ext_resource type="PackedScene" path="res://steven/Sebas Pathpoint.tscn" id="3_3jveu"]
 [ext_resource type="PackedScene" uid="uid://dbldo0fwudiao" path="res://steven/crate.tscn" id="4_xipof"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4alq8"]

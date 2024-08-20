@@ -11,6 +11,7 @@ var MOUSE_SENSITIVITY = 0.05
 var camera
 var move_speed = SPEED
 var pivot
+var dying = false
 
 func _ready():
 	camera = $Pivot/Camera3D
@@ -19,12 +20,13 @@ func _ready():
 
 # Camera rotation
 func _input(event):
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and not dying:
 		pivot.rotate_x(deg_to_rad(event.relative.y * MOUSE_SENSITIVITY * -1))
 		self.rotate_y(deg_to_rad(event.relative.x * MOUSE_SENSITIVITY * -1))
 		var camera_rotation = pivot.rotation_degrees
 		camera_rotation.x = clamp(camera_rotation.x, -70, 70)
 		pivot.rotation_degrees = camera_rotation
+		
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -55,6 +57,7 @@ func _physics_process(delta):
 
 func die():
 	death.emit()
+	dying = true
 
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("enemy"):
