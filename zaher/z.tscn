@@ -33,7 +33,7 @@ transform = Transform3D(2, 0, 0, 0, 10, 0, 0, 0, 2, 0, 0, -0.5)
 mesh = SubResource("PlaneMesh_p4p27")
 skeleton = NodePath("../../..")
 
-[node name="Player" parent="." instance=ExtResource("2_hrhbb")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_hrhbb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30938, 0)
 collision_mask = 12
 

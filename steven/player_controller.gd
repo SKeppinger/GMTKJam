@@ -57,4 +57,5 @@ func die():
 	death.emit()
 
 func _on_hitbox_body_entered(body):
-	die()
+	if body.is_in_group("enemy"):
+		die()
