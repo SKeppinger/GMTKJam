@@ -57,7 +57,7 @@ func Physics_Update(delta: float):
 			var direction = player.global_position - enemy.global_position
 			enemy.rotation.y = lerp_angle(enemy.rotation.y, atan2(direction.x, direction.z), 1) 
 			enemy.velocity = direction.normalized() * move_speed
-		else:
+		elif result and not result.collider.is_in_group("player"):
 			var path_points = get_tree().get_nodes_in_group("sebas_path")
 			var nearest_to_player = path_points[0]
 			for point in path_points:

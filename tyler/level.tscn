@@ -60,7 +60,7 @@ size = Vector2(27, 6)
 [sub_resource type="QuadMesh" id="QuadMesh_yfugj"]
 size = Vector2(28.9, 6)
 
-[node name="Level" type="Node3D"]
+[node name="Level2" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_25oov")

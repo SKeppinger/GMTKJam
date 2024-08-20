@@ -438,7 +438,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.604, 2, -0.082)
 next = NodePath("../Path 2")
 
 [node name="Path 2" parent="Starting Room2" node_paths=PackedStringArray("prev", "next") instance=ExtResource("3_3jveu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7769, 2, -0.0820007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3772, 2, -0.0820007)
 prev = NodePath("../Path 1")
 next = NodePath("../../Hallway2/Path 3")
 
@@ -490,7 +490,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1736, 0.526157, 2.84685)
 mass = 0.01
 
 [node name="Path 3" parent="Hallway2" node_paths=PackedStringArray("prev", "next") instance=ExtResource("3_3jveu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7679, 2, -0.0820007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8132, 2, -0.0820007)
 prev = NodePath("../../Starting Room2/Path 2")
 next = NodePath("../Path 4")
 
@@ -546,11 +546,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.7166, 0, 1.86159)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.914, 0, -2.75668)
 
 [node name="Path 5" parent="Hallway3" node_paths=PackedStringArray("prev") instance=ExtResource("3_3jveu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.7518, 2, -0.0820007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.7837, 2, -0.0820007)
 prev = NodePath("../../Hallway2/Path 4")
 
 [connection signal="block" from="Hallway2/Cracked Wall" to="Starting Room2/Sebas/StateMachine/SebasChase" method="_on_cracked_wall_block"]
 [connection signal="block" from="Hallway2/Crate" to="Starting Room2/Sebas/StateMachine/SebasChase" method="_on_crate_block"]
+[connection signal="block" from="Hallway3/Crate" to="Starting Room2/Sebas/StateMachine/SebasChase" method="_on_crate_block"]
+[connection signal="block" from="Hallway3/Crate2" to="Starting Room2/Sebas/StateMachine/SebasChase" method="_on_crate_block"]
 
 [editable path="Starting Room2/Sebas"]
 [editable path="Starting Room2/Sebas/Running"]

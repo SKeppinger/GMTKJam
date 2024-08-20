@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://vxtm3yuayd4d"]
+
+[ext_resource type="PackedScene" uid="uid://dbfia2gpr8qgd" path="res://zaher/sebas.tscn" id="1_lw102"]
+[ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="2_hrhbb"]
+[ext_resource type="PackedScene" uid="uid://0r3s4aqqbyuf" path="res://steven/interactable.tscn" id="3_c5hxx"]
+[ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="4_qwh4p"]
+[ext_resource type="PackedScene" uid="uid://dbldo0fwudiao" path="res://steven/crate.tscn" id="5_gp5kd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_230la"]
+size = Vector3(41, 1, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05qkn"]
+albedo_color = Color(0.226563, 0.0203552, 0.083184, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p4p27"]
+material = SubResource("StandardMaterial3D_05qkn")
+size = Vector2(20, 20)
+
+[node name="Z" type="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0384445, 0, 0.260235)
+shape = SubResource("BoxShape3D_230la")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D"]
+transform = Transform3D(2, 0, 0, 0, 10, 0, 0, 0, 2, 0, 0, -0.5)
+mesh = SubResource("PlaneMesh_p4p27")
+skeleton = NodePath("../../..")
+
+[node name="Sebas" parent="." instance=ExtResource("1_lw102")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.1893, 2.09485, 0)
+
+[node name="SebasChase" parent="Sebas/StateMachine" index="1" node_paths=PackedStringArray("player")]
+player = NodePath("../../../Player")
+
+[node name="Player" parent="." instance=ExtResource("2_hrhbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30938, 0)
+
+[node name="Interactable" parent="." instance=ExtResource("3_c5hxx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 7)
+
+[node name="Cracked Wall" parent="." instance=ExtResource("4_qwh4p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 1, -1)
+
+[node name="CollisionShape3D" parent="Cracked Wall/Hitbox" index="0"]
+polygon = PackedVector2Array(0.347089, -2.49234, 0.715103, -2.08103, -0.0335008, -0.590169, -0.670366, -2.50316, -2.50436, -2.4953, -2.48431, 2.5212, 2.49517, 2.50423, 2.5078, -2.4953)
+
+[node name="Interactable2" parent="." instance=ExtResource("5_gp5kd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 1, -12)
+
+[node name="MeshInstance3D" parent="Interactable2/CollisionShape3D" index="0"]
+skeleton = NodePath("../../../Interactable2")
+
+[node name="Hitbox" parent="Interactable2" index="1"]
+collision_layer = 2
+collision_mask = 4
+
+[connection signal="death" from="Player" to="Sebas/StateMachine/SebasChase" method="_on_player_death"]
+[connection signal="block" from="Interactable" to="Sebas/StateMachine/SebasChase" method="_on_interactable_block"]
+[connection signal="block" from="Cracked Wall" to="Sebas/StateMachine/SebasChase" method="_on_cracked_wall_block"]
+[connection signal="block" from="Interactable2" to="Sebas/StateMachine/SebasChase" method="_on_interactable_2_block"]
+
+[editable path="Sebas"]
+[editable path="Player"]
+[editable path="Interactable"]
+[editable path="Cracked Wall"]
+[editable path="Interactable2"]
