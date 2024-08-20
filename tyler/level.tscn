@@ -395,7 +395,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00383, 18.5124, 0.164424)
 white = NodePath("../../../Player/Pivot/ColorRect")
 
 [node name="MusicTrigger" parent="Starting Room/lighthouse_evan" node_paths=PackedStringArray("music") instance=ExtResource("23_qog1e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78625, 13.4631, 1.2018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30686, 13.4631, 1.91432)
 music = NodePath("../../../EndMusic")
 
 [node name="Tutorial" type="Node" parent="."]
