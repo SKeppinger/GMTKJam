@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bpcw8gdjm8ul1"]
+[gd_scene load_steps=16 format=3 uid="uid://ckwrr8bbxrxo3"]
 
 [ext_resource type="AudioStream" uid="uid://cbek1pn3pdvhm" path="res://music/SpookyTutorial.wav" id="3_ax2d8"]
 [ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://assets/cell/cell.tscn" id="10_xbo2t"]

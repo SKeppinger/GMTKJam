@@ -9,9 +9,9 @@ func _ready():
 	player = get_parent().get_parent().get_parent().get_node("Player")
 
 func Physics_Update(delta: float):
-	get_parent().get_parent().get_node("Running").set_visible(true)
+	#get_parent().get_parent().get_node("Running").set_visible(true)
 	#get_parent().get_parent().get_node("Crawling").get_node("AnimationPlayer").play("mixamo_com")
-	get_parent().get_parent().get_node("Running").get_node("AnimationPlayer").play("mixamo_com")
+	#get_parent().get_parent().get_node("Running").get_node("AnimationPlayer").play("mixamo_com")
 	var direction = player.global_position - enemy.global_position
 	enemy.rotation.y = lerp_angle(enemy.rotation.y, atan2(direction.x, direction.z), 1) 
 	enemy.velocity = direction.normalized() * move_speed
@@ -37,3 +37,7 @@ func _on_interactable_2_block():
 	await get_tree().create_timer(2).timeout
 	move_speed *= 5
 	print("speeding up!")
+
+func _on_player_death():
+	print("Im DEAD!!!!")
+	get_tree().reload_current_scene()
