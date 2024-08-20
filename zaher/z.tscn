@@ -36,9 +36,6 @@ skeleton = NodePath("../../..")
 [node name="Player" parent="." instance=ExtResource("2_hrhbb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30938, 0)
 collision_mask = 12
-SPEED = null
-RUN_SPEED = null
-ACCEL = null
 
 [node name="Interactable" parent="." instance=ExtResource("3_c5hxx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 7)

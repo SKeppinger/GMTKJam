@@ -493,7 +493,7 @@ size = Vector3(50, 6, 0.2)
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68.9827, 0.00814331, 0.169044)
 
 [node name="Crate" parent="Hallway2" instance=ExtResource("4_xipof")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1736, 0.0118841, 2.84685)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1736, 0.526157, 2.84685)
 mass = 0.01
 
 [node name="Path 3" parent="Hallway2" node_paths=PackedStringArray("prev", "next") instance=ExtResource("3_3jveu")]
