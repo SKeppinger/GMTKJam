@@ -22,6 +22,7 @@ target_grow_z = 2.0
 target_shrink_x = 0.5
 target_shrink_y = 0.5
 target_shrink_z = 0.5
+block_on_shrink = true
 
 [node name="CollisionShape3D" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
