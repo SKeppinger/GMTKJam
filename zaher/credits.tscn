@@ -1,4 +1,71 @@
-[gd_scene format=3 uid="uid://ckvbnhoakwhtd"]
+[gd_scene load_steps=14 format=3 uid="uid://ckvbnhoakwhtd"]
+
+[ext_resource type="Script" path="res://scripts/Menuing/credits.gd" id="1_rvtdt"]
+
+[sub_resource type="FontFile" id="FontFile_naakv"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_unhs5"]
+font = SubResource("FontFile_naakv")
+font_color = Color(0.145767, 0.641426, 0.910156, 1)
+
+[sub_resource type="FontFile" id="FontFile_wm30d"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bv3p"]
+font = SubResource("FontFile_wm30d")
+font_color = Color(0, 1, 0.498039, 1)
+
+[sub_resource type="FontFile" id="FontFile_nkigs"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_id34u"]
+font = SubResource("FontFile_nkigs")
+font_color = Color(0.0966797, 0.119759, 0.6875, 1)
+
+[sub_resource type="FontFile" id="FontFile_h2iwe"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_22rfu"]
+font = SubResource("FontFile_h2iwe")
+font_color = Color(0.233035, 0.06427, 0.457031, 1)
+
+[sub_resource type="FontFile" id="FontFile_43c0x"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_skrcy"]
+font = SubResource("FontFile_43c0x")
+
+[sub_resource type="FontFile" id="FontFile_mq7t0"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_5or6i"]
+font = SubResource("FontFile_mq7t0")
+font_color = Color(0.752941, 0.752941, 0.752941, 1)
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -7,6 +74,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rvtdt")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -28,27 +96,54 @@ layout_mode = 2
 [node name="Tyler Pearson" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Tyler Pearson - Developer"
+label_settings = SubResource("LabelSettings_unhs5")
+horizontal_alignment = 1
 
 [node name="Steven Keppinger" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Steven Keppinger - Developer"
+label_settings = SubResource("LabelSettings_1bv3p")
+horizontal_alignment = 1
 
 [node name="Evan Zhang" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Evan Zhang - Developer"
+label_settings = SubResource("LabelSettings_id34u")
+horizontal_alignment = 1
 
 [node name="Zaher Ilbih" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Zaher Ilbih - Developer"
+label_settings = SubResource("LabelSettings_22rfu")
+horizontal_alignment = 1
 
 [node name="Sejer Ilbih" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Sejer Ilbih - Music"
+label_settings = SubResource("LabelSettings_skrcy")
+horizontal_alignment = 1
 
 [node name="Special Thanks To" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Special Thanks To:"
+text = "In Loving Memory of:"
+horizontal_alignment = 1
 
 [node name="Sebastian Vargas" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Sebastian Vargas - Monster"
+text = "Sebastian Vargas
+"
+label_settings = SubResource("LabelSettings_5or6i")
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.5
+offset_right = 67.5
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

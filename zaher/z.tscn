@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://0r3s4aqqbyuf" path="res://steven/interactable.tscn" id="3_c5hxx"]
 [ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="4_qwh4p"]
 [ext_resource type="PackedScene" uid="uid://dbldo0fwudiao" path="res://steven/crate.tscn" id="5_gp5kd"]
-[ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="5_sj0ph"]
-[ext_resource type="PackedScene" uid="uid://dmy4c65skjafx" path="res://steven/Sebas Pathpoint.tscn" id="6_koum1"]
+[ext_resource type="PackedScene" path="res://steven/sebas.tscn" id="5_sj0ph"]
+[ext_resource type="PackedScene" path="res://steven/Sebas Pathpoint.tscn" id="6_koum1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_230la"]
 size = Vector3(41, 1, 40)
@@ -33,7 +33,7 @@ transform = Transform3D(2, 0, 0, 0, 10, 0, 0, 0, 2, 0, 0, -0.5)
 mesh = SubResource("PlaneMesh_p4p27")
 skeleton = NodePath("../../..")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_hrhbb")]
+[node name="Player" parent="." instance=ExtResource("2_hrhbb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30938, 0)
 collision_mask = 12
 
