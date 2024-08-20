@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bpcw8gdjm8ul1"]
 
 [ext_resource type="AudioStream" uid="uid://cbek1pn3pdvhm" path="res://music/SpookyTutorial.wav" id="3_ax2d8"]
-[ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://tyler/assets/cell/cell.tscn" id="10_xbo2t"]
+[ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://assets/cell/cell.tscn" id="10_xbo2t"]
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="11_oq74o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1hj8l"]
