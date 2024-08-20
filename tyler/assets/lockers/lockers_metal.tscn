@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8f77u4enht2m"]
-
-[ext_resource type="PackedScene" uid="uid://csirnnqbjlqrp" path="res://tyler/assets/lockers/school_locker.glb" id="1_5j2xo"]
-
-[node name="Sketchfab_Scene" instance=ExtResource("1_5j2xo")]
-
-[node name="Sketchfab_model" parent="." index="0"]
-transform = Transform3D(0.55743, 0, 0, 0, 1.23774e-16, 0.55743, 0, -0.55743, 1.23774e-16, 0, 0, 0)
