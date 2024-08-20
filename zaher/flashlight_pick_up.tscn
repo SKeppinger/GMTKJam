@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpirx5whtjurb"]
+
+[ext_resource type="Script" path="res://zaher/flashlight_pick_up.gd" id="1_5frk8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rfnq6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfwqo"]
+size = Vector3(0.2, 0.2, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l18qj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jq8ej"]
+material = SubResource("StandardMaterial3D_l18qj")
+size = Vector3(0.2, 0.2, 0.6)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_620al"]
+height = 1.0
+radius = 0.35
+
+[sub_resource type="Animation" id="Animation_ydhix"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/FlashlightHandle")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0, 4.37114e-08)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_ce0bq"]
+resource_name = "Rotating"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/FlashlightHandle")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(-9.31323e-10, 1, 0, -1.19209e-07, 0, 1, 0.989416, 1, 0, 1, 0, 4.37114e-08)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.00582009, 1, 0, 0, 0, 1, 0.989416, 1, 0, 1, 0, 4.37114e-08)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k5hm2"]
+_data = {
+"RESET": SubResource("Animation_ydhix"),
+"Rotating": SubResource("Animation_ce0bq")
+}
+
+[node name="FlashlightPickUp" type="Node3D" node_paths=PackedStringArray("animation")]
+script = ExtResource("1_5frk8")
+animation = NodePath("AnimationPlayer")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 0
+physics_material_override = SubResource("PhysicsMaterial_rfnq6")
+
+[node name="FlashlightHandle" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_nfwqo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_jq8ej")
+skeleton = NodePath("../StaticBody3D")
+
+[node name="PickUpArea" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.559421, 0)
+shape = SubResource("CylinderShape3D_620al")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k5hm2")
+}
+
+[connection signal="body_entered" from="PickUpArea" to="." method="_on_pick_up_area_body_entered"]

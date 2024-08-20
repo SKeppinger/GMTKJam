@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://du3yjuu7qepiu"]
+[gd_scene load_steps=13 format=3 uid="uid://cfmeo743wplfn"]
 
+[ext_resource type="Script" path="res://tyler/mock_level.gd" id="1_a47j0"]
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="1_b4cwv"]
 [ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="2_jolvv"]
-[ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="2_utu1w"]
-[ext_resource type="PackedScene" uid="uid://dmy4c65skjafx" path="res://steven/Sebas Pathpoint.tscn" id="3_3jveu"]
+[ext_resource type="PackedScene" path="res://steven/sebas.tscn" id="2_utu1w"]
+[ext_resource type="PackedScene" path="res://steven/Sebas Pathpoint.tscn" id="3_3jveu"]
 [ext_resource type="PackedScene" uid="uid://dbldo0fwudiao" path="res://steven/crate.tscn" id="4_xipof"]
+[ext_resource type="PackedScene" uid="uid://cpirx5whtjurb" path="res://zaher/flashlight_pick_up.tscn" id="6_3icg6"]
+[ext_resource type="PackedScene" uid="uid://dq8lstsdckbwg" path="res://zaher/pause_menu.tscn" id="7_ph3kj"]
+[ext_resource type="PackedScene" uid="uid://cqj8ouleajcvr" path="res://zaher/control_scheme.tscn" id="9_7bnme"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4alq8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -24,6 +28,7 @@ fog_light_energy = 0.02
 fog_density = 0.2
 
 [node name="Level" type="Node3D"]
+script = ExtResource("1_a47j0")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_25oov")
@@ -549,11 +554,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.914, 0, -2.75668)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.7837, 2, -0.0820007)
 prev = NodePath("../../Hallway2/Path 4")
 
+[node name="FlashlightPickUp" parent="." instance=ExtResource("6_3icg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.693, 0.704647, -127.438)
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_ph3kj")]
+visible = false
+
+[node name="ControlScheme" parent="." instance=ExtResource("9_7bnme")]
+
 [connection signal="death" from="Starting Room2/Player" to="Starting Room2/Sebas/StateMachine/SebasChase" method="_on_player_death"]
 [connection signal="block" from="Hallway2/Cracked Wall" to="Starting Room2/Sebas/StateMachine/SebasChase" method="_on_cracked_wall_block"]
 [connection signal="block" from="Hallway2/Crate" to="Starting Room2/Sebas/StateMachine/SebasChase" method="_on_crate_block"]
 [connection signal="block" from="Hallway3/Crate" to="Starting Room2/Sebas/StateMachine/SebasChase" method="_on_crate_block"]
 [connection signal="block" from="Hallway3/Crate2" to="Starting Room2/Sebas/StateMachine/SebasChase" method="_on_crate_block"]
+[connection signal="picked_up" from="FlashlightPickUp" to="Starting Room2/Player/Pivot/Flashlight" method="_on_flashlight_pick_up_picked_up"]
 
 [editable path="Starting Room2/Player"]
 [editable path="Starting Room2/Sebas"]
@@ -563,3 +577,4 @@ prev = NodePath("../../Hallway2/Path 4")
 [editable path="Starting Room2/Sebas/Attacking"]
 [editable path="Hallway2/Cracked Wall"]
 [editable path="Hallway2/Crate"]
+[editable path="FlashlightPickUp"]

@@ -57,6 +57,7 @@ shape = SubResource("CapsuleShape3D_uevqu")
 
 [node name="Pivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 

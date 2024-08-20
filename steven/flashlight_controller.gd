@@ -51,3 +51,7 @@ func _physics_process(delta):
 		spot_angle = 40
 		light_energy = 1
 		light_color = Color(1, 1, 1)
+
+
+func _on_flashlight_pick_up_picked_up():
+	get_parent().show()

@@ -1,0 +1,126 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqj8ouleajcvr"]
+
+[sub_resource type="FontFile" id="FontFile_kub4e"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ks22o"]
+font = SubResource("FontFile_kub4e")
+font_size = 15
+font_color = Color(0.976563, 0.957489, 0.957489, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ce6hb"]
+
+[sub_resource type="FontFile" id="FontFile_v6rj5"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_o4udq"]
+font = SubResource("FontFile_v6rj5")
+font_size = 15
+
+[node name="ControlScheme" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CanvasLayer" type="Polygon2D" parent="CanvasLayer"]
+position = Vector2(-28.225, 39.5)
+scale = Vector2(0.508333, 0.5)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(127, 325, 127, 285, 167, 285, 167, 325, 207, 325, 207, 365, 87, 365, 87, 325)
+
+[node name="W" type="Label" parent="CanvasLayer"]
+offset_left = 35.0
+offset_top = 181.0
+offset_right = 58.0
+offset_bottom = 203.0
+text = "W
+"
+label_settings = SubResource("LabelSettings_ks22o")
+horizontal_alignment = 1
+
+[node name="A" type="Label" parent="CanvasLayer"]
+offset_left = 17.0
+offset_top = 201.0
+offset_right = 39.0
+offset_bottom = 223.0
+text = "A"
+label_settings = SubResource("LabelSettings_ks22o")
+horizontal_alignment = 1
+
+[node name="S" type="Label" parent="CanvasLayer"]
+offset_left = 27.0
+offset_top = 201.0
+offset_right = 67.0
+offset_bottom = 235.0
+text = "S
+"
+label_settings = SubResource("LabelSettings_ks22o")
+horizontal_alignment = 1
+
+[node name="D" type="Label" parent="CanvasLayer"]
+material = SubResource("CanvasItemMaterial_ce6hb")
+offset_left = 47.0
+offset_top = 201.0
+offset_right = 87.0
+offset_bottom = 235.0
+text = "D"
+label_settings = SubResource("LabelSettings_ks22o")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = -13.0
+offset_top = 219.0
+offset_right = 106.0
+offset_bottom = 253.0
+text = "Movement"
+label_settings = SubResource("LabelSettings_o4udq")
+horizontal_alignment = 1
