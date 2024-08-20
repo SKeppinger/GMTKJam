@@ -10,7 +10,6 @@ var growing = false
 var shrinking = false
 var targeting = false
 var dying = false
-var dead = false
 
 var grow_timer = 0.0
 var shrink_timer = 0.0
@@ -71,16 +70,13 @@ func shift_size(delta):
 	elif dying:
 		shift_timer += delta
 		if shift_timer >= shift_time:
-			if not dead:
-				scale = Vector3(0,0,0)
-				dead = true
-				dying = false
-				shift_timer = 0
+			scale = Vector3(0,0,0)
+			queue_free()
 		else:
 			var progress = shift_timer / shift_time
-			if not dead and block_on_grow:
+			if block_on_grow:
 				scale = Vector3(target_grow_x - (target_grow_x * progress), target_grow_y - (target_grow_y * progress), target_grow_z - (target_grow_z * progress))
-			if not dead and block_on_shrink:
+			if block_on_shrink:
 				scale = Vector3(target_shrink_x - (target_shrink_x * progress), target_shrink_y - (target_shrink_y * progress), target_shrink_z - (target_shrink_z * progress))
 			
 
@@ -116,14 +112,11 @@ func _on_shrink(delta):
 
 func block_and_die():
 	block.emit()
-	queue_free()
 
 func _on_hitbox_body_entered(body):
 	if block_on_grow and grown:
 		dying = true
-		await get_tree().create_timer(shift_time).timeout
 		block_and_die()
 	if block_on_shrink and shrunk:
 		dying = true
-		await get_tree().create_timer(shift_time).timeout
 		block_and_die()
