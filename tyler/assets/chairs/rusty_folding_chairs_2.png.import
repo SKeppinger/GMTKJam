@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1pwby1oluki6"
+uid="uid://cjgbpbm0irhll"
 path.s3tc="res://.godot/imported/rusty_folding_chairs_2.png-eff5bd4bc46c3e7546a8fdedbbd85a11.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "a5c1d40bf0d842e785eda28055f807e6"
 }
 
 [deps]

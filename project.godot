@@ -14,12 +14,14 @@ config/name="Lighthouse"
 run/main_scene="res://zaher/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
-"<<<<<<<Updatedupstream[display]window/size/viewport_width"=320
+
+[display]
+
+window/size/viewport_width=320
 window/size/viewport_height=240
 window/size/window_width_override=1024
 window/size/window_height_override=576
 window/stretch/mode="viewport"
-<<<<<<<Updatedupstreamrun/main_scene="res://zaher/main_menu.tscn"
 
 [filesystem]
 

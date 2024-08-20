@@ -69,10 +69,5 @@ func die():
 	dying = true
 
 func _on_hitbox_body_entered(body):
-<<<<<<< Updated upstream
 	if body.is_in_group("enemy"):
 		die()
-=======
-	print(body.name)
-	die()
->>>>>>> Stashed changes
