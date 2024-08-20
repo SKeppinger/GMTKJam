@@ -2,6 +2,8 @@ extends SpotLight3D
 
 const RAY_LENGTH = 50.0
 
+@export var controls: Control
+
 var camera
 
 func _ready():
@@ -52,6 +54,9 @@ func _physics_process(delta):
 		light_energy = 1
 		light_color = Color(1, 1, 1)
 
-
 func _on_flashlight_pick_up_picked_up():
 	get_parent().show()
+	controls.get_child(0).hide()
+	controls.get_child(1).show()
+	await get_tree().create_timer(3).timeout
+	controls.get_child(1).hide()

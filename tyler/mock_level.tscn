@@ -393,6 +393,9 @@ size = Vector3(27, 6, 0.2)
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.04044, 0, -1.45335)
 ENEMY = NodePath("../Sebas")
 
+[node name="Flashlight" parent="Starting Room2/Player/Pivot" index="1" node_paths=PackedStringArray("controls")]
+controls = NodePath("../../../../ControlScheme")
+
 [node name="Divider" type="CSGBox3D" parent="Starting Room2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.99426, 3.00497, 10.496)
 use_collision = true

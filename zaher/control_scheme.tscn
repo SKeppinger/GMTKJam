@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqj8ouleajcvr"]
+[gd_scene load_steps=14 format=3 uid="uid://cqj8ouleajcvr"]
 
 [sub_resource type="FontFile" id="FontFile_kub4e"]
 subpixel_positioning = 0
@@ -37,6 +37,32 @@ font_color = Color(0.976563, 0.957489, 0.957489, 1)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ce6hb"]
 
+[sub_resource type="FontFile" id="FontFile_0cgan"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_xfuf6"]
+font = SubResource("FontFile_0cgan")
+font_size = 13
+
 [sub_resource type="FontFile" id="FontFile_v6rj5"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
@@ -61,7 +87,76 @@ cache/0/15/0/scale = 1.0
 font = SubResource("FontFile_v6rj5")
 font_size = 15
 
+[sub_resource type="FontFile" id="FontFile_6k8gr"]
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_5kssd"]
+font = SubResource("FontFile_6k8gr")
+font_size = 15
+
+[sub_resource type="FontFile" id="FontFile_m7eeq"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_8enhm"]
+font = SubResource("FontFile_m7eeq")
+font_size = 15
+
+[sub_resource type="FontFile" id="FontFile_xno0e"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qsdib"]
+font = SubResource("FontFile_xno0e")
+font_size = 15
+
 [node name="ControlScheme" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,15 +164,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Movement" type="CanvasLayer" parent="."]
 
-[node name="CanvasLayer" type="Polygon2D" parent="CanvasLayer"]
+[node name="Polygon2D" type="Polygon2D" parent="Movement"]
 position = Vector2(-28.225, 39.5)
 scale = Vector2(0.508333, 0.5)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(127, 325, 127, 285, 167, 285, 167, 325, 207, 325, 207, 365, 87, 365, 87, 325)
 
-[node name="W" type="Label" parent="CanvasLayer"]
+[node name="Polygon2D2" type="Polygon2D" parent="Movement"]
+position = Vector2(-13.5641, 70)
+scale = Vector2(1.17949, 1.33333)
+color = Color(0.015625, 0.0146484, 0.0146484, 1)
+polygon = PackedVector2Array(31, 66, 70, 66, 70, 78, 31, 78)
+
+[node name="W" type="Label" parent="Movement"]
 offset_left = 35.0
 offset_top = 181.0
 offset_right = 58.0
@@ -87,7 +188,7 @@ text = "W
 label_settings = SubResource("LabelSettings_ks22o")
 horizontal_alignment = 1
 
-[node name="A" type="Label" parent="CanvasLayer"]
+[node name="A" type="Label" parent="Movement"]
 offset_left = 17.0
 offset_top = 201.0
 offset_right = 39.0
@@ -96,7 +197,7 @@ text = "A"
 label_settings = SubResource("LabelSettings_ks22o")
 horizontal_alignment = 1
 
-[node name="S" type="Label" parent="CanvasLayer"]
+[node name="S" type="Label" parent="Movement"]
 offset_left = 27.0
 offset_top = 201.0
 offset_right = 67.0
@@ -106,7 +207,7 @@ text = "S
 label_settings = SubResource("LabelSettings_ks22o")
 horizontal_alignment = 1
 
-[node name="D" type="Label" parent="CanvasLayer"]
+[node name="D" type="Label" parent="Movement"]
 material = SubResource("CanvasItemMaterial_ce6hb")
 offset_left = 47.0
 offset_top = 201.0
@@ -116,11 +217,89 @@ text = "D"
 label_settings = SubResource("LabelSettings_ks22o")
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = -13.0
+[node name="Shift" type="Label" parent="Movement"]
+offset_left = 25.0
+offset_top = 157.0
+offset_right = 68.0
+offset_bottom = 176.0
+text = "Shift"
+label_settings = SubResource("LabelSettings_xfuf6")
+horizontal_alignment = 1
+
+[node name="Move" type="Label" parent="Movement"]
 offset_top = 219.0
-offset_right = 106.0
-offset_bottom = 253.0
-text = "Movement"
+offset_right = 98.0
+offset_bottom = 241.0
+text = "Move
+"
 label_settings = SubResource("LabelSettings_o4udq")
 horizontal_alignment = 1
+
+[node name="Run" type="Label" parent="Movement"]
+offset_left = 26.0
+offset_top = 136.0
+offset_right = 66.0
+offset_bottom = 159.0
+text = "Run"
+label_settings = SubResource("LabelSettings_5kssd")
+horizontal_alignment = 1
+
+[node name="GrowAndShrink" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="LeftMouseButton" type="Polygon2D" parent="GrowAndShrink"]
+position = Vector2(2, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(235, 175, 253, 175, 253, 197, 235, 197)
+
+[node name="RightMouseButton" type="Polygon2D" parent="GrowAndShrink"]
+position = Vector2(21, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(235, 175, 253, 175, 253, 197, 235, 197)
+
+[node name="Middle" type="Polygon2D" parent="GrowAndShrink"]
+position = Vector2(242, 1.22113)
+scale = Vector2(0.0555555, 0.993801)
+color = Color(0.972656, 0.972656, 0.972656, 1)
+polygon = PackedVector2Array(235, 175, 253, 175, 253, 185.919, 253, 197, 235, 197, 235, 181.304)
+
+[node name="Polygon2D" type="Polygon2D" parent="GrowAndShrink"]
+polygon = PackedVector2Array(237, 197, 274, 197, 274, 198, 237, 198)
+
+[node name="Polygon2D2" type="Polygon2D" parent="GrowAndShrink"]
+color = Color(0.0117188, 0.000366211, 0.000366211, 1)
+polygon = PackedVector2Array(237, 198, 237, 229, 274, 229, 274, 198)
+
+[node name="Left" type="Label" parent="GrowAndShrink"]
+offset_left = 243.0
+offset_top = 175.0
+offset_right = 251.0
+offset_bottom = 196.0
+text = "L"
+label_settings = SubResource("LabelSettings_8enhm")
+
+[node name="Right" type="Label" parent="GrowAndShrink"]
+offset_left = 260.0
+offset_top = 175.0
+offset_right = 284.0
+offset_bottom = 196.0
+text = "R"
+label_settings = SubResource("LabelSettings_qsdib")
+
+[node name="Grow" type="Label" parent="GrowAndShrink"]
+offset_left = 198.0
+offset_top = 175.0
+offset_right = 234.0
+offset_bottom = 196.0
+text = "Grow
+"
+label_settings = SubResource("LabelSettings_qsdib")
+
+[node name="Shrink" type="Label" parent="GrowAndShrink"]
+offset_left = 276.0
+offset_top = 175.0
+offset_right = 318.0
+offset_bottom = 196.0
+text = "Shrink
+"
+label_settings = SubResource("LabelSettings_qsdib")
