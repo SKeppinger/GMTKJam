@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-@export var SPEED = 5.0
-@export var RUN_SPEED = 11.0
-@export var ACCEL = 12.0
+@export var SPEED = 3.0
+@export var RUN_SPEED = 8.0
+@export var ACCEL = 10.0
 
 var MOUSE_SENSITIVITY = 0.05
 
