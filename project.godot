@@ -30,6 +30,7 @@ interactable=""
 sebas_path=""
 obstacle=""
 player=""
+enemy=""
 
 [input]
 
