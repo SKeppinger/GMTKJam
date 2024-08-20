@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqev2vuajxp3a"]
+[gd_scene load_steps=10 format=3 uid="uid://cqev2vuajxp3a"]
 
 [ext_resource type="PackedScene" uid="uid://d3vql56tmu8jr" path="res://tyler/assets/wooden_crate/wooden_crate_01_4k.gltf" id="1_o4xkl"]
 [ext_resource type="Texture2D" uid="uid://b2wdqwu6ustji" path="res://tyler/assets/wooden_crate/textures/wooden_crate_01_diff_4k.png" id="2_tk7pw"]
@@ -22,6 +22,9 @@ normal_texture = ExtResource("3_b0ne8")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8i3tc"]
 albedo_texture = ExtResource("4_33jl6")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7vp6"]
+size = Vector3(0.819733, 0.311157, 0.386292)
+
 [node name="wooden_crate" instance=ExtResource("1_o4xkl")]
 
 [node name="wooden_crate_01_lid" parent="." index="0"]
@@ -33,3 +36,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0dk66")
 
 [node name="wooden_crate_01_latch" parent="." index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_8i3tc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00624084, 0.170227, 0.00228882)
+shape = SubResource("BoxShape3D_h7vp6")

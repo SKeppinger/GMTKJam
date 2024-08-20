@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://d14w2l16caarp"]
+[gd_scene load_steps=8 format=4 uid="uid://cotscsq6cwxw0"]
 
+[ext_resource type="PackedScene" uid="uid://c8rh5ly1uxfyh" path="res://tyler/door.glb" id="1_j0pnq"]
 [ext_resource type="Texture2D" uid="uid://wbokkpa18hnx" path="res://tyler/textures/brick_wall_08_diff_4k.png" id="2_ebp77"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocokb"]
 albedo_texture = ExtResource("2_ebp77")
-uv1_scale = Vector3(1, 4, 1)
+uv1_scale = Vector3(1, 5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxnxm"]
 
@@ -40,15 +41,15 @@ shadow_mesh = SubResource("ArrayMesh_4qvl4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db1ix"]
 albedo_texture = ExtResource("2_ebp77")
-uv1_scale = Vector3(4, 1, 1)
+uv1_scale = Vector3(5, 3, 1)
 
-[node name="door"]
+[node name="door" instance=ExtResource("1_j0pnq")]
 
 [node name="frame_side" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 1, 0.382052, 0.5, 0.225161)
 surface_material_override/0 = SubResource("StandardMaterial3D_ocokb")
 
 [node name="frame_top" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 1, 0.379539, 0.5, 0.211464)
+transform = Transform3D(1, 0, 0, 0, 9.25302, 0, 0, 0, 1, 0.379539, -4.31067, 0.211464)
 mesh = SubResource("ArrayMesh_e04lk")
 surface_material_override/0 = SubResource("StandardMaterial3D_db1ix")
