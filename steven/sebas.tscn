@@ -22,7 +22,7 @@ shape = SubResource("CapsuleShape3D_tyyxk")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_nebmk")
-initial_state = NodePath("SebasChase")
+initial_state = NodePath("SebasIdle")
 
 [node name="SebasIdle" type="Node" parent="StateMachine"]
 script = ExtResource("3_kbno4")

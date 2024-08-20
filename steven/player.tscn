@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjkyarhgjy3bt"]
+[gd_scene load_steps=10 format=3 uid="uid://bjkyarhgjy3bt"]
 
 [ext_resource type="Script" path="res://steven/player_controller.gd" id="1_0r8s4"]
 [ext_resource type="Script" path="res://steven/flashlight_controller.gd" id="2_4tg8v"]
+[ext_resource type="PackedScene" uid="uid://2efqrd1rqshr" path="res://steven/Flashlight.fbx" id="3_s8qc2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uevqu"]
 
@@ -78,6 +79,11 @@ spot_angle = 10.0
 spot_angle_attenuation = 30.0
 script = ExtResource("2_4tg8v")
 
+[node name="Flashlight2" parent="Pivot" instance=ExtResource("3_s8qc2")]
+
+[node name="Flashlight" parent="Pivot/Flashlight2" index="0"]
+transform = Transform3D(4.53579e-07, 2.5366, -1.10878e-07, -2.5366, 4.53579e-07, -9.0118e-15, 9.0118e-15, 1.10878e-07, 2.5366, 0.286962, 0.0230335, -0.271758)
+
 [node name="Feet" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 shape = SubResource("BoxShape3D_vc15v")
@@ -90,3 +96,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_oyqal")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+
+[editable path="Pivot/Flashlight2"]

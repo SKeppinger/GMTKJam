@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://cc2idrw1678j"]
 
-[ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://assets/cell/cell.tscn" id="1_82dhp"]
+[ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://tyler/assets/cell/cell.tscn" id="1_82dhp"]
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="1_b4cwv"]
 [ext_resource type="Script" path="res://tyler/mock_level.gd" id="1_s1w6x"]
 [ext_resource type="Texture2D" uid="uid://bot5c48e3ylkd" path="res://tyler/textures/white_plaster_02_diff_4k.png" id="1_sikpa"]
@@ -9,12 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://ccs8g6xumftxx" path="res://tyler/textures/white_plaster_02_nor_gl_4k.png" id="2_d7soh"]
 [ext_resource type="Texture2D" uid="uid://cc087ugdi55y4" path="res://tyler/textures/old_planks_02_rough_4k.png" id="3_heegx"]
 [ext_resource type="Texture2D" uid="uid://dbbbrc8x8e6xt" path="res://tyler/textures/white_plaster_02_rough_4k.png" id="3_ikifs"]
-[ext_resource type="PackedScene" uid="uid://cs6k8thlx7kkj" path="res://assets/light/hanging_light.tscn" id="3_v4gt1"]
+[ext_resource type="PackedScene" uid="uid://cs6k8thlx7kkj" path="res://tyler/assets/light/hanging_light.tscn" id="3_v4gt1"]
 [ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="10_hw33d"]
 [ext_resource type="PackedScene" uid="uid://dmy4c65skjafx" path="res://steven/Sebas Pathpoint.tscn" id="11_t4k37"]
 [ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="12_v2b0k"]
 [ext_resource type="PackedScene" uid="uid://dbldo0fwudiao" path="res://steven/crate.tscn" id="13_6v8ap"]
-[ext_resource type="PackedScene" path="res://zaher/flashlight_pick_up.tscn" id="14_1s30k"]
+[ext_resource type="PackedScene" uid="uid://cku23pxfiv0ra" path="res://zaher/flashlight_pick_up.tscn" id="14_1s30k"]
 [ext_resource type="PackedScene" path="res://zaher/pause_menu.tscn" id="15_d2spm"]
 [ext_resource type="PackedScene" path="res://zaher/control_scheme.tscn" id="16_2ga48"]
 
@@ -132,6 +132,9 @@ transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -3.07562, 0.0246425, 10.719
 [node name="Door" parent="Starting Room/Cell7" index="0"]
 transform = Transform3D(0.805978, 0.199355, 2.9543e-06, 3.06697e-06, -9.55614e-08, -0.830267, -0.199355, 0.805978, -8.29178e-07, -1.00594, 1.84377, 3.98241)
 
+[node name="CollisionShape3D" parent="Starting Room/Cell7/StaticBody3D" index="0"]
+transform = Transform3D(0.804638, 0.204696, 2.94873e-06, 3.06697e-06, -9.55614e-08, -0.830267, -0.204696, 0.804638, -8.48753e-07, -1.00594, 1.84377, 3.98241)
+
 [node name="Cell8" parent="Starting Room" instance=ExtResource("1_82dhp")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -9.69706, 0.0246425, 10.7196)
 
@@ -139,17 +142,56 @@ transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -9.69706, 0.0246425, 10.719
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00161, 0, 12.059)
 ENEMY = NodePath("../Sebas")
 
+[node name="Flashlight" parent="Starting Room/Player/Pivot" index="1" node_paths=PackedStringArray("controls")]
+controls = NodePath("../../../../ControlScheme")
+
 [node name="Hanging_Light" parent="Starting Room" instance=ExtResource("3_v4gt1")]
 transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -3.95147, 5.13683, -3.35681)
+
+[node name="Light" type="SpotLight3D" parent="Starting Room/Hanging_Light"]
+transform = Transform3D(40, 0, 0, 0, 11.5733, 38.2891, 0, -38.2891, 11.5733, 0, -46.3536, 0)
+light_energy = 7.788
+light_indirect_energy = 14.414
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Starting Room/Hanging_Light"]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, -72.003, 0)
+light_indirect_energy = 16.0
 
 [node name="Hanging_Light2" parent="Starting Room" instance=ExtResource("3_v4gt1")]
 transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -3.95147, 5.15329, 3.37977)
 
+[node name="Light" type="SpotLight3D" parent="Starting Room/Hanging_Light2"]
+transform = Transform3D(40, 0, 0, 0, 11.5733, 38.2891, 0, -38.2891, 11.5733, 0, -46.3536, 0)
+light_energy = 7.788
+light_indirect_energy = 14.414
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Starting Room/Hanging_Light2"]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, -72.003, 0)
+light_indirect_energy = 16.0
+
 [node name="Hanging_Light3" parent="Starting Room" instance=ExtResource("3_v4gt1")]
 transform = Transform3D(-1.09278e-09, 0, 0.025, 0, 0.025, 0, -0.025, 0, -1.09278e-09, -11.4368, 5.13683, -0.0153639)
 
+[node name="Light" type="SpotLight3D" parent="Starting Room/Hanging_Light3"]
+transform = Transform3D(40, 0, 0, 0, 11.5733, 38.2891, 0, -38.2891, 11.5733, 0, -46.3536, 0)
+light_energy = 7.788
+light_indirect_energy = 14.414
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Starting Room/Hanging_Light3"]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, -72.003, 0)
+light_indirect_energy = 16.0
+
 [node name="Hanging_Light4" parent="Starting Room" instance=ExtResource("3_v4gt1")]
 transform = Transform3D(-1.09278e-09, 0, 0.025, 0, 0.025, 0, -0.025, 0, -1.09278e-09, 4.13157, 5.13683, -0.01107)
+
+[node name="Light" type="SpotLight3D" parent="Starting Room/Hanging_Light4"]
+transform = Transform3D(40, 0, 0, 0, 11.5733, 38.2891, 0, -38.2891, 11.5733, 0, -46.3536, 0)
+light_energy = 7.788
+light_indirect_energy = 14.414
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Starting Room/Hanging_Light4"]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, -72.003, 0)
+light_indirect_energy = 16.0
 
 [node name="Sebas" parent="Starting Room" instance=ExtResource("10_hw33d")]
 
@@ -246,9 +288,6 @@ mass = 0.01
 [node name="FlashlightPickUp" parent="." instance=ExtResource("14_1s30k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.014, 0.705, 0)
 
-[node name="FlashlightHandle" parent="FlashlightPickUp/StaticBody3D" index="0"]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.5, 0)
-
 [node name="PauseMenu" parent="." instance=ExtResource("15_d2spm")]
 visible = false
 
@@ -259,6 +298,11 @@ visible = false
 
 [editable path="Starting Room/Cell7"]
 [editable path="Starting Room/Player"]
+[editable path="Starting Room/Player/Pivot/Flashlight2"]
+[editable path="Starting Room/Hanging_Light"]
+[editable path="Starting Room/Hanging_Light2"]
+[editable path="Starting Room/Hanging_Light3"]
+[editable path="Starting Room/Hanging_Light4"]
 [editable path="Starting Room/Sebas"]
 [editable path="Starting Room/Sebas/Running"]
 [editable path="Starting Room/Sebas/Crawling"]
@@ -267,3 +311,4 @@ visible = false
 [editable path="Hallway2/Cracked Wall"]
 [editable path="Hallway2/Crate"]
 [editable path="FlashlightPickUp"]
+[editable path="FlashlightPickUp/Flashlight"]

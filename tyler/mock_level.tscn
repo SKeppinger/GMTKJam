@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="2_utu1w"]
 [ext_resource type="PackedScene" uid="uid://dmy4c65skjafx" path="res://steven/Sebas Pathpoint.tscn" id="3_3jveu"]
 [ext_resource type="PackedScene" uid="uid://dbldo0fwudiao" path="res://steven/crate.tscn" id="4_xipof"]
-[ext_resource type="PackedScene" path="res://zaher/flashlight_pick_up.tscn" id="6_3icg6"]
+[ext_resource type="PackedScene" uid="uid://cku23pxfiv0ra" path="res://zaher/flashlight_pick_up.tscn" id="6_3icg6"]
 [ext_resource type="PackedScene" path="res://zaher/pause_menu.tscn" id="7_ph3kj"]
 [ext_resource type="PackedScene" path="res://zaher/control_scheme.tscn" id="9_7bnme"]
 
@@ -496,9 +496,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68.98
 [node name="Crate" parent="Hallway2" instance=ExtResource("4_xipof")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1736, 0.526157, 2.84685)
 mass = 0.01
-
-[node name="OmniLight3D" parent="Hallway2/Crate" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19924, 1, 0)
 
 [node name="Path 3" parent="Hallway2" node_paths=PackedStringArray("prev", "next") instance=ExtResource("3_3jveu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8132, 2, -0.0820007)
