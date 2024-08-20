@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://vxtm3yuayd4d"]
+[gd_scene load_steps=10 format=3 uid="uid://cpfdc2roprs10"]
 
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="2_hrhbb"]
-[ext_resource type="PackedScene" uid="uid://0r3s4aqqbyuf" path="res://steven/interactable.tscn" id="3_c5hxx"]
+[ext_resource type="PackedScene" uid="uid://w8d7cl4wb0jo" path="res://steven/interactable.tscn" id="3_c5hxx"]
 [ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="4_qwh4p"]
 [ext_resource type="PackedScene" uid="uid://dbldo0fwudiao" path="res://steven/crate.tscn" id="5_gp5kd"]
 [ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="5_sj0ph"]
