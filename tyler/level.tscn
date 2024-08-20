@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://6btpbxw6yvoq"]
+[gd_scene load_steps=107 format=4 uid="uid://6btpbxw6yvoq"]
 
 [ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://tyler/assets/cell/cell.tscn" id="1_82dhp"]
 [ext_resource type="Script" path="res://tyler/mock_level.gd" id="1_qtf1d"]
@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://brbs5vylur337" path="res://tyler/assets/lockers/lockers_green.tscn" id="20_0vp06"]
 [ext_resource type="PackedScene" uid="uid://b3qpcikwf5em2" path="res://evan/lighthouse_evan.tscn" id="20_b4rqh"]
 [ext_resource type="PackedScene" uid="uid://t2plyh102rde" path="res://tyler/assets/lockers/lockers_green_damaged.tscn" id="21_86s12"]
-[ext_resource type="PackedScene" uid="uid://bodjr4ine3cfd" path="res://steven/End Point.tscn" id="22_it1sr"]
+[ext_resource type="PackedScene" path="res://steven/End Point.tscn" id="22_it1sr"]
 [ext_resource type="PackedScene" uid="uid://j708j4nd7t1l" path="res://tyler/assets/bench/old_bench.tscn" id="22_lodh8"]
 [ext_resource type="PackedScene" uid="uid://b0rmpt7cwb4wt" path="res://tyler/assets/bench/bench.tscn" id="23_bhgvn"]
 [ext_resource type="PackedScene" uid="uid://h5va721cn41g" path="res://tyler/assets/desk/wooden_desk.tscn" id="24_seagx"]
@@ -35,14 +35,15 @@
 [ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="28_npmj1"]
 [ext_resource type="PackedScene" uid="uid://dbldo0fwudiao" path="res://steven/crate.tscn" id="29_6akmg"]
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="29_ewnqa"]
-[ext_resource type="PackedScene" path="res://tyler/assets/rocks/rocks.tscn" id="29_qeq30"]
-[ext_resource type="PackedScene" path="res://zaher/control_scheme.tscn" id="29_vsh2r"]
-[ext_resource type="PackedScene" uid="uid://dmy4c65skjafx" path="res://steven/Sebas Pathpoint.tscn" id="30_7qfjh"]
-[ext_resource type="PackedScene" uid="uid://c6q0a82ekahf3" path="res://steven/Sebas Spawnpoint.tscn" id="31_xchcd"]
-[ext_resource type="PackedScene" uid="uid://0xgl24h1n463" path="res://steven/Spawn Trigger.tscn" id="32_tj2ba"]
-[ext_resource type="PackedScene" uid="uid://chq1ra6eg41r1" path="res://steven/Despawn Trigger.tscn" id="33_pxb4m"]
+[ext_resource type="PackedScene" uid="uid://dx7va30h2f31o" path="res://tyler/assets/rocks/rocks.tscn" id="29_qeq30"]
+[ext_resource type="PackedScene" uid="uid://cqj8ouleajcvr" path="res://zaher/control_scheme.tscn" id="29_vsh2r"]
+[ext_resource type="PackedScene" path="res://steven/Sebas Pathpoint.tscn" id="30_7qfjh"]
+[ext_resource type="PackedScene" path="res://steven/Sebas Spawnpoint.tscn" id="31_xchcd"]
+[ext_resource type="PackedScene" path="res://steven/Spawn Trigger.tscn" id="32_tj2ba"]
+[ext_resource type="PackedScene" path="res://steven/Despawn Trigger.tscn" id="33_pxb4m"]
 [ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="36_0iol4"]
 [ext_resource type="AudioStream" uid="uid://bsv6nl1hgr3er" path="res://steven/SpookyTutorialSlow.wav" id="38_r46hk"]
+[ext_resource type="PackedScene" uid="uid://cik6dy7lbqdrx" path="res://tyler/assets/wooden_crate/crate.tscn" id="44_45d62"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4alq8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -52,7 +53,6 @@ ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 sky_material = SubResource("ProceduralSkyMaterial_4alq8")
 
 [sub_resource type="Environment" id="Environment_25oov"]
-background_mode = 1
 sky = SubResource("Sky_xgqwg")
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.02
@@ -213,6 +213,202 @@ data = PackedVector3Array(-0.45, 2.5, 4, 0.45, 2.5, 4, -0.45, -2.5, 4, 0.45, 2.5
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wni4h"]
 data = PackedVector3Array(-0.45, 2.5, 4, 0.45, 2.5, 4, -0.45, -2.5, 4, 0.45, 2.5, 4, 0.45, -2.5, 4, -0.45, -2.5, 4, 0.45, 2.5, -4, -0.45, 2.5, -4, 0.45, -2.5, -4, -0.45, 2.5, -4, -0.45, -2.5, -4, 0.45, -2.5, -4, 0.45, 2.5, 4, 0.45, 2.5, -4, 0.45, -2.5, 4, 0.45, 2.5, -4, 0.45, -2.5, -4, 0.45, -2.5, 4, -0.45, 2.5, -4, -0.45, 2.5, 4, -0.45, -2.5, -4, -0.45, 2.5, 4, -0.45, -2.5, 4, -0.45, -2.5, -4, 0.45, 2.5, 4, -0.45, 2.5, 4, 0.45, 2.5, -4, -0.45, 2.5, 4, -0.45, 2.5, -4, 0.45, 2.5, -4, -0.45, -2.5, 4, 0.45, -2.5, 4, -0.45, -2.5, -4, 0.45, -2.5, 4, 0.45, -2.5, -4, -0.45, -2.5, -4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l226g"]
+albedo_texture = ExtResource("1_sikpa")
+roughness_texture = ExtResource("3_ikifs")
+normal_enabled = true
+normal_texture = ExtResource("2_d7soh")
+uv1_scale = Vector3(2, 14, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkly5"]
+albedo_texture = ExtResource("1_v0neb")
+roughness_texture = ExtResource("3_heegx")
+normal_enabled = true
+normal_texture = ExtResource("2_1wpng")
+uv1_scale = Vector3(14, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ne5j"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(14, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg02y"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(14, 2, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_44xx0"]
+load_path = "res://.godot/imported/brick_wall_08_diff_4k.png-18ee42cbed9705499d18e471dfaa311e.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6kjc"]
+albedo_texture = SubResource("CompressedTexture2D_44xx0")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(8, 5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vd0jv"]
+albedo_texture = ExtResource("11_e7inq")
+uv1_scale = Vector3(2, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjac7"]
+albedo_texture = ExtResource("1_v0neb")
+roughness_texture = ExtResource("3_heegx")
+normal_enabled = true
+normal_texture = ExtResource("2_1wpng")
+uv1_scale = Vector3(14, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfw0j"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(8, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fol5"]
+albedo_texture = ExtResource("1_sikpa")
+roughness_texture = ExtResource("3_ikifs")
+normal_enabled = true
+normal_texture = ExtResource("2_d7soh")
+uv1_scale = Vector3(2, 14, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpa8p"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(10, 2, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lg128"]
+load_path = "res://.godot/imported/brick_wall_08_diff_4k.png-18ee42cbed9705499d18e471dfaa311e.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuo01"]
+albedo_texture = SubResource("CompressedTexture2D_lg128")
+uv1_scale = Vector3(8, 5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w07ep"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(2, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g7g1p"]
+albedo_texture = ExtResource("1_sikpa")
+roughness_texture = ExtResource("3_ikifs")
+normal_enabled = true
+normal_texture = ExtResource("2_d7soh")
+uv1_scale = Vector3(2, 14, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhyxf"]
+albedo_texture = ExtResource("1_v0neb")
+roughness_texture = ExtResource("3_heegx")
+normal_enabled = true
+normal_texture = ExtResource("2_1wpng")
+uv1_scale = Vector3(14, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3p5n"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(14, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tnh4"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(14, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vi5v7"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(2, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sfapb"]
+albedo_texture = ExtResource("1_sikpa")
+roughness_texture = ExtResource("3_ikifs")
+normal_enabled = true
+normal_texture = ExtResource("2_d7soh")
+uv1_scale = Vector3(2, 14, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ox6o1"]
+albedo_texture = ExtResource("1_v0neb")
+roughness_texture = ExtResource("3_heegx")
+normal_enabled = true
+normal_texture = ExtResource("2_1wpng")
+uv1_scale = Vector3(14, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifbxc"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(2, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ylf03"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(14, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6i30"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(14, 2, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n2d50"]
+load_path = "res://.godot/imported/brick_wall_08_diff_4k.png-18ee42cbed9705499d18e471dfaa311e.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4ioe"]
+albedo_texture = SubResource("CompressedTexture2D_n2d50")
+uv1_scale = Vector3(8, 5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2acrc"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(2, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjc2d"]
+albedo_texture = ExtResource("1_sikpa")
+roughness_texture = ExtResource("3_ikifs")
+normal_enabled = true
+normal_texture = ExtResource("2_d7soh")
+uv1_scale = Vector3(2, 14, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5dqp"]
+albedo_texture = ExtResource("1_v0neb")
+roughness_texture = ExtResource("3_heegx")
+normal_enabled = true
+normal_texture = ExtResource("2_1wpng")
+uv1_scale = Vector3(14, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghgyw"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(14, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p185a"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(14, 2, 1)
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_qtf1d")
@@ -601,8 +797,14 @@ transform = Transform3D(1, 0, 0, 0, 0.586369, 0, 0, 0, 1, -21.5415, 0.462326, 4.
 [node name="FlashlightPickUp" parent="Tutorial" instance=ExtResource("26_wxysa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6045, 0.299303, 4.30546)
 
+[node name="FlashlightHandle" parent="Tutorial/FlashlightPickUp/StaticBody3D" index="0"]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.5, 0)
+
 [node name="CollisionShape3D" parent="Tutorial/FlashlightPickUp/PickUpArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.559421, -0.555754)
+
+[node name="Flashlight" parent="Tutorial/FlashlightPickUp/Flashlight" index="0"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, 0.5, 0)
 
 [node name="door" parent="Tutorial" instance=ExtResource("26_v0wwo")]
 transform = Transform3D(1.42223, 0, 0, 0, 1.22811, 0, 0, 0, 1.18613, -22.3962, 1.78272, 10.4083)
@@ -621,59 +823,67 @@ layers = 15
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 0.001, 8)
+material = SubResource("StandardMaterial3D_l226g")
 
 [node name="Ceiling" type="CSGBox3D" parent="Hallway2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 6, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -45, 4.81808, 0)
 layers = 15
 use_collision = true
 collision_layer = 8
-size = Vector3(50, 0.001, 8)
-
-[node name="Wall4" type="CSGBox3D" parent="Hallway2"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 3, 0)
-use_collision = true
-collision_layer = 8
-size = Vector3(8, 6, 0.2)
-
-[node name="Door" type="CSGBox3D" parent="Hallway2/Wall4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
-operation = 2
-size = Vector3(2.3, 4.5, 0.2)
+size = Vector3(8, 0.001, 50)
+material = SubResource("StandardMaterial3D_fkly5")
 
 [node name="Wall5" type="CSGBox3D" parent="Hallway2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, -4.0094)
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 6, 0.2)
+material = SubResource("StandardMaterial3D_7ne5j")
 
 [node name="Wall6" type="CSGBox3D" parent="Hallway2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, 3.9906)
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 6, 0.2)
+material = SubResource("StandardMaterial3D_dg02y")
 
 [node name="Cracked Wall" parent="Hallway2" instance=ExtResource("28_npmj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68.9827, 0.00814331, 0.169044)
+
+[node name="MeshInstance3D" parent="Hallway2/Cracked Wall/CollisionShape3D" index="0"]
+material = SubResource("StandardMaterial3D_a6kjc")
+
+[node name="Hole" parent="Hallway2/Cracked Wall/CollisionShape3D/MeshInstance3D" index="1"]
+material = SubResource("StandardMaterial3D_vd0jv")
 
 [node name="Crate" parent="Hallway2" instance=ExtResource("29_6akmg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1736, 0.526157, 2.84685)
 mass = 0.01
 
+[node name="MeshInstance3D" parent="Hallway2/Crate/CollisionShape3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00684166, 0, 0)
+visible = false
+
+[node name="Crate" parent="Hallway2/Crate/CollisionShape3D" index="1" instance=ExtResource("44_45d62")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.56337, -1.04692, -0.402166)
+
 [node name="Scare Room" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5168, 0, 64.016)
 
 [node name="Ceiling" type="CSGBox3D" parent="Scare Room"]
-transform = Transform3D(0.667648, 0, 0, 0, 1, 0, 0, 0, 1, 12.3134, 6, 0)
+transform = Transform3D(-2.91838e-08, 0, -1, 0, 1, 0, 0.667648, 0, -4.37114e-08, 12.3134, 6, 0)
 layers = 15
 use_collision = true
 collision_layer = 8
-size = Vector3(50, 0.001, 8)
+size = Vector3(12, 0.001, 50)
+material = SubResource("StandardMaterial3D_kjac7")
 
 [node name="Wall5" type="CSGBox3D" parent="Scare Room"]
 transform = Transform3D(0.515286, 0, 0, 0, 1, 0, 0, 0, 1, 16.2476, 3, -4.0094)
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 6, 0.2)
+material = SubResource("StandardMaterial3D_tfw0j")
 
 [node name="Floor" type="CSGBox3D" parent="Scare Room"]
 transform = Transform3D(0.668211, 0, 0, 0, 1, 0, 0, 0, 1, 12.3264, 0, 0)
@@ -681,6 +891,7 @@ layers = 15
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 0.001, 8)
+material = SubResource("StandardMaterial3D_6fol5")
 
 [node name="Wall4" type="CSGBox3D" parent="Scare Room"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28.9615, 3, 0)
@@ -693,6 +904,7 @@ transform = Transform3D(0.665788, 0, 0, 0, 1, 0, 0, 0, 1, 12.2264, 3, 3.9906)
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 6, 0.2)
+material = SubResource("StandardMaterial3D_xpa8p")
 
 [node name="SebasSpawnpoint" parent="Scare Room" node_paths=PackedStringArray("next") instance=ExtResource("31_xchcd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.517, 2, 0.002)
@@ -715,6 +927,12 @@ enemy = NodePath("../../Sebas")
 [node name="Cracked Wall" parent="Scare Room" instance=ExtResource("28_npmj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.4468, 0.00814331, 0.169044)
 
+[node name="MeshInstance3D" parent="Scare Room/Cracked Wall/CollisionShape3D" index="0"]
+material = SubResource("StandardMaterial3D_xuo01")
+
+[node name="Hole" parent="Scare Room/Cracked Wall/CollisionShape3D/MeshInstance3D" index="1"]
+material = SubResource("StandardMaterial3D_w07ep")
+
 [node name="Hallway3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.86479, 0, 63.9995)
 
@@ -724,31 +942,36 @@ layers = 15
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 0.001, 8)
+material = SubResource("StandardMaterial3D_g7g1p")
 
 [node name="Ceiling" type="CSGBox3D" parent="Hallway3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 6, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -45, 6, 0)
 layers = 15
 use_collision = true
 collision_layer = 8
-size = Vector3(50, 0.001, 8)
+size = Vector3(8, 0.001, 50)
+material = SubResource("StandardMaterial3D_fhyxf")
 
 [node name="Wall5" type="CSGBox3D" parent="Hallway3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, -4.0094)
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 6, 0.2)
+material = SubResource("StandardMaterial3D_n3p5n")
 
 [node name="Wall6" type="CSGBox3D" parent="Hallway3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, 3.9906)
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 6, 0.2)
+material = SubResource("StandardMaterial3D_2tnh4")
 
 [node name="Wall7" type="CSGBox3D" parent="Hallway3"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -70, 3, 0)
 use_collision = true
 collision_layer = 8
 size = Vector3(8, 6, 0.2)
+material = SubResource("StandardMaterial3D_vi5v7")
 
 [node name="Door" type="CSGBox3D" parent="Hallway3/Wall7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
@@ -758,8 +981,20 @@ size = Vector3(2.3, 4.5, 0.2)
 [node name="Crate" parent="Hallway3" instance=ExtResource("29_6akmg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.7166, 0, 1.86159)
 
+[node name="MeshInstance3D" parent="Hallway3/Crate/CollisionShape3D" index="0"]
+visible = false
+
+[node name="Crate" parent="Hallway3/Crate/CollisionShape3D" index="1" instance=ExtResource("44_45d62")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.61423, -1.0558, -0.402168)
+
 [node name="Crate2" parent="Hallway3" instance=ExtResource("29_6akmg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.914, 0, -2.75668)
+
+[node name="Crate" parent="Hallway3/Crate2/CollisionShape3D" index="0" instance=ExtResource("44_45d62")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.61423, -1.0558, -0.402168)
+
+[node name="MeshInstance3D" parent="Hallway3/Crate2/CollisionShape3D" index="1"]
+visible = false
 
 [node name="SebasPathpoint2" parent="Hallway3" node_paths=PackedStringArray("prev", "next") instance=ExtResource("30_7qfjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.379, 2, 0)
@@ -780,25 +1015,29 @@ layers = 15
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 0.001, 8)
+material = SubResource("StandardMaterial3D_sfapb")
 
 [node name="Ceiling" type="CSGBox3D" parent="Hallway4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 6, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -45, 6, 7.62939e-06)
 layers = 15
 use_collision = true
 collision_layer = 8
-size = Vector3(50, 0.001, 8)
+size = Vector3(8, 0.001, 50)
+material = SubResource("StandardMaterial3D_ox6o1")
 
 [node name="Wall4" type="CSGBox3D" parent="Hallway4"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 3, 0)
 use_collision = true
 collision_layer = 8
 size = Vector3(8, 6, 0.2)
+material = SubResource("StandardMaterial3D_ifbxc")
 
 [node name="Wall5" type="CSGBox3D" parent="Hallway4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, -4.0094)
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 6, 0.2)
+material = SubResource("StandardMaterial3D_ylf03")
 
 [node name="Door" type="CSGBox3D" parent="Hallway4/Wall5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0273, -0.8, -0.0379257)
@@ -810,13 +1049,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, 3.9906)
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 6, 0.2)
+material = SubResource("StandardMaterial3D_e6i30")
 
 [node name="Cracked Wall" parent="Hallway4" instance=ExtResource("28_npmj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68.9827, 0.00814331, 0.169044)
 
+[node name="MeshInstance3D" parent="Hallway4/Cracked Wall/CollisionShape3D" index="0"]
+material = SubResource("StandardMaterial3D_w4ioe")
+
+[node name="Hole" parent="Hallway4/Cracked Wall/CollisionShape3D/MeshInstance3D" index="1"]
+material = SubResource("StandardMaterial3D_2acrc")
+
 [node name="Crate" parent="Hallway4" instance=ExtResource("29_6akmg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.7655, 0.526157, 2.84686)
 mass = 0.01
+
+[node name="MeshInstance3D" parent="Hallway4/Crate/CollisionShape3D" index="0"]
+visible = false
+
+[node name="Crate" parent="Hallway4/Crate/CollisionShape3D" index="1" instance=ExtResource("44_45d62")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.61423, -1.0558, -0.402168)
 
 [node name="SebasPathpoint3" parent="Hallway4" node_paths=PackedStringArray("prev", "next") instance=ExtResource("30_7qfjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.4199, 2, 2.28882e-05)
@@ -842,33 +1094,82 @@ layers = 15
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 0.001, 8)
+material = SubResource("StandardMaterial3D_bjc2d")
 
 [node name="Ceiling" type="CSGBox3D" parent="Hallway5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 6, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -45, 6, 0)
 layers = 15
 use_collision = true
 collision_layer = 8
-size = Vector3(50, 0.001, 8)
+size = Vector3(8, 0.001, 50)
+material = SubResource("StandardMaterial3D_a5dqp")
 
 [node name="Wall5" type="CSGBox3D" parent="Hallway5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, -4.0094)
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 6, 0.2)
+material = SubResource("StandardMaterial3D_ghgyw")
 
 [node name="Wall6" type="CSGBox3D" parent="Hallway5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, 3.9906)
 use_collision = true
 collision_layer = 8
 size = Vector3(50, 6, 0.2)
+material = SubResource("StandardMaterial3D_p185a")
 
 [node name="Crate" parent="Hallway5" instance=ExtResource("29_6akmg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1736, 0.526157, 2.84685)
 mass = 0.01
 
+[node name="MeshInstance3D" parent="Hallway5/Crate/CollisionShape3D" index="0"]
+visible = false
+
+[node name="Crate" parent="Hallway5/Crate/CollisionShape3D" index="1" instance=ExtResource("44_45d62")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.61423, -1.0558, -0.402168)
+
+[node name="Hanging_Light" parent="Hallway5/Crate/CollisionShape3D" index="2" instance=ExtResource("3_v4gt1")]
+transform = Transform3D(-1.09278e-09, 0, -0.025, 0, 0.025, 0, 0.025, 0, -1.09278e-09, -41.3811, 3.41821, 54.8718)
+
+[node name="Hanging_Light2" parent="Hallway5/Crate/CollisionShape3D" index="3" instance=ExtResource("3_v4gt1")]
+transform = Transform3D(-1.09278e-09, 0, -0.025, 0, 0.025, 0, 0.025, 0, -1.09278e-09, -51.8851, 3.41821, 54.8718)
+
+[node name="Hanging_Light3" parent="Hallway5/Crate/CollisionShape3D" index="4" instance=ExtResource("3_v4gt1")]
+transform = Transform3D(-1.09278e-09, 0, -0.025, 0, 0.025, 0, 0.025, 0, -1.09278e-09, -63.4456, 3.41821, 54.8718)
+
+[node name="Hanging_Light4" parent="Hallway5/Crate/CollisionShape3D" index="5" instance=ExtResource("3_v4gt1")]
+transform = Transform3D(-1.09278e-09, 0, -0.025, 0, 0.025, 0, 0.025, 0, -1.09278e-09, -73.5569, 3.41821, 54.8718)
+
+[node name="Hanging_Light6" parent="Hallway5/Crate/CollisionShape3D" index="6" instance=ExtResource("3_v4gt1")]
+transform = Transform3D(-0.025, 0, 1.09278e-09, 0, 0.025, 0, -1.09278e-09, 0, -0.025, -89.1705, 4.57025, 47.5687)
+
+[node name="Hanging_Light7" parent="Hallway5/Crate/CollisionShape3D" index="7" instance=ExtResource("3_v4gt1")]
+transform = Transform3D(-0.025, 0, 1.09278e-09, 0, 0.025, 0, -1.09278e-09, 0, -0.025, -89.1705, 4.57025, 35.3574)
+
+[node name="Hanging_Light8" parent="Hallway5/Crate/CollisionShape3D" index="8" instance=ExtResource("3_v4gt1")]
+transform = Transform3D(-0.025, 0, 1.09278e-09, 0, 0.025, 0, -1.09278e-09, 0, -0.025, -89.1705, 4.57025, 29.3574)
+
+[node name="Hanging_Light9" parent="Hallway5/Crate/CollisionShape3D" index="9" instance=ExtResource("3_v4gt1")]
+transform = Transform3D(-0.025, 0, 1.09278e-09, 0, 0.025, 0, -1.09278e-09, 0, -0.025, -89.1705, 4.57025, 14.1862)
+
+[node name="Hanging_Light5" parent="Hallway5/Crate/CollisionShape3D" index="10" instance=ExtResource("3_v4gt1")]
+transform = Transform3D(-1.09278e-09, 0, -0.025, 0, 0.025, 0, 0.025, 0, -1.09278e-09, -83.6656, 3.41821, 54.8718)
+
+[node name="Sketchfab_Scene" parent="Hallway5/Crate/CollisionShape3D" index="11" instance=ExtResource("14_c4iu2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -52.9507, -1.52566, 52.9337)
+
+[node name="Rocks" parent="Hallway5/Crate/CollisionShape3D" index="12" instance=ExtResource("29_qeq30")]
+transform = Transform3D(0.802925, 0, -0.215143, 0, 0.831249, 0, 0.215143, 0, 0.802925, -87.17, -1.19411, 60.4401)
+
 [node name="Crate2" parent="Hallway5" instance=ExtResource("29_6akmg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.2896, 0.526157, -3.21745)
 mass = 0.01
+
+[node name="MeshInstance3D" parent="Hallway5/Crate2/CollisionShape3D" index="0"]
+visible = false
+
+[node name="Crate" parent="Hallway5/Crate2/CollisionShape3D" index="1" instance=ExtResource("44_45d62")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.61423, -1.0558, -0.402168)
 
 [node name="Cracked Wall" parent="Hallway5" instance=ExtResource("28_npmj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.8582, 0.00814331, -0.0728302)
@@ -943,6 +1244,8 @@ mix_target = 1
 [editable path="Hallway2/Cracked Wall"]
 [editable path="Hallway2/Crate"]
 [editable path="Scare Room/Cracked Wall"]
+[editable path="Hallway3/Crate"]
+[editable path="Hallway3/Crate2"]
 [editable path="Hallway4/Cracked Wall"]
 [editable path="Hallway4/Crate"]
 [editable path="Hallway5/Crate"]

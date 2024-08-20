@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cik6dy7lbqdrx"]
+
+[ext_resource type="PackedScene" uid="uid://b30npavmxbets" path="res://tyler/assets/wooden_crate/crate_box.glb" id="1_24udi"]
+[ext_resource type="Texture2D" uid="uid://2fpbkgpqfqoe" path="res://tyler/assets/wooden_crate/crate_box_0.png" id="2_1ppde"]
+[ext_resource type="Texture2D" uid="uid://dwpfh70ool133" path="res://tyler/assets/wooden_crate/crate_box_1.png" id="3_o0r41"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjkva"]
+albedo_texture = ExtResource("2_1ppde")
+normal_enabled = true
+normal_texture = ExtResource("3_o0r41")
+
+[node name="Crate" instance=ExtResource("1_24udi")]
+
+[node name="crate002_Material #51_0" parent="Sketchfab_model/9d111f7aa7d344d78f66f155b759a9a0_fbx/RootNode/crate002/Object_4" index="0"]
+transform = Transform3D(0.0332358, 0, -7.94093e-23, -2.22045e-15, 0.0332358, 2.22045e-16, 5.29396e-23, 6.66134e-16, 0.0332358, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_jjkva")
