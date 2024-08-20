@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="Lighthouse"
-run/main_scene="res://zaher/z.tscn"
+run/main_scene="res://evan/evan_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+<<<<<<< Updated upstream
 [display]
 
 window/size/viewport_width=320
@@ -27,6 +28,8 @@ window/stretch/mode="viewport"
 
 import/blender/enabled=false
 
+=======
+>>>>>>> Stashed changes
 [global_group]
 
 interactable=""

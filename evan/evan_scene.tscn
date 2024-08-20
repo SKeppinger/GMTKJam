@@ -16,10 +16,15 @@ ambient_light_color = Color(0.331924, 0.685109, 0.960699, 1)
 
 [node name="Node3D" type="Node3D"]
 
+[node name="lighthouse_evan" parent="." instance=ExtResource("2_cy75i")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+
 [node name="Player" parent="." instance=ExtResource("2_jt10u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0829927, 257.887, 34.1366)
+transform = Transform3D(0.229285, 0, -0.973359, 0, 1, 0, 0.973359, 0, 0.229285, -10.366, 261.009, 37.0862)
 
 [node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_fc5ca")
@@ -30,9 +35,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_1i672")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.74757, 360.474, 17.1653)
-
-[node name="lighthouse_evan" parent="." instance=ExtResource("2_cy75i")]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_83vvb")
