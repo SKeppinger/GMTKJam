@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dbldo0fwudiao"]
 
-[ext_resource type="Script" path="res://steven/interactable.gd" id="1_0efft"]
+[ext_resource type="Script" path="res://steven/interactable_rigid.gd" id="1_s05lk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tfy6q"]
+size = Vector3(2, 2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxr8c"]
 cull_mode = 2
@@ -10,18 +11,22 @@ emission_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_xn8y2"]
 material = SubResource("StandardMaterial3D_sxr8c")
+size = Vector3(2, 2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oicsb"]
+size = Vector3(2, 2, 2)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yc6wy"]
 radius = 1.5
 
-[node name="Interactable" type="StaticBody3D" groups=["interactable"]]
+[node name="Crate" type="RigidBody3D" groups=["interactable", "obstacle"]]
 collision_layer = 2
-collision_mask = 8
-script = ExtResource("1_0efft")
+collision_mask = 10
+script = ExtResource("1_s05lk")
 target_time = 0.5
 shift_time = 0.5
+growable = true
+shrinkable = true
 target_grow_x = 2.0
 target_grow_y = 2.0
 target_grow_z = 2.0
@@ -29,9 +34,10 @@ target_shrink_x = 0.5
 target_shrink_y = 0.5
 target_shrink_z = 0.5
 block_on_grow = true
+block_on_default = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_tfy6q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
@@ -42,18 +48,20 @@ skeleton = NodePath("../..")
 visible = false
 
 [node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_oicsb")
 
 [node name="TargetArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TargetArea"]
 shape = SubResource("SphereShape3D_yc6wy")
 
 [connection signal="grow" from="." to="." method="_on_grow"]
-[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="shrink" from="." to="." method="_on_shrink"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

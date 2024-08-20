@@ -1,0 +1,16 @@
+diff a/zaher/z.tscn b/zaher/z.tscn	(rejected hunks)
+@@ -58,7 +58,14 @@
+ collision_layer = 2
+ collision_mask = 4
+ 
++<<<<<<< HEAD
+ [node name="Sebas" parent="." instance=ExtResource("5_sj0ph")]
++=======
++[connection signal="death" from="Player" to="Sebas/StateMachine/SebasChase" method="_on_player_death"]
++[connection signal="block" from="Interactable" to="Sebas/StateMachine/SebasChase" method="_on_interactable_block"]
++[connection signal="block" from="Cracked Wall" to="Sebas/StateMachine/SebasChase" method="_on_cracked_wall_block"]
++[connection signal="block" from="Interactable2" to="Sebas/StateMachine/SebasChase" method="_on_interactable_2_block"]
++>>>>>>> b213b7fcc247389a790ba8bed107fe935b1c9ea9
+ 
+ [editable path="Player"]
+ [editable path="Interactable"]

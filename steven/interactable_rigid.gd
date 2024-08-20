@@ -1,8 +1,10 @@
-extends StaticBody3D
+extends RigidBody3D
 
 signal grow
 signal shrink
 signal block
+
+var mesh
 
 var grown = false
 var shrunk = false
@@ -31,56 +33,59 @@ var dying_timer = 0.0
 @export var block_on_default: bool
 @export var block_on_shrink: bool
 
+func _ready():
+	mesh = $CollisionShape3D
+
 func shift_size(delta):
 	if growing:
 		shift_timer += delta
 		if shift_timer >= shift_time:
 			if not grown and not shrunk:
-				scale = Vector3(target_grow_x, target_grow_y, target_grow_z)
+				mesh.scale = Vector3(target_grow_x, target_grow_y, target_grow_z)
 				grown = true
 				growing = false
 				shift_timer = 0
 			elif shrunk:
-				scale = Vector3(1, 1, 1)
+				mesh.scale = Vector3(1, 1, 1)
 				shrunk = false
 				growing = false
 				shift_timer = 0
 		else:
 			var progress = shift_timer / shift_time
 			if not grown and not shrunk:
-				scale = Vector3(1 + (target_grow_x - 1) * progress, 1 + (target_grow_y - 1) * progress, 1 + (target_grow_z - 1) * progress)
+				mesh.scale = Vector3(1 + (target_grow_x - 1) * progress, 1 + (target_grow_y - 1) * progress, 1 + (target_grow_z - 1) * progress)
 			elif shrunk:
-				scale = Vector3(target_shrink_x + (1 - target_shrink_x) * progress, target_shrink_y + (1 - target_shrink_y) * progress, target_shrink_z + (1 - target_shrink_z) * progress)
+				mesh.scale = Vector3(target_shrink_x + (1 - target_shrink_x) * progress, target_shrink_y + (1 - target_shrink_y) * progress, target_shrink_z + (1 - target_shrink_z) * progress)
 	elif shrinking:
 		shift_timer += delta
 		if shift_timer >= shift_time:
 			if not grown and not shrunk:
-				scale = Vector3(target_shrink_x, target_shrink_y, target_shrink_z)
+				mesh.scale = Vector3(target_shrink_x, target_shrink_y, target_shrink_z)
 				shrunk = true
 				shrinking = false
 				shift_timer = 0
 			elif grown:
-				scale = Vector3(1, 1, 1)
+				mesh.scale = Vector3(1, 1, 1)
 				grown = false
 				shrinking = false
 				shift_timer = 0
 		else:
 			var progress = shift_timer / shift_time
 			if not grown and not shrunk:
-				scale = Vector3(1 - (1 - target_shrink_x) * progress, 1 - (1 - target_shrink_y) * progress, 1 - (1 - target_shrink_z) * progress)
+				mesh.scale = Vector3(1 - (1 - target_shrink_x) * progress, 1 - (1 - target_shrink_y) * progress, 1 - (1 - target_shrink_z) * progress)
 			elif grown:
-				scale = Vector3(target_grow_x - (target_grow_x - 1) * progress, target_grow_y - (target_grow_y - 1) * progress, target_grow_z - (target_grow_z - 1) * progress)
+				mesh.scale = Vector3(target_grow_x - (target_grow_x - 1) * progress, target_grow_y - (target_grow_y - 1) * progress, target_grow_z - (target_grow_z - 1) * progress)
 	elif dying:
 		shift_timer += delta
 		if shift_timer >= shift_time:
-			scale = Vector3(0,0,0)
+			mesh.scale = Vector3(0,0,0)
 			queue_free()
 		else:
 			var progress = shift_timer / shift_time
 			if block_on_grow:
-				scale = Vector3(target_grow_x - (target_grow_x * progress), target_grow_y - (target_grow_y * progress), target_grow_z - (target_grow_z * progress))
+				mesh.scale = Vector3(target_grow_x - (target_grow_x * progress), target_grow_y - (target_grow_y * progress), target_grow_z - (target_grow_z * progress))
 			if block_on_shrink:
-				scale = Vector3(target_shrink_x - (target_shrink_x * progress), target_shrink_y - (target_shrink_y * progress), target_shrink_z - (target_shrink_z * progress))
+				mesh.scale = Vector3(target_shrink_x - (target_shrink_x * progress), target_shrink_y - (target_shrink_y * progress), target_shrink_z - (target_shrink_z * progress))
 			
 
 func _process(delta):

@@ -3,31 +3,33 @@
 [ext_resource type="Script" path="res://steven/interactable.gd" id="1_3053l"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_scnq5"]
-size = Vector3(5, 5, 2)
+size = Vector3(8, 6, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eaii0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yc6wy"]
 radius = 3.5
 
-[node name="Cracked Wall" type="StaticBody3D" groups=["interactable"]]
+[node name="Cracked Wall" type="StaticBody3D" groups=["interactable", "obstacle"]]
 collision_layer = 2
 collision_mask = 8
 script = ExtResource("1_3053l")
 target_time = 0.5
 shift_time = 0.5
-target_grow_x = 2.0
-target_grow_y = 2.0
+growable = true
+target_grow_x = 2.25
+target_grow_y = 2.25
 target_grow_z = 2.0
-target_shrink_x = 0.5
+target_shrink_x = 1.0
 target_shrink_y = 0.5
-target_shrink_z = 0.5
+target_shrink_z = 1.0
+block_on_default = true
 block_on_shrink = true
 
 [node name="CollisionShape3D" type="CollisionPolygon3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 depth = 2.0
-polygon = PackedVector2Array(0.347089, -2.49234, 0.715103, -2.08103, -0.0335008, -0.590169, -0.670366, -2.50316, -2.50436, -2.4953, -2.50436, 2.50423, 2.49517, 2.50423, 2.5078, -2.4953)
+polygon = PackedVector2Array(0.433148, -2.99806, 0.544961, -2.351, -0.0163261, -1.2897, -0.798405, -2.99834, -4.00755, -2.99322, -4.01887, 3.02507, 4.0045, 3.02766, 3.99384, -2.98761)
 
 [node name="MeshInstance3D" type="CSGMesh3D" parent="CollisionShape3D"]
 mesh = SubResource("BoxMesh_scnq5")
@@ -37,9 +39,9 @@ material = SubResource("StandardMaterial3D_eaii0")
 visible = false
 
 [node name="Hole" type="CSGPolygon3D" parent="CollisionShape3D/MeshInstance3D"]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 1, -1.52274, -3.59753, 1.00519)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 1, -1.52274, -4.02218, 1.00519)
 operation = 2
-polygon = PackedVector2Array(1, 1, 2, 1, 2, 1, 3, 2, 2, 4)
+polygon = PackedVector2Array(0.92155, 1.29632, 1.89835, 1.08089, 2.61789, 1.31235, 2.74387, 2.24293, 2.00228, 3.64793)
 depth = 2.1
 
 [node name="Hitbox" type="Area3D" parent="."]
@@ -47,9 +49,9 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionPolygon3D" parent="Hitbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
-depth = 2.0
-polygon = PackedVector2Array(0.347089, -2.49234, 0.715103, -2.08103, -0.0335008, -0.590169, -0.670366, -2.50316, -2.50436, -2.4953, -2.50436, 2.50423, 2.49517, 2.50423, 2.5078, -2.4953)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -1.00349)
+depth = 4.0
+polygon = PackedVector2Array(0.438224, -2.5125, 0.561287, -1.85021, -0.00806111, -0.775205, -0.80228, -2.49959, -3.98804, -2.49604, -4.01101, 3.57142, 3.99806, 3.51728, 4.00317, -2.48517)
 
 [node name="TargetArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
