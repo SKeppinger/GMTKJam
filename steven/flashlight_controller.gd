@@ -1,6 +1,6 @@
 extends SpotLight3D
 
-const RAY_LENGTH = 100.0
+const RAY_LENGTH = 50.0
 
 var camera
 

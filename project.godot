@@ -27,6 +27,9 @@ import/blender/enabled=false
 [global_group]
 
 interactable=""
+sebas_path=""
+obstacle=""
+player=""
 
 [input]
 

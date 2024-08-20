@@ -495,7 +495,7 @@ prev = NodePath("../../Starting Room2/Path 2")
 next = NodePath("../Path 4")
 
 [node name="Path 4" parent="Hallway2" node_paths=PackedStringArray("prev", "next") instance=ExtResource("3_3jveu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.261, 2, -0.0820007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.5573, 2, -0.0820007)
 prev = NodePath("../Path 3")
 next = NodePath("../../Hallway3/Path 5")
 
