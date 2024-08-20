@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://ckwrr8bbxrxo3"]
 
 [ext_resource type="AudioStream" uid="uid://cbek1pn3pdvhm" path="res://music/SpookyTutorial.wav" id="3_ax2d8"]
-[ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://assets/cell/cell.tscn" id="10_xbo2t"]
+[ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://tyler/assets/cell/cell.tscn" id="10_xbo2t"]
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="11_oq74o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1hj8l"]
@@ -55,6 +55,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 mesh = SubResource("PlaneMesh_yrb3x")
 
 [node name="Player" parent="." instance=ExtResource("11_oq74o")]
+
+[node name="Camera3D" parent="Player/Pivot" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)

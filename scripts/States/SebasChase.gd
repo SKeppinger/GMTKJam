@@ -4,9 +4,12 @@ class_name SebasChase
 @export var enemy: CharacterBody3D
 @export var move_speed := 5
 @export var player: CharacterBody3D
+@export var animation: AnimationPlayer
+
 
 func _ready():
 	player = get_parent().get_parent().get_parent().get_node("Player")
+	animation = player.get_child(1).get_child(0).get_child(0)
 
 func Physics_Update(delta: float):
 	#get_parent().get_parent().get_node("Running").set_visible(true)
@@ -40,4 +43,7 @@ func _on_interactable_2_block():
 
 func _on_player_death():
 	print("Im DEAD!!!!")
+	move_speed = 0
+	animation.play("Dying")
+	await get_tree().create_timer(3).timeout
 	get_tree().reload_current_scene()

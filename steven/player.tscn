@@ -1,9 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjkyarhgjy3bt"]
+[gd_scene load_steps=9 format=3 uid="uid://bjkyarhgjy3bt"]
 
 [ext_resource type="Script" path="res://steven/player_controller.gd" id="1_0r8s4"]
 [ext_resource type="Script" path="res://steven/flashlight_controller.gd" id="2_4tg8v"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uevqu"]
+
+[sub_resource type="Animation" id="Animation_7p1ig"]
+resource_name = "Dying"
+length = 1.5
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.833862, 1, 2, -1, 0, 1.14656, 1, 2, -1, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.839682, 1, 0, 0, -0.707107, 0.707107, 1.14656, 1, 0, 0, -0.793353, 0.608761)
+
+[sub_resource type="Animation" id="Animation_b4x6b"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qlw0k"]
+_data = {
+"Dying": SubResource("Animation_7p1ig"),
+"RESET": SubResource("Animation_b4x6b")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vc15v"]
 size = Vector3(0.4, 0.1, 0.4)
@@ -23,7 +57,12 @@ shape = SubResource("CapsuleShape3D_uevqu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.056)
+transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pivot/Camera3D"]
+libraries = {
+"": SubResource("AnimationLibrary_qlw0k")
+}
 
 [node name="Flashlight" type="SpotLight3D" parent="Pivot"]
 transform = Transform3D(0.995887, -0.000844772, 0.0906034, 0.000393198, 0.999987, 0.00500181, -0.0906065, -0.00494561, 0.995875, 0.290519, 0.549173, -0.215929)
