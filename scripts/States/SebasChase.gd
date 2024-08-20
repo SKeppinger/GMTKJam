@@ -83,6 +83,7 @@ func Physics_Update(delta: float):
 			navigate_to_point(nearest_to_me, destination)
 
 func _on_interactable_block():
+	enemy.get_node("Break").play()
 	enemy.get_node("Running").set_visible(false)
 	enemy.get_node("Crawling").set_visible(false)
 	enemy.get_node("Attacking").set_visible(true)
@@ -96,6 +97,7 @@ func _on_interactable_block():
 	print("speeding up!")
 
 func _on_cracked_wall_block():
+	enemy.get_node("Break").play()
 	enemy.get_node("Running").set_visible(false)
 	enemy.get_node("Crawling").set_visible(false)
 	enemy.get_node("Attacking").set_visible(true)
@@ -110,6 +112,7 @@ func _on_cracked_wall_block():
 
 #this one is for the "crate" object instead of "interactable", we can prob delete one of them and rename the other and be fine
 func _on_crate_block():
+	enemy.get_node("Break").play()
 	enemy.get_node("Running").set_visible(false)
 	enemy.get_node("Crawling").set_visible(false)
 	enemy.get_node("Attacking").set_visible(true)
@@ -127,6 +130,7 @@ func _on_player_death():
 	enemy.get_node("Running").set_visible(false)
 	enemy.get_node("Crawling").set_visible(false)
 	enemy.get_node("Biting").set_visible(true)
+	enemy.get_node("Bite").play()
 	enemy.get_node("Biting").get_node("AnimationPlayer").play("mixamo_com")
 	move_speed = -1
 	await get_tree().create_timer(1).timeout

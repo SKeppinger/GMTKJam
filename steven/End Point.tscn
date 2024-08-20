@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bodjr4ine3cfd"]
+
+[ext_resource type="Script" path="res://steven/end_point.gd" id="1_k01yr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_his3s"]
+radius = 1.0
+
+[node name="End Point" type="Node3D"]
+script = ExtResource("1_k01yr")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_his3s")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

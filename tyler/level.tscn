@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://6btpbxw6yvoq"]
+[gd_scene load_steps=75 format=4 uid="uid://6btpbxw6yvoq"]
 
 [ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://tyler/assets/cell/cell.tscn" id="1_82dhp"]
 [ext_resource type="Script" path="res://tyler/mock_level.gd" id="1_qtf1d"]
@@ -20,8 +20,9 @@
 [ext_resource type="PackedScene" path="res://tyler/assets/wood_bucket/bucket.tscn" id="17_re5mv"]
 [ext_resource type="Texture2D" uid="uid://dptl7qu86mx1i" path="res://tyler/assets/cell/cell_irons.png" id="19_qaf73"]
 [ext_resource type="PackedScene" uid="uid://brbs5vylur337" path="res://tyler/assets/lockers/lockers_green.tscn" id="20_0vp06"]
-[ext_resource type="PackedScene" uid="uid://ds772r5a5m0te" path="res://evan/lighthouse_evan.tscn" id="20_b4rqh"]
+[ext_resource type="PackedScene" uid="uid://b3qpcikwf5em2" path="res://evan/lighthouse_evan.tscn" id="20_b4rqh"]
 [ext_resource type="PackedScene" uid="uid://t2plyh102rde" path="res://tyler/assets/lockers/lockers_green_damaged.tscn" id="21_86s12"]
+[ext_resource type="PackedScene" uid="uid://bodjr4ine3cfd" path="res://steven/End Point.tscn" id="22_it1sr"]
 [ext_resource type="PackedScene" uid="uid://j708j4nd7t1l" path="res://tyler/assets/bench/old_bench.tscn" id="22_lodh8"]
 [ext_resource type="PackedScene" uid="uid://b0rmpt7cwb4wt" path="res://tyler/assets/bench/bench.tscn" id="23_bhgvn"]
 [ext_resource type="PackedScene" uid="uid://h5va721cn41g" path="res://tyler/assets/desk/wooden_desk.tscn" id="24_seagx"]
@@ -34,13 +35,14 @@
 [ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="28_npmj1"]
 [ext_resource type="PackedScene" uid="uid://dbldo0fwudiao" path="res://steven/crate.tscn" id="29_6akmg"]
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="29_ewnqa"]
-[ext_resource type="PackedScene" uid="uid://dx7va30h2f31o" path="res://tyler/assets/rocks/rocks.tscn" id="29_qeq30"]
-[ext_resource type="PackedScene" uid="uid://cqj8ouleajcvr" path="res://zaher/control_scheme.tscn" id="29_vsh2r"]
-[ext_resource type="PackedScene" path="res://steven/Sebas Pathpoint.tscn" id="30_7qfjh"]
-[ext_resource type="PackedScene" path="res://steven/Sebas Spawnpoint.tscn" id="31_xchcd"]
-[ext_resource type="PackedScene" path="res://steven/Spawn Trigger.tscn" id="32_tj2ba"]
-[ext_resource type="PackedScene" path="res://steven/Despawn Trigger.tscn" id="33_pxb4m"]
+[ext_resource type="PackedScene" path="res://tyler/assets/rocks/rocks.tscn" id="29_qeq30"]
+[ext_resource type="PackedScene" path="res://zaher/control_scheme.tscn" id="29_vsh2r"]
+[ext_resource type="PackedScene" uid="uid://dmy4c65skjafx" path="res://steven/Sebas Pathpoint.tscn" id="30_7qfjh"]
+[ext_resource type="PackedScene" uid="uid://c6q0a82ekahf3" path="res://steven/Sebas Spawnpoint.tscn" id="31_xchcd"]
+[ext_resource type="PackedScene" uid="uid://0xgl24h1n463" path="res://steven/Spawn Trigger.tscn" id="32_tj2ba"]
+[ext_resource type="PackedScene" uid="uid://chq1ra6eg41r1" path="res://steven/Despawn Trigger.tscn" id="33_pxb4m"]
 [ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="36_0iol4"]
+[ext_resource type="AudioStream" uid="uid://bsv6nl1hgr3er" path="res://steven/SpookyTutorialSlow.wav" id="38_r46hk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4alq8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -384,7 +386,11 @@ transform = Transform3D(1, -2.98023e-08, -6.82121e-13, 0, 1, 1.13687e-13, 0, -1.
 shape = SubResource("ConcavePolygonShape3D_0once")
 
 [node name="lighthouse_evan" parent="Starting Room" instance=ExtResource("20_b4rqh")]
-transform = Transform3D(-6.92498, 0, -6.92498, 0, 8.58, 0, 6.92498, 0, -6.92498, -15.4323, -0.232922, 111)
+transform = Transform3D(12.4454, 0, 8.37335, 0, 13.142, 0, -8.37335, 0, 12.4454, -86.7023, -1.03768, -175.215)
+
+[node name="End Point" parent="Starting Room/lighthouse_evan" node_paths=PackedStringArray("white") instance=ExtResource("22_it1sr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00383, 18.5124, 0.164424)
+white = NodePath("../../../Player/Pivot/ColorRect")
 
 [node name="Tutorial" type="Node" parent="."]
 
@@ -595,14 +601,8 @@ transform = Transform3D(1, 0, 0, 0, 0.586369, 0, 0, 0, 1, -21.5415, 0.462326, 4.
 [node name="FlashlightPickUp" parent="Tutorial" instance=ExtResource("26_wxysa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6045, 0.299303, 4.30546)
 
-[node name="FlashlightHandle" parent="Tutorial/FlashlightPickUp/StaticBody3D" index="0"]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.5, 0)
-
 [node name="CollisionShape3D" parent="Tutorial/FlashlightPickUp/PickUpArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.559421, -0.555754)
-
-[node name="Flashlight" parent="Tutorial/FlashlightPickUp/Flashlight" index="0"]
-transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, 0.5, 0)
 
 [node name="door" parent="Tutorial" instance=ExtResource("26_v0wwo")]
 transform = Transform3D(1.42223, 0, 0, 0, 1.22811, 0, 0, 0, 1.18613, -22.3962, 1.78272, 10.4083)
@@ -801,9 +801,9 @@ collision_layer = 8
 size = Vector3(50, 6, 0.2)
 
 [node name="Door" type="CSGBox3D" parent="Hallway4/Wall5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0273, -0.8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0273, -0.8, -0.0379257)
 operation = 2
-size = Vector3(2.3, 4.5, 0.2)
+size = Vector3(2.3, 4.5, 0.3)
 
 [node name="Wall6" type="CSGBox3D" parent="Hallway4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, 3.9906)
@@ -873,8 +873,9 @@ mass = 0.01
 [node name="Cracked Wall" parent="Hallway5" instance=ExtResource("28_npmj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.8582, 0.00814331, -0.0728302)
 
-[node name="DespawnTrigger" parent="Hallway5" instance=ExtResource("33_pxb4m")]
+[node name="DespawnTrigger" parent="Hallway5" node_paths=PackedStringArray("enemy") instance=ExtResource("33_pxb4m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6298, -0.930526, 0.16658)
+enemy = NodePath("../../Sebas")
 
 [node name="SebasPathpoint5" parent="Hallway5" node_paths=PackedStringArray("prev", "next") instance=ExtResource("30_7qfjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.4532, 2, 5.34058e-05)
@@ -897,6 +898,9 @@ ENEMY = NodePath("../Sebas")
 [node name="Flashlight" parent="Player/Pivot" index="1" node_paths=PackedStringArray("controls")]
 controls = NodePath("../../../ControlScheme")
 
+[node name="ColorRect" parent="Player/Pivot" index="3"]
+visible = true
+
 [node name="PauseMenu" parent="." instance=ExtResource("28_dc55n")]
 visible = false
 
@@ -907,6 +911,12 @@ visible = false
 [node name="SebasChase" parent="Sebas/StateMachine" index="1" node_paths=PackedStringArray("player", "animation")]
 player = NodePath("../../../Player")
 animation = NodePath("../../../Player/Pivot/Camera3D/AnimationPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_r46hk")
+volume_db = 1.0
+autoplay = true
+mix_target = 1
 
 [connection signal="picked_up" from="Tutorial/FlashlightPickUp" to="Player/Pivot/Flashlight" method="_on_flashlight_pick_up_picked_up"]
 [connection signal="block" from="Hallway2/Cracked Wall" to="Sebas/StateMachine/SebasChase" method="_on_cracked_wall_block"]
@@ -924,6 +934,7 @@ animation = NodePath("../../../Player/Pivot/Camera3D/AnimationPlayer")
 [editable path="Starting Room/Cell7"]
 [editable path="Starting Room/Hanging_Light3"]
 [editable path="Starting Room/Hanging_Light4"]
+[editable path="Starting Room/lighthouse_evan/End Point"]
 [editable path="Tutorial/Hanging_Light"]
 [editable path="Tutorial/Hanging_Light3"]
 [editable path="Tutorial/Hanging_Light5"]

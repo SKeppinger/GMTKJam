@@ -58,7 +58,6 @@ shape = SubResource("CapsuleShape3D_uevqu")
 
 [node name="Pivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-visible = false
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 
@@ -84,6 +83,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.120732, 0)
 
 [node name="Flashlight" parent="Pivot/Flashlight2" index="0"]
 transform = Transform3D(1.16824e-06, 6, -2.62268e-07, -6, 1.16824e-06, -2.55808e-14, 2.54846e-14, 2.62268e-07, 6, 0.286962, 0.0230335, -0.271758)
+
+[node name="ColorRect" type="ColorRect" parent="Pivot"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
 
 [node name="Feet" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)

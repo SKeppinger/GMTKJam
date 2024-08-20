@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfd6dwgjd0vpt"]
+[gd_scene load_steps=12 format=3 uid="uid://cfd6dwgjd0vpt"]
 
 [ext_resource type="Script" path="res://scripts/Sebas/sebas.gd" id="1_tx7kx"]
 [ext_resource type="Script" path="res://scripts/States/State_machine.gd" id="2_nebmk"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bpo672pa2qhk6" path="res://steven/Zombie Crawl (1).fbx" id="6_gnt1i"]
 [ext_resource type="PackedScene" uid="uid://ckkrgfi6td1o0" path="res://steven/Zombie Neck Bite.fbx" id="7_br8ur"]
 [ext_resource type="PackedScene" uid="uid://c65a34mwmea8y" path="res://steven/Zombie Attack.fbx" id="8_5q0dn"]
+[ext_resource type="AudioStream" uid="uid://d00d6kmfcn6v4" path="res://steven/horror_01_stinger_piano_03.wav" id="9_kd652"]
+[ext_resource type="AudioStream" uid="uid://hxyriwiw7ewd" path="res://steven/horror_01_stinger_piano_06.wav" id="10_5qcoy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tyyxk"]
 
@@ -166,6 +168,18 @@ bones/33/position = Vector3(-4.68094e-11, 0.291487, 1.05546e-09)
 bones/34/position = Vector3(-1.12764e-10, 0.0435671, -1.22719e-10)
 bones/38/position = Vector3(-1.18745e-09, 0.291847, -9.95145e-11)
 bones/39/position = Vector3(-2.96529e-11, 0.0454863, -6.27573e-10)
+
+[node name="Break" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_kd652")
+volume_db = 10.0
+max_db = 6.0
+max_distance = 15.0
+
+[node name="Bite" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_5qcoy")
+volume_db = 10.0
+max_db = 6.0
+max_distance = 15.0
 
 [editable path="Running"]
 [editable path="Crawling"]
