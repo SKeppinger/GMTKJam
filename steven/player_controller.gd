@@ -35,6 +35,7 @@ func _input(event):
 func _physics_process(delta):
 	if dying and !animator.is_playing():
 		rotation.y = lerp_angle(rotation.y, atan2(death_direction.x, death_direction.z), 0.95) * -1
+		pivot.rotation_degrees = Vector3(0, 0, 0)
 	else:
 		# Add the gravity.
 		if not is_on_floor():

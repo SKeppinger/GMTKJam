@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=4 uid="uid://6btpbxw6yvoq"]
+[gd_scene load_steps=109 format=4 uid="uid://6btpbxw6yvoq"]
 
 [ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://tyler/assets/cell/cell.tscn" id="1_82dhp"]
 [ext_resource type="Script" path="res://tyler/mock_level.gd" id="1_qtf1d"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" path="res://steven/End Point.tscn" id="22_it1sr"]
 [ext_resource type="PackedScene" uid="uid://j708j4nd7t1l" path="res://tyler/assets/bench/old_bench.tscn" id="22_lodh8"]
 [ext_resource type="PackedScene" uid="uid://b0rmpt7cwb4wt" path="res://tyler/assets/bench/bench.tscn" id="23_bhgvn"]
+[ext_resource type="PackedScene" path="res://steven/Music Trigger.tscn" id="23_qog1e"]
 [ext_resource type="PackedScene" uid="uid://h5va721cn41g" path="res://tyler/assets/desk/wooden_desk.tscn" id="24_seagx"]
 [ext_resource type="PackedScene" uid="uid://crb3t8cxsqf1m" path="res://tyler/assets/debris/papers_1.tscn" id="25_u4kx8"]
 [ext_resource type="PackedScene" uid="uid://b8wo53l4pc4x0" path="res://tyler/assets/debris/papers_2.tscn" id="26_4ocni"]
@@ -44,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="36_0iol4"]
 [ext_resource type="AudioStream" uid="uid://bsv6nl1hgr3er" path="res://steven/SpookyTutorialSlow.wav" id="38_r46hk"]
 [ext_resource type="PackedScene" uid="uid://cik6dy7lbqdrx" path="res://tyler/assets/wooden_crate/crate.tscn" id="44_45d62"]
+[ext_resource type="AudioStream" uid="uid://dv5p8emdjeiio" path="res://music/spookyEnding.wav" id="44_nrkkd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4alq8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -53,6 +55,7 @@ ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 sky_material = SubResource("ProceduralSkyMaterial_4alq8")
 
 [sub_resource type="Environment" id="Environment_25oov"]
+background_mode = 1
 sky = SubResource("Sky_xgqwg")
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.02
@@ -587,6 +590,10 @@ transform = Transform3D(12.4454, 0, 8.37335, 0, 13.142, 0, -8.37335, 0, 12.4454,
 [node name="End Point" parent="Starting Room/lighthouse_evan" node_paths=PackedStringArray("white") instance=ExtResource("22_it1sr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00383, 18.5124, 0.164424)
 white = NodePath("../../../Player/Pivot/ColorRect")
+
+[node name="MusicTrigger" parent="Starting Room/lighthouse_evan" node_paths=PackedStringArray("music") instance=ExtResource("23_qog1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30686, 13.4631, 1.91432)
+music = NodePath("../../../EndMusic")
 
 [node name="Tutorial" type="Node" parent="."]
 
@@ -1218,6 +1225,10 @@ stream = ExtResource("38_r46hk")
 volume_db = 1.0
 autoplay = true
 mix_target = 1
+
+[node name="EndMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_nrkkd")
+volume_db = 1.0
 
 [connection signal="picked_up" from="Tutorial/FlashlightPickUp" to="Player/Pivot/Flashlight" method="_on_flashlight_pick_up_picked_up"]
 [connection signal="block" from="Hallway2/Cracked Wall" to="Sebas/StateMachine/SebasChase" method="_on_cracked_wall_block"]
