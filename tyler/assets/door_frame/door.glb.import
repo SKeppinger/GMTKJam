@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c8rh5ly1uxfyh"
-path="res://.godot/imported/door.glb-7c2c99d48731d58790eb61e55df04f1d.scn"
+uid="uid://cexibqveksl3a"
+path="res://.godot/imported/door.glb-fc9284e389e0c29f86d5ef72f9350337.scn"
 
 [deps]
 
-source_file="res://tyler/door.glb"
-dest_files=["res://.godot/imported/door.glb-7c2c99d48731d58790eb61e55df04f1d.scn"]
+source_file="res://tyler/assets/door_frame/door.glb"
+dest_files=["res://.godot/imported/door.glb-fc9284e389e0c29f86d5ef72f9350337.scn"]
 
 [params]
 

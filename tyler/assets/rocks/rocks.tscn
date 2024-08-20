@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://dx7va30h2f31o"]
+
+[ext_resource type="PackedScene" uid="uid://b7e1m7qivaw3f" path="res://tyler/assets/rocks/debris_concrete_junk.glb" id="1_fptxd"]
+[ext_resource type="Texture2D" uid="uid://dwb57l5nkapy" path="res://tyler/assets/rocks/debris_concrete_junk_0.jpg" id="2_u8wjb"]
+[ext_resource type="Texture2D" uid="uid://dixx1jlqybehk" path="res://tyler/assets/rocks/debris_concrete_junk_1.jpg" id="3_00re5"]
+[ext_resource type="Texture2D" uid="uid://vxei8kfaukqq" path="res://tyler/assets/rocks/debris_concrete_junk_2.jpg" id="4_fjhmk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etey8"]
+albedo_texture = ExtResource("2_u8wjb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdqje"]
+albedo_texture = ExtResource("3_00re5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2q5br"]
+albedo_texture = ExtResource("4_fjhmk")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7euef"]
+size = Vector3(2.92328, 1, 4.67627)
+
+[node name="Rocks" instance=ExtResource("1_fptxd")]
+transform = Transform3D(0.831249, 0, 0, 0, 0.831249, 0, 0, 0, 0.831249, 0, 0, 0)
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.0833234, -0.00122938, -0.000374891, 0.00128523, 0.0798775, 0.0237147, 9.4927e-06, -0.0237176, 0.0798869, 0, 0, 0)
+
+[node name="Model_material0_0" parent="Sketchfab_model/debris-concrete-junk_fbx/RootNode/Model" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_etey8")
+
+[node name="Model_material0_02" parent="Sketchfab_model/debris-concrete-junk_fbx/RootNode/Model" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_etey8")
+
+[node name="Model_material2_0" parent="Sketchfab_model/debris-concrete-junk_fbx/RootNode/Model" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_sdqje")
+
+[node name="Model_material2_02" parent="Sketchfab_model/debris-concrete-junk_fbx/RootNode/Model" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_sdqje")
+
+[node name="Model_material1_0" parent="Sketchfab_model/debris-concrete-junk_fbx/RootNode/Model" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2q5br")
+
+[node name="Model_material1_02" parent="Sketchfab_model/debris-concrete-junk_fbx/RootNode/Model" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2q5br")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+collision_layer = 2
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.199177, 0.14399, 0.133506)
+shape = SubResource("BoxShape3D_7euef")
