@@ -44,9 +44,6 @@ shape = SubResource("BoxShape3D_tfy6q")
 mesh = SubResource("BoxMesh_xn8y2")
 skeleton = NodePath("../..")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="CollisionShape3D/MeshInstance3D"]
-visible = false
-
 [node name="Hitbox" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 collision_layer = 2

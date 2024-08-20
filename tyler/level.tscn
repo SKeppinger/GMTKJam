@@ -1,15 +1,22 @@
-[gd_scene load_steps=21 format=3 uid="uid://cc2idrw1678j"]
+[gd_scene load_steps=28 format=3 uid="uid://cc2idrw1678j"]
 
-[ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://tyler/assets/cell/cell.tscn" id="1_82dhp"]
+[ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://assets/cell/cell.tscn" id="1_82dhp"]
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="1_b4cwv"]
+[ext_resource type="Script" path="res://tyler/mock_level.gd" id="1_s1w6x"]
 [ext_resource type="Texture2D" uid="uid://bot5c48e3ylkd" path="res://tyler/textures/white_plaster_02_diff_4k.png" id="1_sikpa"]
 [ext_resource type="Texture2D" uid="uid://ojtgj3488c8t" path="res://tyler/textures/old_planks_02_diff_4k.png" id="1_v0neb"]
 [ext_resource type="Texture2D" uid="uid://7xc2n41aol40" path="res://tyler/textures/old_planks_02_nor_gl_4k.png" id="2_1wpng"]
 [ext_resource type="Texture2D" uid="uid://ccs8g6xumftxx" path="res://tyler/textures/white_plaster_02_nor_gl_4k.png" id="2_d7soh"]
 [ext_resource type="Texture2D" uid="uid://cc087ugdi55y4" path="res://tyler/textures/old_planks_02_rough_4k.png" id="3_heegx"]
 [ext_resource type="Texture2D" uid="uid://dbbbrc8x8e6xt" path="res://tyler/textures/white_plaster_02_rough_4k.png" id="3_ikifs"]
-[ext_resource type="PackedScene" uid="uid://cs6k8thlx7kkj" path="res://tyler/assets/light/hanging_light.tscn" id="3_v4gt1"]
+[ext_resource type="PackedScene" uid="uid://cs6k8thlx7kkj" path="res://assets/light/hanging_light.tscn" id="3_v4gt1"]
 [ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="10_hw33d"]
+[ext_resource type="PackedScene" uid="uid://dmy4c65skjafx" path="res://steven/Sebas Pathpoint.tscn" id="11_t4k37"]
+[ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="12_v2b0k"]
+[ext_resource type="PackedScene" uid="uid://dbldo0fwudiao" path="res://steven/crate.tscn" id="13_6v8ap"]
+[ext_resource type="PackedScene" path="res://zaher/flashlight_pick_up.tscn" id="14_1s30k"]
+[ext_resource type="PackedScene" path="res://zaher/pause_menu.tscn" id="15_d2spm"]
+[ext_resource type="PackedScene" path="res://zaher/control_scheme.tscn" id="16_2ga48"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4alq8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -20,6 +27,7 @@ sky_material = SubResource("ProceduralSkyMaterial_4alq8")
 
 [sub_resource type="Environment" id="Environment_25oov"]
 sky = SubResource("Sky_xgqwg")
+ambient_light_source = 1
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.02
 tonemap_mode = 2
@@ -61,6 +69,7 @@ size = Vector2(27, 6)
 size = Vector2(28.9, 6)
 
 [node name="Level2" type="Node3D"]
+script = ExtResource("1_s1w6x")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_25oov")
@@ -123,14 +132,12 @@ transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -3.07562, 0.0246425, 10.719
 [node name="Door" parent="Starting Room/Cell7" index="0"]
 transform = Transform3D(0.805978, 0.199355, 2.9543e-06, 3.06697e-06, -9.55614e-08, -0.830267, -0.199355, 0.805978, -8.29178e-07, -1.00594, 1.84377, 3.98241)
 
-[node name="CollisionShape3D" parent="Starting Room/Cell7/StaticBody3D" index="0"]
-transform = Transform3D(0.805978, 0.199355, 2.9543e-06, 3.06697e-06, -9.55614e-08, -0.830267, -0.199355, 0.805978, -8.29178e-07, -1.00594, 1.84377, 3.98241)
-
 [node name="Cell8" parent="Starting Room" instance=ExtResource("1_82dhp")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -9.69706, 0.0246425, 10.7196)
 
-[node name="Player" parent="Starting Room" instance=ExtResource("1_b4cwv")]
+[node name="Player" parent="Starting Room" node_paths=PackedStringArray("ENEMY") instance=ExtResource("1_b4cwv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00161, 0, 12.059)
+ENEMY = NodePath("../Sebas")
 
 [node name="Hanging_Light" parent="Starting Room" instance=ExtResource("3_v4gt1")]
 transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -3.95147, 5.13683, -3.35681)
@@ -146,4 +153,117 @@ transform = Transform3D(-1.09278e-09, 0, 0.025, 0, 0.025, 0, -0.025, 0, -1.09278
 
 [node name="Sebas" parent="Starting Room" instance=ExtResource("10_hw33d")]
 
+[node name="SebasChase" parent="Starting Room/Sebas/StateMachine" index="1" node_paths=PackedStringArray("player")]
+player = NodePath("../../../Player")
+
+[node name="Skeleton3D" parent="Starting Room/Sebas/Biting" index="0"]
+bones/0/position = Vector3(0.00507754, 0.509254, -0.0167167)
+bones/0/rotation = Quaternion(0.100121, -0.164052, -0.0120677, 0.981283)
+bones/1/rotation = Quaternion(-0.00250318, -0.00576341, 0.0140169, 0.999882)
+bones/2/rotation = Quaternion(0.0650032, -0.0116118, 0.0116688, 0.997749)
+bones/3/rotation = Quaternion(0.0651063, -0.0106338, 0.0120346, 0.997749)
+bones/4/rotation = Quaternion(-0.0281271, 0.0286395, -0.021631, 0.99896)
+bones/5/rotation = Quaternion(-0.195972, 0.121985, -0.0351995, 0.972356)
+bones/7/rotation = Quaternion(-0.531098, -0.458938, 0.581953, -0.41066)
+bones/8/rotation = Quaternion(0.428971, 0.0446722, 0.16727, 0.886571)
+bones/9/rotation = Quaternion(0.0277166, 0.0063451, 0.670077, 0.741747)
+bones/10/rotation = Quaternion(-0.0137078, 0.935608, -0.214693, -0.279922)
+bones/11/rotation = Quaternion(-0.177458, -0.0780084, -0.209714, 0.958355)
+bones/12/rotation = Quaternion(-0.0458018, 0.0169694, 0.00903556, 0.998766)
+bones/13/rotation = Quaternion(0.0292106, -0.102037, 0.338361, 0.935012)
+bones/15/rotation = Quaternion(-0.0708762, -0.0775439, -0.130706, 0.985839)
+bones/16/rotation = Quaternion(-0.177983, -0.00965325, -0.0028536, 0.983982)
+bones/17/rotation = Quaternion(-0.343998, 0.00241599, 0.0429328, 0.937985)
+bones/19/rotation = Quaternion(0.579393, -0.430909, 0.530788, 0.443717)
+bones/20/rotation = Quaternion(0.48783, 0.0379435, -0.1761, 0.85415)
+bones/21/rotation = Quaternion(0.0420645, -0.0059792, -0.695032, 0.717723)
+bones/22/rotation = Quaternion(0.0639316, 0.957573, 0.0216699, 0.280174)
+bones/23/rotation = Quaternion(-0.0812777, 0.112932, 0.442804, 0.885757)
+bones/24/rotation = Quaternion(0.143426, 0.0518575, -0.38487, 0.910283)
+bones/25/rotation = Quaternion(-0.0502531, 0.00891981, 0.203339, 0.977777)
+bones/27/rotation = Quaternion(0.174637, 0.00528293, -0.0592824, 0.982832)
+bones/28/rotation = Quaternion(-0.380061, -0.0224817, -0.0470616, 0.92349)
+bones/29/rotation = Quaternion(-0.0718157, -0.000248956, 0.0785146, 0.994323)
+bones/31/rotation = Quaternion(0.146817, 0.426718, 0.872504, -0.187332)
+bones/32/rotation = Quaternion(-0.474529, -0.0528577, 0.0173846, 0.87848)
+bones/33/rotation = Quaternion(0.474373, -0.0487847, -0.107205, 0.872409)
+bones/34/rotation = Quaternion(0.330388, 0.036966, -0.0121592, 0.943043)
+bones/36/rotation = Quaternion(-0.13877, 0.380139, 0.905549, 0.127355)
+bones/37/rotation = Quaternion(-0.481488, 0.0641147, -0.0199927, 0.873876)
+bones/38/rotation = Quaternion(0.531248, 0.0428868, 0.0907187, 0.841253)
+bones/39/rotation = Quaternion(0.306303, -0.0392778, 0.0126504, 0.951039)
+
+[node name="SebasPathpoint" parent="Starting Room" instance=ExtResource("11_t4k37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.30979, 0, 0)
+
+[node name="Hallway2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.96952, 0, 0.033597)
+
+[node name="Floor" type="CSGBox3D" parent="Hallway2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 0)
+layers = 15
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 0.001, 8)
+
+[node name="Ceiling" type="CSGBox3D" parent="Hallway2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 6, 0)
+layers = 15
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 0.001, 8)
+
+[node name="Wall4" type="CSGBox3D" parent="Hallway2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 3, 0)
+use_collision = true
+collision_layer = 8
+size = Vector3(8, 6, 0.2)
+
+[node name="Door" type="CSGBox3D" parent="Hallway2/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+operation = 2
+size = Vector3(2.3, 4.5, 0.2)
+
+[node name="Wall5" type="CSGBox3D" parent="Hallway2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, -4.0094)
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 6, 0.2)
+
+[node name="Wall6" type="CSGBox3D" parent="Hallway2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, 3.9906)
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 6, 0.2)
+
+[node name="Cracked Wall" parent="Hallway2" instance=ExtResource("12_v2b0k")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68.9827, 0.00814331, 0.169044)
+
+[node name="Crate" parent="Hallway2" instance=ExtResource("13_6v8ap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1736, 0.526157, 2.84685)
+mass = 0.01
+
+[node name="FlashlightPickUp" parent="." instance=ExtResource("14_1s30k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.014, 0.705, 0)
+
+[node name="FlashlightHandle" parent="FlashlightPickUp/StaticBody3D" index="0"]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.5, 0)
+
+[node name="PauseMenu" parent="." instance=ExtResource("15_d2spm")]
+visible = false
+
+[node name="ControlScheme" parent="." instance=ExtResource("16_2ga48")]
+
+[connection signal="death" from="Starting Room/Player" to="Starting Room/Sebas/StateMachine/SebasChase" method="_on_player_death"]
+[connection signal="picked_up" from="FlashlightPickUp" to="Starting Room/Player/Pivot/Flashlight" method="_on_flashlight_pick_up_picked_up"]
+
 [editable path="Starting Room/Cell7"]
+[editable path="Starting Room/Player"]
+[editable path="Starting Room/Sebas"]
+[editable path="Starting Room/Sebas/Running"]
+[editable path="Starting Room/Sebas/Crawling"]
+[editable path="Starting Room/Sebas/Biting"]
+[editable path="Starting Room/Sebas/Attacking"]
+[editable path="Hallway2/Cracked Wall"]
+[editable path="Hallway2/Crate"]
+[editable path="FlashlightPickUp"]
