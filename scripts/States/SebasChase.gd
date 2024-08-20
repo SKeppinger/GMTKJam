@@ -10,9 +10,12 @@ var destination
 @export var enemy: CharacterBody3D
 @export var move_speed := 5
 @export var player: CharacterBody3D
+@export var animation: AnimationPlayer
+
 
 func _ready():
 	player = get_parent().get_parent().get_parent().get_node("Player")
+	animation = player.get_child(1).get_child(0).get_child(0)
 
 func navigate_to_point(from: Node3D, to: Node3D):
 	if from != to:
@@ -101,3 +104,10 @@ func _on_crate_block():
 	await get_tree().create_timer(1).timeout
 	move_speed *= 5
 	print("speeding up!")
+
+func _on_player_death():
+	print("Im DEAD!!!!")
+	move_speed = 0
+	animation.play("Dying")
+	await get_tree().create_timer(3).timeout
+	get_tree().reload_current_scene()

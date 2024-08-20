@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal death
+
 @export var SPEED = 3.0
 @export var RUN_SPEED = 8.0
 @export var ACCEL = 10.0
@@ -50,3 +52,9 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, move_speed)
 
 	move_and_slide()
+
+func die():
+	death.emit()
+
+func _on_hitbox_body_entered(body):
+	die()
