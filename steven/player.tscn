@@ -45,7 +45,7 @@ size = Vector3(0.4, 0.1, 0.4)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oyqal"]
 
 [node name="Player" type="CharacterBody3D"]
-collision_mask = 4
+collision_mask = 14
 floor_max_angle = 0.802851
 script = ExtResource("1_0r8s4")
 
