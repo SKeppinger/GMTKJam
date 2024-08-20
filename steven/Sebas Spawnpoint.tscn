@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6q0a82ekahf3"]
+
+[ext_resource type="Script" path="res://steven/sebas_pathpoint.gd" id="1_wbrff"]
+
+[node name="SebasSpawnpoint" type="Node3D" groups=["sebas_path", "sebas_spawn"]]
+script = ExtResource("1_wbrff")

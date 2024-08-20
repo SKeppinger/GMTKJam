@@ -14,7 +14,7 @@ material = SubResource("StandardMaterial3D_sxr8c")
 size = Vector3(2, 2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oicsb"]
-size = Vector3(2, 2, 2)
+size = Vector3(6, 6, 2)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yc6wy"]
 radius = 1.5

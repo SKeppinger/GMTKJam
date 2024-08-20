@@ -4,7 +4,7 @@ func _ready():
 	$ControlScheme.show()
 
 func _process(delta):
-	$FlashlightPickUp/AnimationPlayer.play("Rotating")
+	$Tutorial/FlashlightPickUp/AnimationPlayer.play("Rotating")
 	if Input.is_action_just_pressed("Pause"):
 		get_tree().paused = true
 		$PauseMenu.show()

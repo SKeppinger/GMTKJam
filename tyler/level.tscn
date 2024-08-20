@@ -1,6 +1,7 @@
-[gd_scene load_steps=53 format=3 uid="uid://6btpbxw6yvoq"]
+[gd_scene load_steps=64 format=3 uid="uid://6btpbxw6yvoq"]
 
 [ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://tyler/assets/cell/cell.tscn" id="1_82dhp"]
+[ext_resource type="Script" path="res://tyler/mock_level.gd" id="1_qtf1d"]
 [ext_resource type="Texture2D" uid="uid://bot5c48e3ylkd" path="res://tyler/textures/white_plaster_02_diff_4k.png" id="1_sikpa"]
 [ext_resource type="Texture2D" uid="uid://ojtgj3488c8t" path="res://tyler/textures/old_planks_02_diff_4k.png" id="1_v0neb"]
 [ext_resource type="Texture2D" uid="uid://7xc2n41aol40" path="res://tyler/textures/old_planks_02_nor_gl_4k.png" id="2_1wpng"]
@@ -24,8 +25,18 @@
 [ext_resource type="PackedScene" uid="uid://h5va721cn41g" path="res://tyler/assets/desk/wooden_desk.tscn" id="24_seagx"]
 [ext_resource type="PackedScene" uid="uid://crb3t8cxsqf1m" path="res://tyler/assets/debris/papers_1.tscn" id="25_u4kx8"]
 [ext_resource type="PackedScene" uid="uid://b8wo53l4pc4x0" path="res://tyler/assets/debris/papers_2.tscn" id="26_4ocni"]
+[ext_resource type="PackedScene" uid="uid://cku23pxfiv0ra" path="res://zaher/flashlight_pick_up.tscn" id="26_wxysa"]
 [ext_resource type="PackedScene" uid="uid://dsj5v87ywt246" path="res://tyler/assets/debris/papers_3.tscn" id="27_t57n1"]
+[ext_resource type="PackedScene" path="res://zaher/pause_menu.tscn" id="28_dc55n"]
+[ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="28_npmj1"]
+[ext_resource type="PackedScene" uid="uid://dbldo0fwudiao" path="res://steven/crate.tscn" id="29_6akmg"]
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="29_ewnqa"]
+[ext_resource type="PackedScene" path="res://zaher/control_scheme.tscn" id="29_vsh2r"]
+[ext_resource type="PackedScene" uid="uid://dmy4c65skjafx" path="res://steven/Sebas Pathpoint.tscn" id="30_7qfjh"]
+[ext_resource type="PackedScene" uid="uid://c6q0a82ekahf3" path="res://steven/Sebas Spawnpoint.tscn" id="31_xchcd"]
+[ext_resource type="PackedScene" uid="uid://0xgl24h1n463" path="res://steven/Spawn Trigger.tscn" id="32_tj2ba"]
+[ext_resource type="PackedScene" uid="uid://chq1ra6eg41r1" path="res://steven/Despawn Trigger.tscn" id="33_pxb4m"]
+[ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="36_0iol4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4alq8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -35,6 +46,7 @@ ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 sky_material = SubResource("ProceduralSkyMaterial_4alq8")
 
 [sub_resource type="Environment" id="Environment_25oov"]
+background_mode = 1
 sky = SubResource("Sky_xgqwg")
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.02
@@ -153,6 +165,7 @@ data = PackedVector3Array(-0.45, 2.5, 4, 0.45, 2.5, 4, -0.45, -2.5, 4, 0.45, 2.5
 data = PackedVector3Array(-0.45, 2.5, 4, 0.45, 2.5, 4, -0.45, -2.5, 4, 0.45, 2.5, 4, 0.45, -2.5, 4, -0.45, -2.5, 4, 0.45, 2.5, -4, -0.45, 2.5, -4, 0.45, -2.5, -4, -0.45, 2.5, -4, -0.45, -2.5, -4, 0.45, -2.5, -4, 0.45, 2.5, 4, 0.45, 2.5, -4, 0.45, -2.5, 4, 0.45, 2.5, -4, 0.45, -2.5, -4, 0.45, -2.5, 4, -0.45, 2.5, -4, -0.45, 2.5, 4, -0.45, -2.5, -4, -0.45, 2.5, 4, -0.45, -2.5, 4, -0.45, -2.5, -4, 0.45, 2.5, 4, -0.45, 2.5, 4, 0.45, 2.5, -4, -0.45, 2.5, 4, -0.45, 2.5, -4, 0.45, 2.5, -4, -0.45, -2.5, 4, 0.45, -2.5, 4, -0.45, -2.5, -4, 0.45, -2.5, 4, 0.45, -2.5, -4, -0.45, -2.5, -4)
 
 [node name="Level" type="Node3D"]
+script = ExtResource("1_qtf1d")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_25oov")
@@ -482,11 +495,340 @@ transform = Transform3D(1, 0, 0, 0, 0.586369, 0, 0, 0, 1, -21.5415, 0.462326, 4.
 [node name="old_bench2" parent="Tutorial" instance=ExtResource("22_lodh8")]
 transform = Transform3D(1, 0, 0, 0, 0.586369, 0, 0, 0, 1, -21.5415, 0.462326, 4.8378)
 
+[node name="FlashlightPickUp" parent="Tutorial" instance=ExtResource("26_wxysa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6045, 0.299303, 4.30546)
+
+[node name="CollisionShape3D" parent="Tutorial/FlashlightPickUp/PickUpArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.559421, -0.555754)
+
 [node name="Hallway1" type="Node" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("29_ewnqa")]
+[node name="Hallway2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24.0277, 0, -9.93685)
+
+[node name="Floor" type="CSGBox3D" parent="Hallway2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 0)
+layers = 15
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 0.001, 8)
+
+[node name="Ceiling" type="CSGBox3D" parent="Hallway2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 6, 0)
+layers = 15
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 0.001, 8)
+
+[node name="Wall4" type="CSGBox3D" parent="Hallway2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 3, 0)
+use_collision = true
+collision_layer = 8
+size = Vector3(8, 6, 0.2)
+
+[node name="Door" type="CSGBox3D" parent="Hallway2/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+operation = 2
+size = Vector3(2.3, 4.5, 0.2)
+
+[node name="Wall5" type="CSGBox3D" parent="Hallway2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, -4.0094)
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 6, 0.2)
+
+[node name="Wall6" type="CSGBox3D" parent="Hallway2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, 3.9906)
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 6, 0.2)
+
+[node name="Cracked Wall" parent="Hallway2" instance=ExtResource("28_npmj1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68.9827, 0.00814331, 0.169044)
+
+[node name="Crate" parent="Hallway2" instance=ExtResource("29_6akmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1736, 0.526157, 2.84685)
+mass = 0.01
+
+[node name="Scare Room" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5168, 0, 64.016)
+
+[node name="Ceiling" type="CSGBox3D" parent="Scare Room"]
+transform = Transform3D(0.667648, 0, 0, 0, 1, 0, 0, 0, 1, 12.3134, 6, 0)
+layers = 15
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 0.001, 8)
+
+[node name="Wall5" type="CSGBox3D" parent="Scare Room"]
+transform = Transform3D(0.515286, 0, 0, 0, 1, 0, 0, 0, 1, 16.2476, 3, -4.0094)
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 6, 0.2)
+
+[node name="Floor" type="CSGBox3D" parent="Scare Room"]
+transform = Transform3D(0.668211, 0, 0, 0, 1, 0, 0, 0, 1, 12.3264, 0, 0)
+layers = 15
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 0.001, 8)
+
+[node name="Wall4" type="CSGBox3D" parent="Scare Room"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28.9615, 3, 0)
+use_collision = true
+collision_layer = 8
+size = Vector3(8, 6, 0.2)
+
+[node name="Wall7" type="CSGBox3D" parent="Scare Room"]
+transform = Transform3D(0.665788, 0, 0, 0, 1, 0, 0, 0, 1, 12.2264, 3, 3.9906)
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 6, 0.2)
+
+[node name="SebasSpawnpoint" parent="Scare Room" node_paths=PackedStringArray("next") instance=ExtResource("31_xchcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.517, 2, 0.002)
+next = NodePath("../SebasPathpoint")
+
+[node name="SebasPathpoint" parent="Scare Room" node_paths=PackedStringArray("prev", "next") instance=ExtResource("30_7qfjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+prev = NodePath("../SebasSpawnpoint")
+next = NodePath("../SebasPathpoint2")
+
+[node name="SebasPathpoint2" parent="Scare Room" node_paths=PackedStringArray("prev", "next") instance=ExtResource("30_7qfjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.765, 2, 0)
+prev = NodePath("../SebasPathpoint")
+next = NodePath("../../Hallway3/SebasPathpoint2")
+
+[node name="SpawnTrigger" parent="Scare Room" node_paths=PackedStringArray("enemy") instance=ExtResource("32_tj2ba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.785416, -1.81986, -0.268654)
+enemy = NodePath("../../Sebas")
+
+[node name="Cracked Wall" parent="Scare Room" instance=ExtResource("28_npmj1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.4468, 0.00814331, 0.169044)
+
+[node name="Hallway3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.86479, 0, 63.9995)
+
+[node name="Floor" type="CSGBox3D" parent="Hallway3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 0)
+layers = 15
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 0.001, 8)
+
+[node name="Ceiling" type="CSGBox3D" parent="Hallway3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 6, 0)
+layers = 15
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 0.001, 8)
+
+[node name="Wall5" type="CSGBox3D" parent="Hallway3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, -4.0094)
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 6, 0.2)
+
+[node name="Wall6" type="CSGBox3D" parent="Hallway3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, 3.9906)
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 6, 0.2)
+
+[node name="Wall7" type="CSGBox3D" parent="Hallway3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -70, 3, 0)
+use_collision = true
+collision_layer = 8
+size = Vector3(8, 6, 0.2)
+
+[node name="Door" type="CSGBox3D" parent="Hallway3/Wall7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+operation = 2
+size = Vector3(2.3, 4.5, 0.2)
+
+[node name="Crate" parent="Hallway3" instance=ExtResource("29_6akmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.7166, 0, 1.86159)
+
+[node name="Crate2" parent="Hallway3" instance=ExtResource("29_6akmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.914, 0, -2.75668)
+
+[node name="SebasPathpoint2" parent="Hallway3" node_paths=PackedStringArray("prev", "next") instance=ExtResource("30_7qfjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.379, 2, 0)
+prev = NodePath("../../Scare Room/SebasPathpoint2")
+next = NodePath("../SebasPathpoint3")
+
+[node name="SebasPathpoint3" parent="Hallway3" node_paths=PackedStringArray("prev", "next") instance=ExtResource("30_7qfjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.056, 2, 0)
+prev = NodePath("../SebasPathpoint2")
+next = NodePath("../../Hallway4/SebasPathpoint3")
+
+[node name="Hallway4" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -82.1075, 0, 88.0304)
+
+[node name="Floor" type="CSGBox3D" parent="Hallway4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 0)
+layers = 15
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 0.001, 8)
+
+[node name="Ceiling" type="CSGBox3D" parent="Hallway4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 6, 0)
+layers = 15
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 0.001, 8)
+
+[node name="Wall4" type="CSGBox3D" parent="Hallway4"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 3, 0)
+use_collision = true
+collision_layer = 8
+size = Vector3(8, 6, 0.2)
+
+[node name="Wall5" type="CSGBox3D" parent="Hallway4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, -4.0094)
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 6, 0.2)
+
+[node name="Door" type="CSGBox3D" parent="Hallway4/Wall5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0273, -0.8, 0)
+operation = 2
+size = Vector3(2.3, 4.5, 0.2)
+
+[node name="Wall6" type="CSGBox3D" parent="Hallway4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, 3.9906)
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 6, 0.2)
+
+[node name="Cracked Wall" parent="Hallway4" instance=ExtResource("28_npmj1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68.9827, 0.00814331, 0.169044)
+
+[node name="Crate" parent="Hallway4" instance=ExtResource("29_6akmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.7655, 0.526157, 2.84686)
+mass = 0.01
+
+[node name="SebasPathpoint3" parent="Hallway4" node_paths=PackedStringArray("prev", "next") instance=ExtResource("30_7qfjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.4199, 2, 2.28882e-05)
+prev = NodePath("../../Hallway3/SebasPathpoint3")
+next = NodePath("../SebasPathpoint4")
+
+[node name="SebasPathpoint4" parent="Hallway4" node_paths=PackedStringArray("prev", "next") instance=ExtResource("30_7qfjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.4322, 2, 4.57764e-05)
+prev = NodePath("../SebasPathpoint3")
+next = NodePath("../SebasPathpoint5")
+
+[node name="SebasPathpoint5" parent="Hallway4" node_paths=PackedStringArray("prev", "next") instance=ExtResource("30_7qfjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.3589, 2, 5.34058e-05)
+prev = NodePath("../SebasPathpoint4")
+next = NodePath("../../Hallway5/SebasPathpoint5")
+
+[node name="Hallway5" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -82.1638, 0, -50.5383)
+
+[node name="Floor" type="CSGBox3D" parent="Hallway5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 0)
+layers = 15
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 0.001, 8)
+
+[node name="Ceiling" type="CSGBox3D" parent="Hallway5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 6, 0)
+layers = 15
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 0.001, 8)
+
+[node name="Wall5" type="CSGBox3D" parent="Hallway5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, -4.0094)
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 6, 0.2)
+
+[node name="Wall6" type="CSGBox3D" parent="Hallway5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0232, 3, 3.9906)
+use_collision = true
+collision_layer = 8
+size = Vector3(50, 6, 0.2)
+
+[node name="Crate" parent="Hallway5" instance=ExtResource("29_6akmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1736, 0.526157, 2.84685)
+mass = 0.01
+
+[node name="Crate2" parent="Hallway5" instance=ExtResource("29_6akmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.2896, 0.526157, -3.21745)
+mass = 0.01
+
+[node name="Cracked Wall" parent="Hallway5" instance=ExtResource("28_npmj1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.8582, 0.00814331, -0.0728302)
+
+[node name="DespawnTrigger" parent="Hallway5" instance=ExtResource("33_pxb4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6298, -0.930526, 0.16658)
+
+[node name="SebasPathpoint5" parent="Hallway5" node_paths=PackedStringArray("prev", "next") instance=ExtResource("30_7qfjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.4532, 2, 5.34058e-05)
+prev = NodePath("../../Hallway4/SebasPathpoint5")
+next = NodePath("../SebasPathpoint6")
+
+[node name="SebasPathpoint6" parent="Hallway5" node_paths=PackedStringArray("prev", "next") instance=ExtResource("30_7qfjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.4615, 2, 5.34058e-05)
+prev = NodePath("../SebasPathpoint5")
+next = NodePath("../SebasPathpoint7")
+
+[node name="SebasPathpoint7" parent="Hallway5" node_paths=PackedStringArray("prev") instance=ExtResource("30_7qfjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9106, 2, 5.34058e-05)
+prev = NodePath("../SebasPathpoint6")
+
+[node name="Player" parent="." node_paths=PackedStringArray("ENEMY") instance=ExtResource("29_ewnqa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 10)
+ENEMY = NodePath("../Sebas")
+
+[node name="Flashlight" parent="Player/Pivot" index="1" node_paths=PackedStringArray("controls")]
+controls = NodePath("../../../ControlScheme")
+
+[node name="PauseMenu" parent="." instance=ExtResource("28_dc55n")]
+visible = false
+
+[node name="ControlScheme" parent="." instance=ExtResource("29_vsh2r")]
+
+[node name="Sebas" parent="." instance=ExtResource("36_0iol4")]
+
+[node name="SebasChase" parent="Sebas/StateMachine" index="1" node_paths=PackedStringArray("player", "animation")]
+player = NodePath("../../../Player")
+animation = NodePath("../../../Player/Pivot/Camera3D/AnimationPlayer")
+
+[connection signal="picked_up" from="Tutorial/FlashlightPickUp" to="Player/Pivot/Flashlight" method="_on_flashlight_pick_up_picked_up"]
+[connection signal="block" from="Hallway2/Cracked Wall" to="Sebas/StateMachine/SebasChase" method="_on_cracked_wall_block"]
+[connection signal="block" from="Hallway2/Crate" to="Sebas/StateMachine/SebasChase" method="_on_crate_block"]
+[connection signal="block" from="Scare Room/Cracked Wall" to="Sebas/StateMachine/SebasChase" method="_on_cracked_wall_block"]
+[connection signal="block" from="Hallway3/Crate" to="Sebas/StateMachine/SebasChase" method="_on_crate_block"]
+[connection signal="block" from="Hallway3/Crate2" to="Sebas/StateMachine/SebasChase" method="_on_crate_block"]
+[connection signal="block" from="Hallway4/Cracked Wall" to="Sebas/StateMachine/SebasChase" method="_on_cracked_wall_block"]
+[connection signal="block" from="Hallway4/Crate" to="Sebas/StateMachine/SebasChase" method="_on_crate_block"]
+[connection signal="block" from="Hallway5/Crate" to="Sebas/StateMachine/SebasChase" method="_on_crate_block"]
+[connection signal="block" from="Hallway5/Crate2" to="Sebas/StateMachine/SebasChase" method="_on_crate_block"]
+[connection signal="block" from="Hallway5/Cracked Wall" to="Sebas/StateMachine/SebasChase" method="_on_cracked_wall_block"]
+[connection signal="death" from="Player" to="Sebas/StateMachine/SebasChase" method="_on_player_death"]
 
 [editable path="Starting Room/Cell7"]
 [editable path="Tutorial/Hanging_Light3"]
 [editable path="Tutorial/Hanging_Light5"]
+[editable path="Tutorial/FlashlightPickUp"]
+[editable path="Tutorial/FlashlightPickUp/Flashlight"]
+[editable path="Hallway2/Cracked Wall"]
+[editable path="Hallway2/Crate"]
+[editable path="Scare Room/Cracked Wall"]
+[editable path="Hallway4/Cracked Wall"]
+[editable path="Hallway4/Crate"]
+[editable path="Hallway5/Crate"]
+[editable path="Hallway5/Crate2"]
+[editable path="Hallway5/Cracked Wall"]
+[editable path="Player"]
+[editable path="Player/Pivot/Flashlight2"]
+[editable path="Sebas"]
+[editable path="Sebas/Running"]
+[editable path="Sebas/Crawling"]
+[editable path="Sebas/Biting"]
+[editable path="Sebas/Attacking"]

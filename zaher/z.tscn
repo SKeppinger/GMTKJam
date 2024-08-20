@@ -57,6 +57,7 @@ skeleton = NodePath("../../../Interactable2")
 [node name="SebasPathpoint" parent="." instance=ExtResource("6_koum1")]
 
 [editable path="Player"]
+[editable path="Player/Pivot/Flashlight2"]
 [editable path="Interactable"]
 [editable path="Cracked Wall"]
 [editable path="Interactable2"]

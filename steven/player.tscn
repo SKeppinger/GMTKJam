@@ -68,7 +68,7 @@ libraries = {
 }
 
 [node name="Flashlight" type="SpotLight3D" parent="Pivot"]
-transform = Transform3D(0.995887, -0.000844772, 0.0906034, 0.000393198, 0.999987, 0.00500181, -0.0906065, -0.00494561, 0.995875, 0.290519, 0.549173, -0.215929)
+transform = Transform3D(0.995887, -0.000844772, 0.0906034, 0.000393198, 0.999987, 0.00500181, -0.0906065, -0.00494561, 0.995875, 0.290519, -0.0909722, -0.337165)
 light_energy = 1.5
 light_indirect_energy = 1.485
 light_volumetric_fog_energy = 3.909
@@ -80,9 +80,10 @@ spot_angle_attenuation = 30.0
 script = ExtResource("2_4tg8v")
 
 [node name="Flashlight2" parent="Pivot" instance=ExtResource("3_s8qc2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.120732, 0)
 
 [node name="Flashlight" parent="Pivot/Flashlight2" index="0"]
-transform = Transform3D(4.53579e-07, 2.5366, -1.10878e-07, -2.5366, 4.53579e-07, -9.0118e-15, 9.0118e-15, 1.10878e-07, 2.5366, 0.286962, 0.0230335, -0.271758)
+transform = Transform3D(1.16824e-06, 6, -2.62268e-07, -6, 1.16824e-06, -2.55808e-14, 2.54846e-14, 2.62268e-07, 6, 0.286962, 0.0230335, -0.271758)
 
 [node name="Feet" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)

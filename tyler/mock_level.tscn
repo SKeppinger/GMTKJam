@@ -19,6 +19,7 @@ sky_material = SubResource("ProceduralSkyMaterial_4alq8")
 
 [sub_resource type="Environment" id="Environment_25oov"]
 sky = SubResource("Sky_xgqwg")
+ambient_light_source = 1
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.02
 glow_enabled = true
@@ -441,6 +442,9 @@ size = Vector3(7, 6, 0.2)
 [node name="Sebas" parent="Starting Room2" instance=ExtResource("2_utu1w")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 11.942, 2, 2.923)
 
+[node name="StateMachine" parent="Starting Room2/Sebas" index="1" node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("SebasChase")
+
 [node name="Path 1" parent="Starting Room2" node_paths=PackedStringArray("next") instance=ExtResource("3_3jveu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.604, 2, -0.082)
 next = NodePath("../Path 2")
@@ -560,9 +564,6 @@ prev = NodePath("../../Hallway2/Path 4")
 [node name="FlashlightPickUp" parent="." instance=ExtResource("6_3icg6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.693, 0.704647, -127.438)
 
-[node name="FlashlightHandle" parent="FlashlightPickUp/StaticBody3D" index="0"]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.5, 0)
-
 [node name="PauseMenu" parent="." instance=ExtResource("7_ph3kj")]
 visible = false
 
@@ -576,6 +577,7 @@ visible = false
 [connection signal="picked_up" from="FlashlightPickUp" to="Starting Room2/Player/Pivot/Flashlight" method="_on_flashlight_pick_up_picked_up"]
 
 [editable path="Starting Room2/Player"]
+[editable path="Starting Room2/Player/Pivot/Flashlight2"]
 [editable path="Starting Room2/Sebas"]
 [editable path="Starting Room2/Sebas/Running"]
 [editable path="Starting Room2/Sebas/Crawling"]
@@ -584,3 +586,4 @@ visible = false
 [editable path="Hallway2/Cracked Wall"]
 [editable path="Hallway2/Crate"]
 [editable path="FlashlightPickUp"]
+[editable path="FlashlightPickUp/Flashlight"]

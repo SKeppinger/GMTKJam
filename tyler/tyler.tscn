@@ -161,3 +161,4 @@ volume_db = -25.0
 autoplay = true
 
 [editable path="Player"]
+[editable path="Player/Pivot/Flashlight2"]

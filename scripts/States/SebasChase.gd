@@ -8,7 +8,7 @@ var navigating = false
 var destination
 
 @export var enemy: CharacterBody3D
-@export var move_speed := 5
+@export var move_speed := 7
 @export var player: CharacterBody3D
 @export var animation: AnimationPlayer
 
@@ -69,7 +69,7 @@ func Physics_Update(delta: float):
 						nearest_to_me = point
 			if sightline:
 				sightline = false
-				enemy.position = nearest_to_me.position
+				enemy.global_position = nearest_to_me.global_position
 			destination = nearest_to_player
 			navigate_to_point(nearest_to_me, destination)
 	else:
