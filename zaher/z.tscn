@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://vxtm3yuayd4d"]
+[gd_scene load_steps=10 format=3 uid="uid://vxtm3yuayd4d"]
 
 [ext_resource type="PackedScene" uid="uid://bjkyarhgjy3bt" path="res://steven/player.tscn" id="2_hrhbb"]
 [ext_resource type="PackedScene" uid="uid://0r3s4aqqbyuf" path="res://steven/interactable.tscn" id="3_c5hxx"]
 [ext_resource type="PackedScene" uid="uid://dag8a8h4bujxl" path="res://steven/cracked_wall.tscn" id="4_qwh4p"]
 [ext_resource type="PackedScene" uid="uid://dbldo0fwudiao" path="res://steven/crate.tscn" id="5_gp5kd"]
 [ext_resource type="PackedScene" uid="uid://cfd6dwgjd0vpt" path="res://steven/sebas.tscn" id="5_sj0ph"]
+[ext_resource type="PackedScene" uid="uid://dmy4c65skjafx" path="res://steven/Sebas Pathpoint.tscn" id="6_koum1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_230la"]
 size = Vector3(41, 1, 40)
@@ -54,11 +55,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 1, 
 [node name="MeshInstance3D" parent="Interactable2/CollisionShape3D" index="0"]
 skeleton = NodePath("../../../Interactable2")
 
-[node name="Hitbox" parent="Interactable2" index="1"]
-collision_layer = 2
-collision_mask = 4
-
 [node name="Sebas" parent="." instance=ExtResource("5_sj0ph")]
+
+[node name="SebasPathpoint" parent="." instance=ExtResource("6_koum1")]
 
 [editable path="Player"]
 [editable path="Interactable"]

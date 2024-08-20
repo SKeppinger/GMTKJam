@@ -16,6 +16,8 @@ var destination
 func _ready():
 	player = get_parent().get_parent().get_parent().get_node("Player")
 	animation = player.get_child(1).get_child(0).get_child(0)
+	enemy.get_node("Running").set_visible(true)
+	enemy.get_node("Running").get_node("AnimationPlayer").play("mixamo_com")
 
 func navigate_to_point(from: Node3D, to: Node3D):
 	if from != to:
@@ -43,9 +45,6 @@ func navigate_to_point(from: Node3D, to: Node3D):
 		navigating = false
 
 func Physics_Update(delta: float):
-	get_parent().get_parent().get_node("Running").set_visible(true)
-	#get_parent().get_parent().get_node("Crawling").get_node("AnimationPlayer").play("mixamo_com")
-	get_parent().get_parent().get_node("Running").get_node("AnimationPlayer").play("mixamo_com")
 	if not navigating:
 		var space_state = enemy.get_world_3d().direct_space_state
 		var from = enemy.global_position
@@ -84,29 +83,52 @@ func Physics_Update(delta: float):
 			navigate_to_point(nearest_to_me, destination)
 
 func _on_interactable_block():
+	enemy.get_node("Running").set_visible(false)
+	enemy.get_node("Crawling").set_visible(false)
+	enemy.get_node("Attacking").set_visible(true)
+	enemy.get_node("Attacking").get_node("AnimationPlayer").play("mixamo_com")
 	print("slowing down!")
 	move_speed /= 5
 	await get_tree().create_timer(1).timeout
+	enemy.get_node("Attacking").set_visible(false)
+	enemy.get_node("Running").set_visible(true)
 	move_speed *= 5
 	print("speeding up!")
 
 func _on_cracked_wall_block():
+	enemy.get_node("Running").set_visible(false)
+	enemy.get_node("Crawling").set_visible(false)
+	enemy.get_node("Attacking").set_visible(true)
+	enemy.get_node("Attacking").get_node("AnimationPlayer").play("mixamo_com")
 	print("slowing down!")
 	move_speed /= 5
 	await get_tree().create_timer(1).timeout
+	enemy.get_node("Attacking").set_visible(false)
+	enemy.get_node("Running").set_visible(true)
 	move_speed *= 5
 	print("speeding up!")
 
 #this one is for the "crate" object instead of "interactable", we can prob delete one of them and rename the other and be fine
 func _on_crate_block():
+	enemy.get_node("Running").set_visible(false)
+	enemy.get_node("Crawling").set_visible(false)
+	enemy.get_node("Attacking").set_visible(true)
+	enemy.get_node("Attacking").get_node("AnimationPlayer").play("mixamo_com")
 	print("slowing down!")
 	move_speed /= 5
 	await get_tree().create_timer(1).timeout
+	enemy.get_node("Attacking").set_visible(false)
+	enemy.get_node("Running").set_visible(true)
 	move_speed *= 5
 	print("speeding up!")
 
 func _on_player_death():
 	print("Im DEAD!!!!")
+	enemy.get_node("Running").set_visible(false)
+	enemy.get_node("Crawling").set_visible(false)
+	enemy.get_node("Biting").set_visible(true)
+	enemy.get_node("Biting").get_node("AnimationPlayer").play("mixamo_com")
+	await get_tree().create_timer(1).timeout
 	move_speed = 0
 	animation.play("Dying")
 	await get_tree().create_timer(3).timeout

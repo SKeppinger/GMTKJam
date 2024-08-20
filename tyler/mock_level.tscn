@@ -386,7 +386,7 @@ size = Vector3(27, 6, 0.2)
 
 [node name="Player" parent="Starting Room2" instance=ExtResource("1_b4cwv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.47684, 0, -1.45335)
-collision_mask = 15
+collision_mask = 14
 
 [node name="Divider" type="CSGBox3D" parent="Starting Room2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.99426, 3.00497, 10.496)
@@ -554,8 +554,11 @@ prev = NodePath("../../Hallway2/Path 4")
 [connection signal="block" from="Hallway3/Crate" to="Starting Room2/Sebas/StateMachine/SebasChase" method="_on_crate_block"]
 [connection signal="block" from="Hallway3/Crate2" to="Starting Room2/Sebas/StateMachine/SebasChase" method="_on_crate_block"]
 
+[editable path="Starting Room2/Player"]
 [editable path="Starting Room2/Sebas"]
 [editable path="Starting Room2/Sebas/Running"]
 [editable path="Starting Room2/Sebas/Crawling"]
+[editable path="Starting Room2/Sebas/Biting"]
+[editable path="Starting Room2/Sebas/Attacking"]
 [editable path="Hallway2/Cracked Wall"]
 [editable path="Hallway2/Crate"]
