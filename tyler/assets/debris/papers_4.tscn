@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=4 uid="uid://ch217l8m7q1f0"]
+
+[ext_resource type="Texture2D" uid="uid://cra85a5dpfulb" path="res://tyler/assets/debris/paper_debris_0.jpg" id="1_5iu0j"]
+[ext_resource type="Texture2D" uid="uid://piu8hobe3vla" path="res://tyler/assets/debris/paper_debris_1.png" id="2_rqsdj"]
+[ext_resource type="Texture2D" uid="uid://b2t8x02sv3im5" path="res://tyler/assets/debris/paper_debris_2.png" id="3_t7qi3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4i8dw"]
+resource_name = "T_paper_1001"
+cull_mode = 2
+albedo_texture = ExtResource("1_5iu0j")
+metallic = 1.0
+metallic_texture = ExtResource("2_rqsdj")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_rqsdj")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_t7qi3")
+ao_enabled = true
+ao_texture = ExtResource("2_rqsdj")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lgrjt"]
+_surfaces = [{
+"aabb": AABB(-0.1485, -0.105, -0.023213, 0.297, 0.21, 0.046426),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAACAAEAAgAAAAMABAAGAAUABgAEAAcABwACAAMAAgAHAAQABQAAAAEAAAAFAAYABgADAAAAAwAGAAcABAABAAIAAQAEAAUA"),
+"name": "T_paper_1001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAAAA//8AAAAA/////wAAAAAAAP////8AAAAAAAD//wAA//8AAP//AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gjmqh"]
+resource_name = "Sketchfab_Scene_defaultMaterial4"
+_surfaces = [{
+"aabb": AABB(-0.1485, -0.105, -0.023213, 0.297, 0.21, 0.046426),
+"attribute_data": PackedByteArray("BJZ/AASWAGkgTABpIEx/AH8AfwBkSn8AZEoAaX8AAGls7bjKFt24yhbdN2Js7TdiMGCW2TBgQMmxyEDJsciW2SnvIEx//yBMf/8ElinvBJYM/mRKt+1kSrftfwAM/n8A"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAACAAEAAgAAAAMABAAGAAUABgAEAAcACAAKAAkACgAIAAsADAAOAA0ADgAMAA8AEAASABEAEgAQABMAFAAWABUAFgAUABcA"),
+"material": SubResource("StandardMaterial3D_4i8dw"),
+"name": "T_paper_1001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAAAA//8AAAAAAAD//wAA//8AAP///////wAA//8AAP//////vwAAAAD///+///8AAP///7//////////v////////1TV/////wAAVNUAAP//AABU1QAA/////1TVAAAAAP///78AAAAAAAD/v///AAAAAP+///8AAP///7///wAA////v///AAAAAP+//////wAA/7//////////vwAA//////+/AAD//wAA/78AAAAAAAD/vwAAAAD///+//z//v/8//7//P/+//z//v/9//3//f/9//3//f/9//3+qqqqqqqqqqqqqqqqqqqqqAAD/fwAA/38AAP9/AAD/f/9/AAD/fwAA/38AAP9/AAD/f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lgrjt")
+
+[node name="defaultMaterial4" type="MeshInstance3D"]
+transform = Transform3D(0.0127474, 0, 0, 0, 0.0127474, 0, 0, 0, 0.0127474, -0.00178685, -0.277748, -0.0035828)
+mesh = SubResource("ArrayMesh_gjmqh")
+skeleton = NodePath("")
