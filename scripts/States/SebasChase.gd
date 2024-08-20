@@ -128,8 +128,8 @@ func _on_player_death():
 	enemy.get_node("Crawling").set_visible(false)
 	enemy.get_node("Biting").set_visible(true)
 	enemy.get_node("Biting").get_node("AnimationPlayer").play("mixamo_com")
+	move_speed = -1
 	await get_tree().create_timer(1).timeout
-	move_speed = 0
 	animation.play("Dying")
 	await get_tree().create_timer(3).timeout
 	get_tree().reload_current_scene()
