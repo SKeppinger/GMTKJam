@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://6btpbxw6yvoq"]
+[gd_scene load_steps=61 format=4 uid="uid://6btpbxw6yvoq"]
 
 [ext_resource type="PackedScene" uid="uid://df7j5g3df00ja" path="res://tyler/assets/cell/cell.tscn" id="1_82dhp"]
 [ext_resource type="Texture2D" uid="uid://bot5c48e3ylkd" path="res://tyler/textures/white_plaster_02_diff_4k.png" id="1_sikpa"]
@@ -57,7 +57,7 @@ uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1e80p"]
 material = SubResource("StandardMaterial3D_6hrga")
-size = Vector2(27, 28.8)
+size = Vector2(28.5, 28.8)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1rc8b"]
 
@@ -73,10 +73,26 @@ material = SubResource("StandardMaterial3D_8j5nq")
 flip_faces = true
 size = Vector2(27, 28)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8tu2"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(8, 2, 2)
+
 [sub_resource type="QuadMesh" id="QuadMesh_p3wyn"]
+material = SubResource("StandardMaterial3D_i8tu2")
 size = Vector2(27, 6)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bv4n6"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(8, 2, 2)
+
 [sub_resource type="QuadMesh" id="QuadMesh_yfugj"]
+material = SubResource("StandardMaterial3D_bv4n6")
 size = Vector2(28.9, 6)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wthd"]
@@ -140,7 +156,15 @@ data = PackedVector3Array(-0.45, 2.5, 6.125, 0.45, 2.5, 6.125, -0.45, -2.5, 6.12
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uan44"]
 data = PackedVector3Array(-0.45, 2.5, 6.125, 0.45, 2.5, 6.125, -0.45, -2.5, 6.125, 0.45, 2.5, 6.125, 0.45, -2.5, 6.125, -0.45, -2.5, 6.125, 0.45, 2.5, -6.125, -0.45, 2.5, -6.125, 0.45, -2.5, -6.125, -0.45, 2.5, -6.125, -0.45, -2.5, -6.125, 0.45, -2.5, -6.125, 0.45, 2.5, 6.125, 0.45, 2.5, -6.125, 0.45, -2.5, 6.125, 0.45, 2.5, -6.125, 0.45, -2.5, -6.125, 0.45, -2.5, 6.125, -0.45, 2.5, -6.125, -0.45, 2.5, 6.125, -0.45, -2.5, -6.125, -0.45, 2.5, 6.125, -0.45, -2.5, 6.125, -0.45, -2.5, -6.125, 0.45, 2.5, 6.125, -0.45, 2.5, 6.125, 0.45, 2.5, -6.125, -0.45, 2.5, 6.125, -0.45, 2.5, -6.125, 0.45, 2.5, -6.125, -0.45, -2.5, 6.125, 0.45, -2.5, 6.125, -0.45, -2.5, -6.125, 0.45, -2.5, 6.125, 0.45, -2.5, -6.125, -0.45, -2.5, -6.125)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixyyt"]
+albedo_texture = ExtResource("1_sikpa")
+roughness_texture = ExtResource("3_ikifs")
+normal_enabled = true
+normal_texture = ExtResource("2_d7soh")
+uv2_scale = Vector3(2, 2, 2)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_tfkhg"]
+material = SubResource("StandardMaterial3D_ixyyt")
 size = Vector2(20, 20)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_73flk"]
@@ -151,7 +175,15 @@ size = Vector2(20, 20)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v85ka"]
 data = PackedVector3Array(14, -3, 0, -14, -3, 0, 14, 3, 0, -14, -3, 0, -14, 3, 0, 14, 3, 0)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjfwt"]
+albedo_texture = ExtResource("11_e7inq")
+roughness_texture = ExtResource("13_pc8b1")
+normal_enabled = true
+normal_texture = ExtResource("12_2lmni")
+uv1_scale = Vector3(6, 2, 2)
+
 [sub_resource type="QuadMesh" id="QuadMesh_8ndsa"]
+material = SubResource("StandardMaterial3D_yjfwt")
 size = Vector2(20, 6)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6qhjl"]
@@ -175,7 +207,7 @@ environment = SubResource("Environment_25oov")
 [node name="Starting Room" type="Node" parent="."]
 
 [node name="Floor" type="MeshInstance3D" parent="Starting Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.458704, 0, -0.00867891)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.311611, 0, -0.00867891)
 mesh = SubResource("PlaneMesh_1e80p")
 skeleton = NodePath("../..")
 
@@ -202,7 +234,7 @@ mesh = SubResource("QuadMesh_p3wyn")
 skeleton = NodePath("../..")
 
 [node name="Wall3" type="MeshInstance3D" parent="Starting Room"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 2.7928, -0.0119731)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.7026, 2.7928, -0.0119731)
 mesh = SubResource("QuadMesh_yfugj")
 skeleton = NodePath("../..")
 
@@ -298,10 +330,10 @@ collision_mask = 15
 shape = SubResource("ConcavePolygonShape3D_uan44")
 
 [node name="Table" parent="Starting Room" instance=ExtResource("14_s3lf3")]
-transform = Transform3D(-8.09372e-08, 0, -1.85163, 0, 1.85163, 0, 1.85163, 0, -8.09372e-08, -0.582709, -0.00516444, 1.7923)
+transform = Transform3D(-6.91095e-08, 0, -1.58104, 0, 1.58104, 0, 1.58104, 0, -6.91095e-08, -0.582709, -0.00516444, 1.7923)
 
 [node name="Table2" parent="Starting Room" instance=ExtResource("14_s3lf3")]
-transform = Transform3D(-8.09372e-08, 0, -1.85163, 0, 1.85163, 0, 1.85163, 0, -8.09372e-08, -7.58271, -0.00516444, 1.90219)
+transform = Transform3D(-6.9133e-08, 0, -1.58158, 0, 1.58158, 0, 1.58158, 0, -6.9133e-08, -7.58377, -0.00516444, 1.51848)
 
 [node name="Bricks" parent="Starting Room" instance=ExtResource("14_c4iu2")]
 transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -11.8675, -0.322716, 4.18604)
@@ -310,10 +342,10 @@ transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926
 transform = Transform3D(0.75, 0, -1.29904, 0, 1.5, 0, 1.29904, 0, 0.75, 4.89668, 0.0623206, -4.85527)
 
 [node name="Food" parent="Starting Room" instance=ExtResource("15_n7od6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.22896, 1.29424, 1.88389)
+transform = Transform3D(0.78013, 0, 0, 0, 0.78013, 0, 0, 0, 0.78013, -7.22896, 1.12455, 1.31731)
 
 [node name="Food2" parent="Starting Room" instance=ExtResource("15_n7od6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28722, 1.29424, -0.644124)
+transform = Transform3D(0.884878, 0, 0, 0, 0.884878, 0, 0, 0, 0.884878, -0.28722, 1.11928, -0.644124)
 
 [node name="wooden_crate" parent="Starting Room" instance=ExtResource("16_ljkcj")]
 transform = Transform3D(2.25435e-05, -0.00124443, 2.7, 0.00108222, 2.7, 0.00124443, -2.7, 0.00108221, 2.30215e-05, -12.4153, 0.0164784, -4.31392)
@@ -398,6 +430,9 @@ transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -20.6417, 4.94938
 [node name="Hanging_Light3" parent="Tutorial" instance=ExtResource("3_v4gt1")]
 transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -20.6417, 4.94938, -5.72821)
 
+[node name="SM_hanging_lights_006" parent="Tutorial/Hanging_Light3/Sketchfab_model/Collada visual scene group" index="3"]
+visible = true
+
 [node name="SpotLight3D" type="SpotLight3D" parent="Tutorial/Hanging_Light3"]
 transform = Transform3D(40, 1.74845e-06, 1.74845e-06, -1.74845e-06, -1.74846e-06, 40, 1.74845e-06, -40, -1.74846e-06, 0, -46.8436, 0)
 light_color = Color(0.988281, 1, 0.976563, 1)
@@ -410,6 +445,9 @@ spot_angle_attenuation = 115.36
 
 [node name="Hanging_Light5" parent="Tutorial" instance=ExtResource("3_v4gt1")]
 transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -28.1378, 4.94938, 6.04942)
+
+[node name="SM_hanging_lights_006" parent="Tutorial/Hanging_Light5/Sketchfab_model/Collada visual scene group" index="3"]
+visible = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Tutorial/Hanging_Light5"]
 transform = Transform3D(40, 1.74845e-06, 1.74845e-06, -1.74845e-06, -1.74846e-06, 40, 1.74845e-06, -40, -1.74846e-06, 0, -46.8436, 0)
@@ -520,3 +558,5 @@ transform = Transform3D(1, 0, 0, 0, 0.586369, 0, 0, 0, 1, -21.5415, 0.462326, 4.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 10)
 
 [editable path="Starting Room/Cell7"]
+[editable path="Tutorial/Hanging_Light3"]
+[editable path="Tutorial/Hanging_Light5"]
